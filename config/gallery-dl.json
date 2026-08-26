@@ -1,0 +1,35 @@
+{
+  "extractor": {
+    "base-directory": "images",
+    "twitter": {
+      "retweets": false,
+      "replies": false,
+      "quoted": false,
+      "pinned": true,
+      "text-tweets": false,
+      "videos": false,
+      "cards": false,
+      "twitpic": false,
+      "size": ["orig", "4096x4096", "large", "medium", "small"],
+      "skip": "abort:50",
+      "filename": "{date:%Y-%m-%d}_{author[name]}_{tweet_id}_{num}.{extension}",
+      "directory": ["{author[name]}"],
+      "archive": "archive/gallery-dl-twitter.sqlite3",
+      "archive-format": "{author[id]}_{tweet_id}_{num}",
+      "postprocessors": [
+        {
+          "name": "metadata",
+          "event": "post",
+          "mode": "json",
+          "filename": "{tweet_id}.json",
+          "directory": "metadata/{author[name]}"
+        }
+      ]
+    }
+  },
+  "output": {
+    "log": {
+      "level": "info"
+    }
+  }
+}
