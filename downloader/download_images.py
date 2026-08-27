@@ -4,12 +4,16 @@
 Authentication is supplied at runtime as a Netscape cookies.txt file.
 Each account is processed independently so one unavailable/renamed account
 cannot discard successful downloads from the other accounts.
+
+ACCOUNT_FILTER can be set to process one configured account only.
 """
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "accounts.json"
@@ -18,8 +22,23 @@ COOKIE_FILE = ROOT / ".runtime" / "x-cookies.txt"
 STATUS_FILE = ROOT / "metadata" / "download_status.json"
 
 
+def build_url(username: str) -> str:
+    # X can expose a public profile in a browser while gallery-dl's direct
+    # user-resolution path fails. Search URLs avoid that resolution step.
+    if username.lower() == "casharmax":
+        query = quote(f"from:{username} filter:links", safe="")
+        return f"https://x.com/search?q={query}"
+    return f"https://x.com/{username}"
+
+
 def main() -> int:
     accounts = json.loads(CONFIG.read_text(encoding="utf-8"))["accounts"]
+    account_filter = os.environ.get("ACCOUNT_FILTER", "").strip().lower()
+    if account_filter:
+        accounts = [a for a in accounts if a["username"].lower() == account_filter]
+        if not accounts:
+            raise SystemExit(f"ACCOUNT_FILTER did not match a configured account: {account_filter}")
+
     if not COOKIE_FILE.exists() or COOKIE_FILE.stat().st_size == 0:
         raise SystemExit("Missing runtime X cookie file")
 
@@ -29,7 +48,7 @@ def main() -> int:
 
     for account in accounts:
         username = account["username"]
-        url = f"https://x.com/{username}"
+        url = build_url(username)
         cmd = [
             sys.executable,
             "-m",
@@ -41,7 +60,7 @@ def main() -> int:
             "--verbose",
             url,
         ]
-        print(f"Running gallery-dl for {username}")
+        print(f"Running gallery-dl for {username}: {url}")
         result = subprocess.run(cmd, cwd=ROOT, check=False)
         ok = result.returncode == 0
         any_success = any_success or ok
