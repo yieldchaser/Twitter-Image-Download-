@@ -1,11 +1,39 @@
 {
   "accounts": [
     {
-      "username": "casharmax",
-      "url": "https://x.com/search?q=from%3Acasharmax%20filter%3Alinks",
+      "username": "HBGrimes",
+      "url": "https://x.com/HBGrimes",
       "returncode": 0,
-      "status": "ok"
+      "status": "ok",
+      "reason": "media extraction completed"
+    },
+    {
+      "username": "casharmax",
+      "url": "https://x.com/casharmax",
+      "returncode": 4,
+      "status": "failed",
+      "reason": "gallery-dl exited with code 4"
+    },
+    {
+      "username": "MarhelmData",
+      "url": "https://x.com/MarhelmData",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed"
+    },
+    {
+      "username": "ole_sanne",
+      "url": "https://x.com/ole_sanne",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed"
     }
   ],
-  "overall_success": true
+  "overall_success": false,
+  "expected_accounts": [
+    "HBGrimes",
+    "casharmax",
+    "MarhelmData",
+    "ole_sanne"
+  ]
 }

@@ -13,7 +13,7 @@
         "date": "2023-02-12 17:43:40",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1624826468458016773/1676224126",
         "favourites_count": 454,
-        "followers_count": 27383,
+        "followers_count": 27382,
         "friends_count": 193,
         "listed_count": 533,
         "media_count": 3413,
@@ -32,7 +32,7 @@
         "date": "2023-02-12 17:43:40",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1624826468458016773/1676224126",
         "favourites_count": 454,
-        "followers_count": 27383,
+        "followers_count": 27382,
         "friends_count": 193,
         "listed_count": 533,
         "media_count": 3413,
@@ -57,5 +57,5 @@
     "content": "I've got barnacles as long as me arm!",
     "count": 1,
     "category": "twitter",
-    "subcategory": "timeline"
+    "subcategory": "media"
 }
