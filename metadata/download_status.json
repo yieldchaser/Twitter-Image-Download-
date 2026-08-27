@@ -8,11 +8,11 @@
       "reason": "media extraction completed"
     },
     {
-      "username": "casharmax",
-      "url": "https://x.com/casharmax",
-      "returncode": 4,
-      "status": "failed",
-      "reason": "gallery-dl exited with code 4"
+      "username": "cashsarmax",
+      "url": "https://x.com/cashsarmax",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed"
     },
     {
       "username": "MarhelmData",
@@ -29,10 +29,10 @@
       "reason": "media extraction completed"
     }
   ],
-  "overall_success": false,
+  "overall_success": true,
   "expected_accounts": [
     "HBGrimes",
-    "casharmax",
+    "cashsarmax",
     "MarhelmData",
     "ole_sanne"
   ]
