@@ -1,0 +1,29 @@
+{
+  "accounts": [
+    {
+      "username": "HBGrimes",
+      "url": "https://x.com/HBGrimes",
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "username": "casharmax",
+      "url": "https://x.com/casharmax",
+      "returncode": 4,
+      "status": "failed"
+    },
+    {
+      "username": "MarhelmData",
+      "url": "https://x.com/MarhelmData",
+      "returncode": 0,
+      "status": "ok"
+    },
+    {
+      "username": "ole_sanne",
+      "url": "https://x.com/ole_sanne",
+      "returncode": 0,
+      "status": "ok"
+    }
+  ],
+  "overall_success": true
+}
