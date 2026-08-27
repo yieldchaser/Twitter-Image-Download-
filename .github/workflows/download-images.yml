@@ -12,6 +12,8 @@ permissions:
 
 jobs:
   download:
+    # Do not re-trigger the downloader from its own archive commit.
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -39,6 +41,16 @@ jobs:
           python downloader/convert_cookie_editor.py .runtime/cookies.json .runtime/x-cookies.txt
           chmod 600 .runtime/x-cookies.txt
           rm -f .runtime/cookies.json
+
+      - name: Select accounts
+        run: |
+          if [[ "${{ github.event_name }}" == "push" && "${{ github.event.head_commit.message }}" == "Test casharmax X media collector"* ]]; then
+            echo "ACCOUNT_FILTER=casharmax" >> "$GITHUB_ENV"
+            echo "Targeted test run: casharmax only"
+          else
+            echo "ACCOUNT_FILTER=" >> "$GITHUB_ENV"
+            echo "Normal run: all configured accounts"
+          fi
 
       - name: Download images
         run: python downloader/download_images.py
