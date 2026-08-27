@@ -2,6 +2,18 @@ name: Download X Images
 
 on:
   workflow_dispatch:
+    inputs:
+      account:
+        description: "Account to collect"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - HBGrimes
+          - casharmax
+          - MarhelmData
+          - ole_sanne
   push:
     branches: [main]
   schedule:
@@ -43,21 +55,19 @@ jobs:
           rm -f .runtime/cookies.json
 
       - name: Select accounts
+        env:
+          DISPATCH_ACCOUNT: ${{ inputs.account }}
         run: |
-          if [[ "${{ github.event_name }}" == "push" && "${{ github.event.head_commit.message }}" == "Test casharmax X media collector"* ]]; then
-            echo "ACCOUNT_FILTER=casharmax" >> "$GITHUB_ENV"
-            echo "Targeted test run: casharmax only"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "$DISPATCH_ACCOUNT" != "all" ]]; then
+            echo "ACCOUNT_FILTER=$DISPATCH_ACCOUNT" >> "$GITHUB_ENV"
+            echo "Manual run: $DISPATCH_ACCOUNT only"
           else
             echo "ACCOUNT_FILTER=" >> "$GITHUB_ENV"
-            echo "Normal run: all configured accounts"
+            echo "Run: all configured accounts"
           fi
 
       - name: Download images
         run: python downloader/download_images.py
-
-      - name: Remove runtime credentials
-        if: always()
-        run: rm -rf .runtime
 
       - name: Commit downloaded media and archive
         run: |
@@ -70,3 +80,21 @@ jobs:
           fi
           git commit -m "Update X media archive"
           git push
+
+      - name: Validate account results
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("metadata/download_status.json")
+          status = json.loads(path.read_text(encoding="utf-8"))
+          print(json.dumps(status, indent=2))
+          if not status.get("overall_success"):
+              failed = [a["username"] for a in status.get("accounts", []) if a.get("status") != "ok"]
+              raise SystemExit(f"Required account collection failed: {', '.join(failed)}")
+          PY
+
+      - name: Remove runtime credentials
+        if: always()
+        run: rm -rf .runtime
