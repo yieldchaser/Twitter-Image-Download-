@@ -2,6 +2,8 @@ name: Download X Images
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
   schedule:
     - cron: "17 20 * * *"
 
