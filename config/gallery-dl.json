@@ -10,6 +10,10 @@
       "videos": false,
       "cards": false,
       "twitpic": false,
+      "include": ["media"],
+      "timeline": {
+        "strategy": "media"
+      },
       "size": ["orig", "4096x4096", "large", "medium", "small"],
       "skip": "abort:50",
       "filename": "{date:%Y-%m-%d}_{author[name]}_{tweet_id}_{num}.{extension}",
