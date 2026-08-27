@@ -11,7 +11,7 @@ on:
         options:
           - all
           - HBGrimes
-          - casharmax
+          - cashsarmax
           - MarhelmData
           - ole_sanne
   push:
