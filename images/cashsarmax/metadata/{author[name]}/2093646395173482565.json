@@ -1,12 +1,12 @@
 {
-    "tweet_id": 2049565686331011392,
+    "tweet_id": 2093646395173482565,
     "retweet_id": 0,
     "quote_id": 0,
     "quoted_id": 0,
     "reply_id": 0,
-    "conversation_id": 2049565686331011392,
+    "conversation_id": 2093646395173482565,
     "source_id": 0,
-    "date": "2026-04-29 19:05:13",
+    "date": "2026-08-29 10:26:13",
     "author": {
         "id": 486955929,
         "name": "cashsarmax",
@@ -44,16 +44,23 @@
         "description": "Just an semi-autist that likes floating steel that transports stuff around the globe."
     },
     "lang": "en",
-    "source": "Twitter Web App",
+    "source": "Twitter for iPhone",
     "sensitive": false,
     "sensitive_flags": [],
-    "favorite_count": 23,
-    "quote_count": 0,
-    "reply_count": 0,
-    "retweet_count": 3,
-    "bookmark_count": 2,
-    "view_count": 1411,
-    "content": "2nd hand dry bulk asset values. Strong across all vessel sizes (Xclusiv)",
+    "favorite_count": 43,
+    "quote_count": 1,
+    "reply_count": 4,
+    "retweet_count": 5,
+    "bookmark_count": 11,
+    "view_count": 3059,
+    "mentions": [
+        {
+            "id": 400117907,
+            "name": "ChrisVonheim",
+            "nick": "⏱Christopher Vonheim"
+        }
+    ],
+    "content": "Lian (DNB) at @ChrisVonheim : Newbuild yards are fully booked until 2030 and the only vessel sector where we have not seen a lot of orders is dry bulk, and this segment has a high age profile.\n\nDo you own dry?\n$HSHP $SBLK",
     "count": 1,
     "category": "twitter",
     "subcategory": "media"
