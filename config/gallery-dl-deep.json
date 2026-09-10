@@ -1,0 +1,7 @@
+{
+  "extractor": {
+    "twitter": {
+      "skip": false
+    }
+  }
+}

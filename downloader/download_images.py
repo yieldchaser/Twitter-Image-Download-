@@ -18,6 +18,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "accounts.json"
 GALLERY_CONFIG = ROOT / "config" / "gallery-dl.json"
+GALLERY_DEEP_CONFIG = ROOT / "config" / "gallery-dl-deep.json"
 COOKIE_FILE = ROOT / ".runtime" / "x-cookies.txt"
 STATUS_FILE = ROOT / "metadata" / "download_status.json"
 
@@ -32,9 +33,10 @@ def build_url(username: str) -> str:
 def build_search_url(username: str) -> str:
     # The media timeline only exposes roughly the last few thousand tweets.
     # X's search index reaches back years, so a from:<user> filter:media
-    # search paginates much deeper for a full-history backfill.
+    # search paginates much deeper for a full-history backfill. Requesting
+    # the live tab avoids X defaulting to its "Top" ranking cutoff.
     query = f"from:{username} filter:media -filter:replies -filter:retweets"
-    return f"https://x.com/search?q={quote(query, safe='')}"
+    return f"https://x.com/search?q={quote(query, safe='')}&f=live"
 
 
 def main() -> int:
@@ -85,6 +87,7 @@ def main() -> int:
         output = result.stdout or ""
         no_results = "No results for " in output
         ok = result.returncode == 0 and not no_results
+        downloaded = sum(1 for line in output.splitlines() if line.startswith("images/"))
 
         if no_results:
             reason = "no media results returned by X/gallery-dl"
@@ -99,13 +102,26 @@ def main() -> int:
             "returncode": result.returncode,
             "status": "ok" if ok else "failed",
             "reason": reason,
+            "downloaded": downloaded,
         }
 
         # Best-effort deep backfill via the search index. Failures here do
         # not fail the account; the media-timeline pass above is authoritative.
         if deep_backfill:
             search_url = build_search_url(username)
-            search_cmd = cmd[:-1] + [search_url]
+            search_cmd = [
+                sys.executable,
+                "-m",
+                "gallery_dl",
+                "--config",
+                str(GALLERY_CONFIG),
+                "--config",
+                str(GALLERY_DEEP_CONFIG),
+                "--cookies",
+                str(COOKIE_FILE),
+                "--verbose",
+                search_url,
+            ]
             print(f"Running gallery-dl deep backfill for {username}: {search_url}")
             search_result = subprocess.run(
                 search_cmd,
@@ -116,7 +132,8 @@ def main() -> int:
                 stderr=subprocess.STDOUT,
             )
             print(search_result.stdout, end="")
-            search_no_results = "No results for " in (search_result.stdout or "")
+            search_output = search_result.stdout or ""
+            search_no_results = "No results for " in search_output
             entry["deep_backfill"] = {
                 "url": search_url,
                 "returncode": search_result.returncode,
@@ -125,6 +142,7 @@ def main() -> int:
                     else "ok" if search_result.returncode == 0
                     else "failed"
                 ),
+                "downloaded": sum(1 for line in search_output.splitlines() if line.startswith("images/")),
             }
 
         status["accounts"].append(entry)
