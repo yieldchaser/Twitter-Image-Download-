@@ -6,11 +6,7 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "deep_backfill": {
-        "url": "https://x.com/search?q=from%3AHBGrimes%20filter%3Amedia%20-filter%3Areplies%20-filter%3Aretweets",
-        "returncode": 0,
-        "status": "ok"
-      }
+      "downloaded": 0
     },
     {
       "username": "cashsarmax",
@@ -18,11 +14,7 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "deep_backfill": {
-        "url": "https://x.com/search?q=from%3Acashsarmax%20filter%3Amedia%20-filter%3Areplies%20-filter%3Aretweets",
-        "returncode": 0,
-        "status": "ok"
-      }
+      "downloaded": 0
     },
     {
       "username": "MarhelmData",
@@ -30,11 +22,7 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "deep_backfill": {
-        "url": "https://x.com/search?q=from%3AMarhelmData%20filter%3Amedia%20-filter%3Areplies%20-filter%3Aretweets",
-        "returncode": 0,
-        "status": "ok"
-      }
+      "downloaded": 0
     },
     {
       "username": "ole_sanne",
@@ -42,11 +30,7 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "deep_backfill": {
-        "url": "https://x.com/search?q=from%3Aole_sanne%20filter%3Amedia%20-filter%3Areplies%20-filter%3Aretweets",
-        "returncode": 0,
-        "status": "ok"
-      }
+      "downloaded": 0
     },
     {
       "username": "ed_fin",
@@ -54,11 +38,7 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "deep_backfill": {
-        "url": "https://x.com/search?q=from%3Aed_fin%20filter%3Amedia%20-filter%3Areplies%20-filter%3Aretweets",
-        "returncode": 0,
-        "status": "ok"
-      }
+      "downloaded": 0
     }
   ],
   "overall_success": true,

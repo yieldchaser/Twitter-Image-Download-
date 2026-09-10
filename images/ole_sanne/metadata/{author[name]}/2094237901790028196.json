@@ -56,8 +56,7 @@
     "bookmark_count": 0,
     "view_count": 206,
     "content": "HUGINN - MUNINN UPDATE 30 AUGUST",
-    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

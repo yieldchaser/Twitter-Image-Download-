@@ -61,8 +61,7 @@
         }
     ],
     "content": "A record 901,000 vehicles were exported last month.  Vehicle exports have now set new records during six of the last eight months, and most recently grew year-on-year by 74%.  This has marked the strongest growth seen during this period.\n$HAUTO $WAWI\n@CommodoreJL",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

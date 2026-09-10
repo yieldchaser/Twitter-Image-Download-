@@ -54,8 +54,7 @@
     "bookmark_count": 2,
     "view_count": 702,
     "content": "Dirty tanker spot rate summary (Signal)",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

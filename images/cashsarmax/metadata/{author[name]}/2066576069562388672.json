@@ -54,8 +54,7 @@
     "bookmark_count": 0,
     "view_count": 5526,
     "content": "$FRO needs a new fleet manager, anyone?",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }
