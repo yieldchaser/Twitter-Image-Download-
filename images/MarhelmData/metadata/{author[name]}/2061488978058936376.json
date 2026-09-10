@@ -56,7 +56,8 @@
     "bookmark_count": 20,
     "view_count": 17948,
     "content": "THE BARNACLE CRISIS\n\n\"Even six months without protection against marine fouling deposits can lead to increased drag on the hull so much so that a ship may use up to 40% more fuel and produce 40% more CO2 emissions.\"\n\nEU funded CLEANSHIP research on unchecked barnacle growth",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 4,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

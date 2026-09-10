@@ -56,7 +56,8 @@
     "bookmark_count": 1,
     "view_count": 3362,
     "content": "Record Panamax deliveries in 2026... and rates are STILL climbing. Basic economics says more ships = lower rates. 2026 is seeing the highest Panamax newbuild deliveries since 2015, yet TC rates are pushing back toward 2021 highs. Something else is soaking up the extra tonnage.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

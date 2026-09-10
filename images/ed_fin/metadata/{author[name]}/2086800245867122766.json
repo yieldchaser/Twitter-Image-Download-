@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 5681,
     "content": "🫡",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

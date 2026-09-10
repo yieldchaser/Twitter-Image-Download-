@@ -56,7 +56,8 @@
     "bookmark_count": 4,
     "view_count": 4427,
     "content": "New interview is live for subscribers with offshore industry legend and former investment banker Glen Ole Roedland\n\nFocus is on previous Marhelm top pick Deep Value Driller (which did very well) as well as on the offshore industry and energy in general",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

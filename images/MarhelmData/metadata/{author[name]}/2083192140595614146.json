@@ -56,7 +56,8 @@
     "bookmark_count": 2,
     "view_count": 4909,
     "content": "New Marhelm deep dive is online for subscribers\n\nDiscussing the Houthis, the Red Sea, oil & shipping with Sherwan Hindreen Ali -  Middle East Research Manager  ACLED Armed Conflict Location and Event Data",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

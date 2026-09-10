@@ -56,7 +56,8 @@
     "bookmark_count": 7,
     "view_count": 2979,
     "content": "Per Crisis Group - US and Brazil import more than 20% of their nitrogenous fertilizer from the Persian Gulf\n\nThese flows are effectively all offline",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

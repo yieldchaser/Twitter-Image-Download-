@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 4258,
     "content": "The Turtle Hospital in Marathon, Florida has rescued a giant sea turtle from barnacles \n\nSir Barksalot has recovered from hypothermia and fibropapillomatosis as well as the clearance of his barnacle infestation and is scheduled for re-release into the wild",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

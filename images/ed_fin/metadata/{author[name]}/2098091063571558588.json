@@ -52,9 +52,10 @@
     "reply_count": 3,
     "retweet_count": 3,
     "bookmark_count": 6,
-    "view_count": 6533,
+    "view_count": 6555,
     "content": "My newest article on what to expect from $ECO re: Q3 earnings. You might be surprised. \n\nLink in profile. 🫡",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

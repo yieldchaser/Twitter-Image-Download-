@@ -56,7 +56,8 @@
     "bookmark_count": 4,
     "view_count": 2184,
     "content": "Ukrainian drone strikes on Russian oil refineries have reportedly knocked out ~1/5 of Russian refining capacity, further stressing already stretched fuel supply chains at the worst possible time",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

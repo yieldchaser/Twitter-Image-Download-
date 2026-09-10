@@ -56,7 +56,8 @@
     "bookmark_count": 4,
     "view_count": 9828,
     "content": "The UK Navy is headed to Hormuz to begin mine clearing operations per The National Interest",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

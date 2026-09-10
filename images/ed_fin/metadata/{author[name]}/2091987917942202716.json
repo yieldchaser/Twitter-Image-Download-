@@ -54,7 +54,8 @@
     "bookmark_count": 6,
     "view_count": 8934,
     "content": "Blockades don’t just affect outbound flows.",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

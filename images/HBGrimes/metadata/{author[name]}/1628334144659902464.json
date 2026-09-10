@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 1809,
     "content": "Aussie coal exports around 26mt in Jan",
+    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

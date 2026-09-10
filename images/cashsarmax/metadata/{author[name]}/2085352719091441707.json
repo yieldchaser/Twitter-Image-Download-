@@ -54,7 +54,8 @@
     "bookmark_count": 1,
     "view_count": 489,
     "content": "Pacific capes, around half the fleet ballasting",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

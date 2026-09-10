@@ -56,7 +56,8 @@
     "bookmark_count": 9,
     "view_count": 24332,
     "content": "Fortune - spot prices for base oils have tripled sinced the Hormuz conflict began, with shortages impacting the US beginning in June\n\n“[Auto shops] are being warned by their suppliers that availability will be a problem in June, and certain types of oil will become more scarce\"",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

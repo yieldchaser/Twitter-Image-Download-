@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 1548,
     "content": "Global shipping orderbook by builder country, in deadweight tonnes capacity",
+    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

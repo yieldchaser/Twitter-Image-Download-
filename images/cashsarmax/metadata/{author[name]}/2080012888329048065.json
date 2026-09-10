@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 354,
     "content": "I recently learned character 350 in mandarin and now know more than 500 words. I am even able to read short stories such as the one below.\n\nIt is amazing what is possible with just a little bit of consistency.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

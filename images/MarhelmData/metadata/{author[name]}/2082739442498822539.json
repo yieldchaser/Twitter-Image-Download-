@@ -56,7 +56,8 @@
     "bookmark_count": 7,
     "view_count": 5574,
     "content": "$ECO ship hit by drone in the Black Sea \n\nWill public company tankers getting hit by attacks make them reconsider sending crews into active war zones?",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

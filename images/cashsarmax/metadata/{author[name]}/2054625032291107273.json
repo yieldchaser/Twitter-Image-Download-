@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 1879,
     "content": "Kamsarmax rates strengthening lately as several countries (especially EU) look to coal as cost-effective resource for power generation and China with a 40% YoY increase in soybean imports mainly from US and Brazil.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 3,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

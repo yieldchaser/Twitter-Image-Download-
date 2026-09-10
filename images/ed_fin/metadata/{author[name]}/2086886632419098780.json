@@ -54,7 +54,8 @@
     "bookmark_count": 9,
     "view_count": 13071,
     "content": "$BORR longs today",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

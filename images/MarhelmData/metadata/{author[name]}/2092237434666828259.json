@@ -56,7 +56,8 @@
     "bookmark_count": 4,
     "view_count": 3800,
     "content": "Trøim keeps buying the dip.\n\nAnother 200,000 Borr shares added at $4.3731 taking his recent purchases to 2.2M shares.\n\n$BORR",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

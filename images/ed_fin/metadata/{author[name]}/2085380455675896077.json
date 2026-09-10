@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 8630,
     "content": "From 13 March 2026. Whoops...",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

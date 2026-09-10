@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 4605,
     "content": "I've got barnacles as long as me arm!",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

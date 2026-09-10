@@ -54,7 +54,8 @@
     "bookmark_count": 4,
     "view_count": 1756,
     "content": "Tanker markets started the week quietly and ended softer. \nCrude: Limited activity, Brazil provided some support but overall sentiment remains cautious. VLCCs very quiet with charterers pressing for lower rates.\nClean: Strait of Hormuz closure continues to weigh on sentiment. Red Sea activity subdued, MR rates in NW Europe corrected downward. Most routes showing softer freight levels.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

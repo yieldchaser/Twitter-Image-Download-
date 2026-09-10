@@ -54,7 +54,8 @@
     "bookmark_count": 1,
     "view_count": 4803,
     "content": "$TRMD selling Torm Ganga 2010-built LR2 tanker for $53 m (Lion). This is one of the 8 vessels purchased by Torm in 2023 for a $399 m deal enbloc. Taking profit on older tonnage.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

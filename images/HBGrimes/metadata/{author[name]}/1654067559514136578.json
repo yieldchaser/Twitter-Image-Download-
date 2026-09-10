@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 1525,
     "content": "Not very often the Capesize index stays flat day-on-day!",
+    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

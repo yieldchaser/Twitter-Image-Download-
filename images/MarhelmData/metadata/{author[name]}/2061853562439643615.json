@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 4279,
     "content": "Who sees our posts?",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -54,7 +54,8 @@
     "bookmark_count": 1,
     "view_count": 2923,
     "content": "Capes currently below seasonal average since 2010🙂\n\n(That 2021 number 🥲) & (Avg without 2021 is under $22k)",
+    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

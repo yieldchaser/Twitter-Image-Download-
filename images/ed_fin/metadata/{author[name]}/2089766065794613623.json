@@ -54,7 +54,8 @@
     "bookmark_count": 33,
     "view_count": 16868,
     "content": "Gonna have to look into this...",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -54,7 +54,8 @@
     "bookmark_count": 6,
     "view_count": 6685,
     "content": "Got EU listed shipping? 🤩",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

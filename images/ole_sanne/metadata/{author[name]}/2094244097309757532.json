@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 277,
     "content": "Execution Report 14/28 Aug",
+    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

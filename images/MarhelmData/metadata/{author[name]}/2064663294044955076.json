@@ -56,7 +56,8 @@
     "bookmark_count": 5,
     "view_count": 5312,
     "content": "JP morgan report shows little gains for energy producers over the past 3 months. Australian and Asian Independents have actually lost value despite the energy shortage.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

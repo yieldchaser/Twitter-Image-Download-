@@ -52,9 +52,10 @@
     "reply_count": 2,
     "retweet_count": 5,
     "bookmark_count": 2,
-    "view_count": 5636,
+    "view_count": 5643,
     "content": "We’re not done, FYI  🫡\nHeaded straight for $1m/day",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

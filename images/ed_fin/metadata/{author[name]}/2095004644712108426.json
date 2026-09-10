@@ -52,9 +52,10 @@
     "reply_count": 2,
     "retweet_count": 7,
     "bookmark_count": 10,
-    "view_count": 19146,
+    "view_count": 19147,
     "content": "The bull market Macro Bros™ still haven’t heard about",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

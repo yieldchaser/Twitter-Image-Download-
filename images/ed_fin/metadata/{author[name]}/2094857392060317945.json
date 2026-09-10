@@ -52,9 +52,10 @@
     "reply_count": 0,
     "retweet_count": 13,
     "bookmark_count": 63,
-    "view_count": 32956,
+    "view_count": 32955,
     "content": "You’ll wish you looked into this more carefully 12 months from now. IYKYK.",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

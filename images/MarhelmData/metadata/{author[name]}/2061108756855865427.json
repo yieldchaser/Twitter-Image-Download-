@@ -56,7 +56,8 @@
     "bookmark_count": 3,
     "view_count": 16314,
     "content": "Polymarket odds on near term Strait of Hormuz normalization are collapsing\n\nHowever, traders remain confident on normalization by December 31st",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 4,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

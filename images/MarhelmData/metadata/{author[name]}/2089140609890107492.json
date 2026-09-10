@@ -56,7 +56,8 @@
     "bookmark_count": 14,
     "view_count": 21498,
     "content": "And you thought barnacles were just a joke\n\nWe tried to warn you",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

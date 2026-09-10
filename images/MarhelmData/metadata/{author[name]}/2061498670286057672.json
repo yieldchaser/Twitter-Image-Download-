@@ -56,7 +56,8 @@
     "bookmark_count": 2,
     "view_count": 5643,
     "content": "In 1967, the Scottish Star became stuck in the Suez canal for months due to the Six Day War between Egypt and Israel.\n\nThe build up of barnacles in her cooling systems required almost continuous cleaning to maintain power.  She was declared a total loss and her crew left.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

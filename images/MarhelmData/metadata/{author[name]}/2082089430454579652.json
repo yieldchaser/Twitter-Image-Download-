@@ -56,7 +56,8 @@
     "bookmark_count": 3,
     "view_count": 2345,
     "content": "East-West diesel trades are coming under pressure. Higher regional diesel prices, tighter arbitrage windows and renewed Hormuz/Bab el-Mandeb risks are making long-haul LR2 cargoes to Northwest Europe less profitable.\n\nChart: Vortexa",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

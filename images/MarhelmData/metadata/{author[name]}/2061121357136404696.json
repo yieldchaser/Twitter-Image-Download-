@@ -56,7 +56,8 @@
     "bookmark_count": 23,
     "view_count": 16409,
     "content": "Aramco employee tells us regarding the barnacle infestations in the Persian Gulf: \n\n\"even if they want to sail out, most ships will first do a UWILD (hull cleaning) because the hulls will be in a very bad shape after prolonged idle time in hot, saline waters.\"",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

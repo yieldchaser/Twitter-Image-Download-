@@ -56,7 +56,8 @@
     "bookmark_count": 3,
     "view_count": 4222,
     "content": "New Marhelm interview live for subscribers with independent analyst Gaurav Sharma\n\nFocus on UK oil and companies BP, Harbour and Ithaca",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

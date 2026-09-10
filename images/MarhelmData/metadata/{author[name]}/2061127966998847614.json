@@ -56,7 +56,8 @@
     "bookmark_count": 3,
     "view_count": 5140,
     "content": "The LWF-065-2026 Wildfire in Alberta, just kilometers from key oil production facilities, is now shown on the Alberta Wildfire Status tracker as \"out of control\" and has grown beyond 104 hectares (250 acres)",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

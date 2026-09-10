@@ -56,7 +56,8 @@
     "bookmark_count": 5,
     "view_count": 7457,
     "content": "Bloomberg - Large out of control wildfires in Alberta are threatening 0.5% of the world's oil production",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

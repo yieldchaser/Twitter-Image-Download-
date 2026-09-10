@@ -54,7 +54,8 @@
     "bookmark_count": 17,
     "view_count": 9907,
     "content": "“China’s highest imports on record were in December 2025, at 12.2 Mb/d. About 50% of China’s imports were sourced from the Middle East. As the war continued, China resisted the urge to compete for replacement barrels from the Atlantic Basin. Instead, China reduced its imports.”",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
