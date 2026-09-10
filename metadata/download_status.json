@@ -27,6 +27,13 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed"
+    },
+    {
+      "username": "ed_fin",
+      "url": "https://x.com/ed_fin",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed"
     }
   ],
   "overall_success": true,
@@ -34,6 +41,7 @@
     "HBGrimes",
     "cashsarmax",
     "MarhelmData",
-    "ole_sanne"
+    "ole_sanne",
+    "ed_fin"
   ]
 }
