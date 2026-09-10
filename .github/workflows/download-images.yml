@@ -95,7 +95,18 @@ jobs:
             exit 0
           fi
           git commit -m "Update X media archive"
-          git push
+          # Another queued run may have pushed archive commits while this one
+          # ran. Rebase on origin/main and retry the push instead of failing.
+          for attempt in 1 2 3 4 5; do
+            if git push origin main; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on origin/main"
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "Could not push after 5 attempts"
+          exit 1
 
       - name: Validate account results
         run: |
