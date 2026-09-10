@@ -14,6 +14,7 @@ on:
           - cashsarmax
           - MarhelmData
           - ole_sanne
+          - ed_fin
   push:
     branches: [main]
   schedule:
