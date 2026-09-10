@@ -13,6 +13,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config" / "accounts.json"
@@ -26,6 +27,14 @@ def build_url(username: str) -> str:
     # extractor can paginate the media timeline and use its configured
     # search fallback when necessary.
     return f"https://x.com/{username}"
+
+
+def build_search_url(username: str) -> str:
+    # The media timeline only exposes roughly the last few thousand tweets.
+    # X's search index reaches back years, so a from:<user> filter:media
+    # search paginates much deeper for a full-history backfill.
+    query = f"from:{username} filter:media -filter:replies -filter:retweets"
+    return f"https://x.com/search?q={quote(query, safe='')}"
 
 
 def main() -> int:
@@ -45,6 +54,8 @@ def main() -> int:
         "overall_success": False,
         "expected_accounts": [a["username"] for a in accounts],
     }
+
+    deep_backfill = os.environ.get("DEEP_BACKFILL", "").strip().lower() in {"1", "true", "yes"}
 
     for account in accounts:
         username = account["username"]
@@ -82,13 +93,41 @@ def main() -> int:
         else:
             reason = "media extraction completed"
 
-        status["accounts"].append({
+        entry = {
             "username": username,
             "url": url,
             "returncode": result.returncode,
             "status": "ok" if ok else "failed",
             "reason": reason,
-        })
+        }
+
+        # Best-effort deep backfill via the search index. Failures here do
+        # not fail the account; the media-timeline pass above is authoritative.
+        if deep_backfill:
+            search_url = build_search_url(username)
+            search_cmd = cmd[:-1] + [search_url]
+            print(f"Running gallery-dl deep backfill for {username}: {search_url}")
+            search_result = subprocess.run(
+                search_cmd,
+                cwd=ROOT,
+                check=False,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+            )
+            print(search_result.stdout, end="")
+            search_no_results = "No results for " in (search_result.stdout or "")
+            entry["deep_backfill"] = {
+                "url": search_url,
+                "returncode": search_result.returncode,
+                "status": (
+                    "no_results" if search_no_results
+                    else "ok" if search_result.returncode == 0
+                    else "failed"
+                ),
+            }
+
+        status["accounts"].append(entry)
 
         if not ok:
             print(f"Account {username} failed validation: {reason}")

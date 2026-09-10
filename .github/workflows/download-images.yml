@@ -15,6 +15,11 @@ on:
           - MarhelmData
           - ole_sanne
           - ed_fin
+      deep_backfill:
+        description: "Also page the search index for full history"
+        required: false
+        default: false
+        type: boolean
   push:
     branches: [main]
   schedule:
@@ -22,6 +27,11 @@ on:
 
 permissions:
   contents: write
+
+# Queue overlapping runs instead of letting two racing git pushes fail.
+concurrency:
+  group: download-x-images
+  cancel-in-progress: false
 
 jobs:
   download:
@@ -58,6 +68,7 @@ jobs:
       - name: Select accounts
         env:
           DISPATCH_ACCOUNT: ${{ inputs.account }}
+          DISPATCH_DEEP_BACKFILL: ${{ inputs.deep_backfill }}
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "$DISPATCH_ACCOUNT" != "all" ]]; then
             echo "ACCOUNT_FILTER=$DISPATCH_ACCOUNT" >> "$GITHUB_ENV"
@@ -65,6 +76,10 @@ jobs:
           else
             echo "ACCOUNT_FILTER=" >> "$GITHUB_ENV"
             echo "Run: all configured accounts"
+          fi
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "$DISPATCH_DEEP_BACKFILL" == "true" ]]; then
+            echo "DEEP_BACKFILL=true" >> "$GITHUB_ENV"
+            echo "Deep backfill: enabled"
           fi
 
       - name: Download images
