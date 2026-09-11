@@ -54,7 +54,8 @@
     "bookmark_count": 2,
     "view_count": 1055,
     "content": "The secondhand tonnage prices are quite ridiculous currently in both wet and dry sector. (Xclusiv)",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

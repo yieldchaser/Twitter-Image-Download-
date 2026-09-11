@@ -54,7 +54,8 @@
     "bookmark_count": 4,
     "view_count": 2314,
     "content": "$ECO In Q2 2026 to date, 46% of the available VLCC spot days have been booked at an average TCE rate of $223,900 per day and 60% of the available Suezmax spot days have been booked at an average TCE rate of $187,300 per day.🔥🔥",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

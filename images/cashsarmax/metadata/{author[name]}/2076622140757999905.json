@@ -54,7 +54,8 @@
     "bookmark_count": 1,
     "view_count": 731,
     "content": "Tanker rates:\nVLCC:\nTD3C WS345\nTD34 WS 176\nTD15 WS168\nTD 22  $115 100/d",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

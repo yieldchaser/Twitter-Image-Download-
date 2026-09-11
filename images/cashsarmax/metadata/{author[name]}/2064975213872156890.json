@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 1833,
     "content": "High amount of product tankers trading dirty while only around 10 Suez/VLCC currently employed in clean.\nCrack spread looking promising.\nInventories depleting.\n\nPost conflict will be positive.\nGot product tankers?\n(SB1M)\n\n$HAFNI $TRMD",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

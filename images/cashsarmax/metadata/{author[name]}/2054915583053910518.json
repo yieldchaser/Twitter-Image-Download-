@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 967,
     "content": "$ECO chartering performance again showing stellar performance. $256m out performance of avg of peers since q4 2019",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

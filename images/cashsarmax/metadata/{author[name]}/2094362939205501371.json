@@ -54,7 +54,8 @@
     "bookmark_count": 8,
     "view_count": 3597,
     "content": "OMC tankers are now live on Euronext Growth Oslo. Despite the mistake on their website stating they have dry bulk vessels, they are a pure VLCC play with 8 NB under construction.\nThe company is split between $BRUT which is a setup for those interested in dividends as vessels are delivered as we speak. The companies are managed by the same team as 2020 Bulkers and Himalaya Shipping.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

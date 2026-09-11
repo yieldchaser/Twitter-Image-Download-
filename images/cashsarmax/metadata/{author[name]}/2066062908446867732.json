@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 5018,
     "content": "Gibson:\nTanker orderbook\nVLCC - 35% of existing fleet\nSuezmax 30% of existing fleet\nLR2/Afra 18% of existing fleet\nMR 20% of existing fleet",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

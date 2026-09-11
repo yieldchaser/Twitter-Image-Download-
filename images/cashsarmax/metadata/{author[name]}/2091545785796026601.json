@@ -54,7 +54,8 @@
     "bookmark_count": 6,
     "view_count": 3184,
     "content": "Tanker secondhand values (Xclusiv). If you want a 15(!) year old VLCC, you might need to pay 100m USD...",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
