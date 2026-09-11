@@ -46,8 +46,11 @@ STALL_TIMEOUT_SECONDS = 600
 DEEP_WINDOW_DAYS = 183
 DEEP_FLOOR_DEFAULT = "2015-01-01"
 # Stop walking backwards after this many consecutive windows with no new
-# media (empty windows cost seconds, so generous slack is cheap).
-DEEP_EMPTY_WINDOWS_STOP = 3
+# media. Empty windows cost seconds (one API page), but windows that are
+# fully archived still count as "empty" even though they contain tweets,
+# so this must tolerate long already-covered stretches before giving up:
+# 12 ≈ six years of total silence before a walk stops early.
+DEEP_EMPTY_WINDOWS_STOP = 12
 
 GIT_AUTHOR_NAME = "github-actions[bot]"
 GIT_AUTHOR_EMAIL = "41898282+github-actions[bot]@users.noreply.github.com"
