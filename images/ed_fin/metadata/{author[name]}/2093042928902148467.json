@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 7692,
     "content": "Dark fleet Aframax ‘BURSA’ (b. 1999 at Sumitomo, 108,468 dwt, IMO # 9187760) reported sold for demolition for $480/LDT to a Bangladeshi yard, with delivery in Sri Lanka.\n\nShe used to actively trade Venezuelan crude. \nShe was not sanctioned.",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
