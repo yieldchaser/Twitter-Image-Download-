@@ -1,18 +1,37 @@
 {
   "username": "HBGrimes",
-  "generated_at": "2026-09-11T15:53:35.273631+00:00",
-  "mode": "regular",
-  "status": "ok",
-  "reason": "media extraction completed",
+  "generated_at": "2026-09-11T15:54:10.437474+00:00",
+  "mode": "deep_backfill",
+  "status": "failed",
+  "reason": "deep window 2021-09-07..2022-03-09 exited -9",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 0,
   "detail": {
     "username": "HBGrimes",
     "url": "https://x.com/HBGrimes",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0
+    "downloaded": 0,
+    "deep_backfill": {
+      "windows_total": 24,
+      "windows_with_downloads": 0,
+      "downloaded": 0,
+      "errors": [
+        {
+          "window": "2025-03-11..2025-09-10",
+          "returncode": -9
+        },
+        {
+          "window": "2023-03-10..2023-09-09",
+          "returncode": -9
+        },
+        {
+          "window": "2021-09-07..2022-03-09",
+          "returncode": -9
+        }
+      ],
+      "stopped_early": "12 consecutive empty windows"
+    }
   }
 }
