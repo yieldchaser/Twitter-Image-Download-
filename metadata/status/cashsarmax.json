@@ -1,9 +1,9 @@
 {
   "username": "cashsarmax",
-  "generated_at": "2026-09-11T18:27:38.556423+00:00",
-  "mode": "deep_backfill",
-  "status": "failed",
-  "reason": "deep window 2022-03-09..2022-09-08 exited -9",
+  "generated_at": "2026-09-11T22:34:37.562724+00:00",
+  "mode": "regular",
+  "status": "ok",
+  "reason": "media extraction completed",
   "downloaded": 0,
   "committed_files": 0,
   "returncode": 0,
@@ -13,30 +13,6 @@
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0,
-    "deep_backfill": {
-      "windows_total": 24,
-      "windows_with_downloads": 0,
-      "downloaded": 0,
-      "errors": [
-        {
-          "window": "2025-09-10..2026-03-12",
-          "returncode": -9
-        },
-        {
-          "window": "2024-09-09..2025-03-11",
-          "returncode": -9
-        },
-        {
-          "window": "2024-03-10..2024-09-09",
-          "returncode": -9
-        },
-        {
-          "window": "2022-03-09..2022-09-08",
-          "returncode": -9
-        }
-      ],
-      "stopped_early": "12 consecutive empty windows"
-    }
+    "downloaded": 0
   }
 }
