@@ -1,0 +1,71 @@
+{
+    "tweet_id": 1566811586727141376,
+    "retweet_id": 0,
+    "quote_id": 0,
+    "quoted_id": 0,
+    "reply_id": 0,
+    "conversation_id": 1566811586727141376,
+    "source_id": 0,
+    "date": "2022-09-05 15:32:46",
+    "author": {
+        "id": 889689521146691586,
+        "name": "ed_fin",
+        "nick": "Ed Finley–Richardson",
+        "date": "2017-07-25 03:31:26",
+        "profile_banner": "https://pbs.twimg.com/profile_banners/889689521146691586/1724324168",
+        "favourites_count": 149622,
+        "followers_count": 59977,
+        "friends_count": 714,
+        "listed_count": 1166,
+        "media_count": 18104,
+        "statuses_count": 36872,
+        "location": "On the high seas",
+        "verified": false,
+        "protected": false,
+        "profile_image": "https://pbs.twimg.com/profile_images/2038282577426231296/Xna2Tdof.jpg",
+        "description": "More shipping →\nhttp://edfin.substack.com\ninquiries: 2con.tangotwitter@gmail.com"
+    },
+    "user": {
+        "id": 889689521146691586,
+        "name": "ed_fin",
+        "nick": "Ed Finley–Richardson",
+        "date": "2017-07-25 03:31:26",
+        "profile_banner": "https://pbs.twimg.com/profile_banners/889689521146691586/1724324168",
+        "favourites_count": 149622,
+        "followers_count": 59977,
+        "friends_count": 714,
+        "listed_count": 1166,
+        "media_count": 18104,
+        "statuses_count": 36872,
+        "location": "On the high seas",
+        "verified": false,
+        "protected": false,
+        "profile_image": "https://pbs.twimg.com/profile_images/2038282577426231296/Xna2Tdof.jpg",
+        "description": "More shipping →\nhttp://edfin.substack.com\ninquiries: 2con.tangotwitter@gmail.com"
+    },
+    "lang": "en",
+    "source": "Twitter Web App",
+    "sensitive": false,
+    "sensitive_flags": [],
+    "favorite_count": 7,
+    "quote_count": 0,
+    "reply_count": 0,
+    "retweet_count": 0,
+    "bookmark_count": 0,
+    "view_count": 0,
+    "hashtags": [
+        "DryBulk"
+    ],
+    "mentions": [
+        {
+            "id": 92786782,
+            "name": "CommodoreJL",
+            "nick": "Commodore"
+        }
+    ],
+    "content": "Enjoying 🇺🇸 @CommodoreJL's Weekly Dry Bulk Report recently, esp. for tracking the #DryBulk demand side. They track trends in: Indian coal stockpiles — spot iron ore cargo volume — iron ore prices — Chinese iron ore stockpiles — Ch. steel prices — Ch. coal port stockpiles...",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2022-03-09 until:2022-09-08",
+    "count": 1,
+    "category": "twitter",
+    "subcategory": "search"
+}
