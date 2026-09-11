@@ -1,12 +1,12 @@
 {
-    "tweet_id": 1653683517480488960,
+    "tweet_id": 2098413674331312142,
     "retweet_id": 0,
     "quote_id": 0,
     "quoted_id": 0,
     "reply_id": 0,
-    "conversation_id": 1653683517480488960,
+    "conversation_id": 2098413674331312142,
     "source_id": 0,
-    "date": "2023-05-03 08:50:49",
+    "date": "2026-09-11 14:09:41",
     "author": {
         "id": 737396379178442753,
         "name": "HBGrimes",
@@ -43,24 +43,17 @@
         "profile_image": "https://pbs.twimg.com/profile_images/2086365390024704000/q0FeEyr8.jpg",
         "description": "Dry Bulk Research at Arrow"
     },
-    "lang": "de",
+    "lang": "zxx",
     "source": "Twitter Web App",
     "sensitive": false,
     "sensitive_flags": [],
-    "favorite_count": 1,
+    "favorite_count": 0,
     "quote_count": 0,
     "reply_count": 0,
     "retweet_count": 0,
     "bookmark_count": 0,
-    "view_count": 445,
-    "mentions": [
-        {
-            "id": 3193355040,
-            "name": "CapEconomics",
-            "nick": "Capital Economics"
-        }
-    ],
-    "content": "Eurozone loan demand @CapEconomics",
+    "view_count": 86,
+    "content": "https://lnkd.in/p/edDUH36Q",
     "count": 1,
     "category": "twitter",
     "subcategory": "media"
