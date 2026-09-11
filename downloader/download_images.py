@@ -5,12 +5,14 @@ Authentication is supplied at runtime as a Netscape cookies.txt file.
 Each account is processed independently so one unavailable/renamed account
 cannot discard successful downloads from the other accounts.
 
-Every account's results are committed and pushed to origin/main immediately
-after that account finishes, so a later hang or cancellation can never lose
-already-downloaded data (runners are ephemeral; only origin persists).
+Every pass (and every deep-backfill window) is committed and pushed to
+origin/main the moment it finishes, so a later hang or cancellation can
+never lose already-downloaded data (runners are ephemeral; only origin
+persists).
 
 ACCOUNT_FILTER can be set to process one configured account only.
-DEEP_BACKFILL=1 additionally pages the search index for full history.
+DEEP_BACKFILL=1 additionally pages the search index for full history in
+date-bounded windows.
 """
 
 from __future__ import annotations
@@ -31,7 +33,7 @@ CONFIG = ROOT / "config" / "accounts.json"
 GALLERY_CONFIG = ROOT / "config" / "gallery-dl.json"
 GALLERY_DEEP_CONFIG = ROOT / "config" / "gallery-dl-deep.json"
 COOKIE_FILE = ROOT / ".runtime" / "x-cookies.txt"
-STATUS_FILE = ROOT / "metadata" / "download_status.json"
+STATUS_DIR = ROOT / "metadata" / "status"
 
 # Kill a gallery-dl pass that produces no output for this long. gallery-dl
 # logs every page it fetches, so total silence means the process is wedged
@@ -68,8 +70,8 @@ def build_search_url(username: str, since: str | None = None, until: str | None 
 
 def deep_windows(now: datetime, floor: str) -> list[tuple[str, str]]:
     """(since, until) date bounds walking backwards from now to floor,
-    DEEP_WINDOW_DAYS at a time (slight overlaps are harmless: the dedup
-    archive skips already-seen tweets)."""
+    DEEP_WINDOW_DAYS at a time. Slight overlaps between windows are
+    harmless: the dedup archive skips already-seen tweets."""
     floor_date = datetime.strptime(floor, "%Y-%m-%d").replace(tzinfo=timezone.utc)
     windows: list[tuple[str, str]] = []
     until = now
@@ -134,40 +136,51 @@ def git_setup() -> None:
     git(["config", "user.email", GIT_AUTHOR_EMAIL])
 
 
-def commit_account(username: str) -> int:
+def commit_account(username: str, skip: set[str]) -> int:
     """Commit and push everything this account produced. Returns the number
     of committed files, so a silent no-op pass can never masquerade as
-    success."""
+    success. Only new files or dedup-archive growth trigger a commit:
+    metadata-only changes (live view/favorite counts) would be noise."""
     git(["add", "--", f"images/{username}", "metadata", "archive"])
-    # Commit only real additions or archive growth: rewritten metadata
-    # (live view/favorite counts shift on every crawl) must not produce a
-    # noisy no-op commit on every deep-backfill window. Leftover modified
-    # files simply stay staged and ride along with the next real commit.
     added = git(["diff", "--cached", "--name-only", "--diff-filter=A"]).stdout.split()
+    added = [p for p in added if not any(p == s or p.endswith(s) for s in skip)]
     archive_changed = bool(
         git(["diff", "--cached", "--name-only", "--", "archive"]).stdout.strip()
     )
     if not added and not archive_changed:
+        # Keep rewritten metadata staged; it rides along with the next real
+        # commit instead of producing a noisy no-op one.
         return 0
     staged = git(["diff", "--cached", "--name-only"]).stdout.split()
-    if not staged:
-        return 0
 
     git(["commit", "-m", f"Archive {username} media"])
     for attempt in range(1, 6):
         push = git(["push", "origin", "HEAD:main"], check=False)
         if push.returncode == 0:
             return len(staged)
-        print(f"Push rejected (attempt {attempt}); re-committing on origin/main")
-        # Shallow CI checkouts cannot always rebase, so instead: move the
-        # branch to the fetched tip with our changes kept staged, and
-        # re-commit on top. No merge conflicts are possible this way.
+        print(f"Push rejected (attempt {attempt}); re-applying on origin/main")
+        # Parallel matrix jobs push concurrently. Never use stash/add -A
+        # here: -A once staged the runtime cookie file into a commit, and
+        # reset --hard drops this job's own committed files from the
+        # workspace. Cherry-picking our single commit sha is safe on a
+        # shallow clone: only the sqlite dedup archive can conflict, and
+        # keeping our version there is self-healing (a later run re-adds
+        # any rows the other side wrote).
+        ours = git(["rev-parse", "HEAD"]).stdout.strip()
         git(["fetch", "origin", "main"])
-        git(["reset", "--soft", "origin/main"])
-        commit = git(["commit", "-m", f"Archive {username} media"], check=False)
-        if commit.returncode != 0:
-            # Nothing left to commit: origin already has these files.
-            return 0
+        git(["reset", "--hard", "origin/main"])
+        pick = git(["cherry-pick", ours], check=False)
+        if pick.returncode != 0:
+            git(
+                ["checkout", "--ours", "archive/gallery-dl-twitter.sqlite3"],
+                check=False,
+            )
+            cont = git(
+                ["-c", "core.editor=true", "cherry-pick", "--continue"],
+                check=False,
+            )
+            if cont.returncode != 0:
+                git(["cherry-pick", "--abort"], check=False)
     raise SystemExit("Could not push after 5 attempts")
 
 
@@ -207,47 +220,28 @@ def account_entry(
     }
 
 
-def run_timeline_pass(username: str) -> tuple[int, str, int]:
-    url = build_url(username)
+def run_pass(username: str, url: str, deep: bool) -> tuple[int, str, int]:
     before = snapshot_images(username)
-    code, lines = run_gallery_dl_with_watchdog(
-        [
-            sys.executable,
-            "-m",
-            "gallery_dl",
-            "--config",
-            str(GALLERY_CONFIG),
-            "--cookies",
-            str(COOKIE_FILE),
-            "--verbose",
-            url,
-        ]
-    )
+    cmd = [
+        sys.executable,
+        "-m",
+        "gallery_dl",
+        "--config",
+        str(GALLERY_CONFIG),
+    ]
+    if deep:
+        cmd += ["--config", str(GALLERY_DEEP_CONFIG)]
+    cmd += ["--cookies", str(COOKIE_FILE), "--verbose", url]
+    code, lines = run_gallery_dl_with_watchdog(cmd)
     return code, "".join(lines), count_new_files(username, before)
 
 
-def run_deep_pass(username: str, url: str) -> tuple[int, str, int]:
-    before = snapshot_images(username)
-    code, lines = run_gallery_dl_with_watchdog(
-        [
-            sys.executable,
-            "-m",
-            "gallery_dl",
-            "--config",
-            str(GALLERY_CONFIG),
-            "--config",
-            str(GALLERY_DEEP_CONFIG),
-            "--cookies",
-            str(COOKIE_FILE),
-            "--verbose",
-            url,
-        ]
-    )
-    return code, "".join(lines), count_new_files(username, before)
-
-
-def write_status(status: dict[str, Any]) -> None:
-    STATUS_FILE.write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
+def write_status(username: str, status: dict[str, Any]) -> None:
+    # Per-account files only: parallel matrix jobs must never write the
+    # same status file, or their commits would conflict on every push.
+    STATUS_DIR.mkdir(parents=True, exist_ok=True)
+    path = STATUS_DIR / f"{username}.json"
+    path.write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -262,88 +256,87 @@ def main() -> int:
         raise SystemExit("Missing runtime X cookie file")
 
     deep_backfill = os.environ.get("DEEP_BACKFILL", "").strip().lower() in {"1", "true", "yes"}
-
-    STATUS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    status: dict[str, Any] = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "mode": "deep_backfill" if deep_backfill else "regular",
-        "accounts": [],
-        "overall_success": False,
-        "expected_accounts": [a["username"] for a in accounts],
-    }
+    deep_floor = os.environ.get("DEEP_FLOOR", DEEP_FLOOR_DEFAULT)
+    windows = deep_windows(datetime.now(timezone.utc), deep_floor) if deep_backfill else []
 
     git_setup()
     for account in accounts:
         username = account["username"]
+        status: dict[str, Any] = {
+            "username": username,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "mode": "deep_backfill" if deep_backfill else "regular",
+            "status": "ok",
+            "reason": "media extraction completed",
+            "downloaded": 0,
+            "committed_files": 0,
+        }
+        skip = set()
 
-        # Each pass commits immediately: if a later pass hangs past the job
-        # timeout and the runner is destroyed, earlier passes stay on origin.
+        # Each pass commits immediately: a later hang past the job timeout
+        # cannot lose this pass's data.
         print(f"Running gallery-dl for {username}: {build_url(username)}")
-        code, output, downloaded = run_timeline_pass(username)
+        code, output, downloaded = run_pass(username, build_url(username), deep=False)
         entry = account_entry(username, build_url(username), code, output, downloaded)
+        if not deep_backfill:
+            # The daily media-timeline pass is authoritative for health.
+            status.update({k: entry[k] for k in ("status", "reason", "returncode")})
+        status["downloaded"] += downloaded
+
         try:
-            entry["committed_files"] = commit_account(username)
+            status["committed_files"] += commit_account(username, skip)
         except SystemExit as exc:
-            entry["commit_error"] = str(exc)
-        status["accounts"].append(entry)
-        write_status(status)
+            status["status"] = "failed"
+            status["reason"] = f"commit failed: {exc}"
 
         if deep_backfill:
-            floor = os.environ.get("DEEP_FLOOR", DEEP_FLOOR_DEFAULT)
-            windows = deep_windows(datetime.now(timezone.utc), floor)
             deep_summary: dict[str, Any] = {
-                "status": "ok",
                 "windows_total": len(windows),
-                "windows_downloaded": 0,
+                "windows_with_downloads": 0,
                 "downloaded": 0,
             }
             empty_streak = 0
-            stopped_early = False
             for since, until in windows:
                 url = build_search_url(username, since, until)
                 print(f"Running gallery-dl deep backfill for {username}: {url}")
-                deep_code, deep_output, deep_downloaded = run_deep_pass(username, url)
-                no_results = "No results for " in deep_output
-                deep_summary["downloaded"] += deep_downloaded
-                entry["downloaded"] = entry.get("downloaded", 0) + deep_downloaded
-                if no_results or deep_code != 0:
-                    deep_summary["status"] = "failed" if deep_code != 0 else deep_summary["status"]
-                    if not no_results:
-                        deep_summary.setdefault("errors", []).append(
-                            {"window": f"{since}..{until}", "returncode": deep_code}
-                        )
-                if deep_downloaded == 0:
+                d_code, d_output, d_downloaded = run_pass(username, url, deep=True)
+                no_results = "No results for " in d_output
+                deep_summary["downloaded"] += d_downloaded
+                status["downloaded"] += d_downloaded
+                if d_code != 0 and not no_results:
+                    status["status"] = "failed"
+                    status["reason"] = f"deep window {since}..{until} exited {d_code}"
+                    deep_summary.setdefault("errors", []).append(
+                        {"window": f"{since}..{until}", "returncode": d_code}
+                    )
+                if d_downloaded == 0:
                     empty_streak += 1
                     if empty_streak >= DEEP_EMPTY_WINDOWS_STOP:
-                        stopped_early = True
+                        deep_summary["stopped_early"] = (
+                            f"{DEEP_EMPTY_WINDOWS_STOP} consecutive empty windows"
+                        )
                         break
                 else:
                     empty_streak = 0
-                    deep_summary["windows_downloaded"] += 1
+                    deep_summary["windows_with_downloads"] += 1
 
                 # Commit after EVERY window: a job timeout can then only
                 # ever lose the current window, never completed ones.
                 try:
-                    commit_account(username)
+                    status["committed_files"] += commit_account(username, skip)
                 except SystemExit as exc:
-                    deep_summary.setdefault("commit_errors", []).append(
-                        {"window": f"{since}..{until}", "error": str(exc)}
-                    )
-                write_status(status)
+                    status["status"] = "failed"
+                    status["reason"] = f"commit failed: {exc}"
+                write_status(username, status)
 
-            if stopped_early:
-                deep_summary["stopped_early"] = f"{DEEP_EMPTY_WINDOWS_STOP} consecutive empty windows"
             entry["deep_backfill"] = deep_summary
-            write_status(status)
 
-        if entry["status"] != "ok":
-            print(f"Account {username} failed validation: {entry['reason']}")
+        status["detail"] = entry
+        write_status(username, status)
 
-    status["overall_success"] = all(a["status"] == "ok" for a in status["accounts"])
-    write_status(status)
+        if status["status"] != "ok":
+            print(f"Account {username} failed: {status['reason']}")
 
-    passed = sum(a["status"] == "ok" for a in status["accounts"])
-    print(f"Account extraction finished: {passed}/{len(status['accounts'])} accounts passed.")
     return 0
 
 

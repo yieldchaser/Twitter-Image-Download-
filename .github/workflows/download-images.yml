@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       account:
-        description: "Account to collect"
+        description: "Account to collect (or all = one matrix job per account)"
         required: true
         default: "all"
         type: choice
@@ -28,7 +28,10 @@ on:
 permissions:
   contents: write
 
-# Queue overlapping runs instead of letting two racing git pushes fail.
+# Serialise whole runs (regular OR deep) so matrix jobs never race each
+# other's pushes. Note GitHub's queueing caveat: dispatching a newer run
+# while one is pending cancels the pending one — never dispatch a batch of
+# separate runs; run them via the matrix inside a single dispatch instead.
 concurrency:
   group: download-x-images
   cancel-in-progress: false
@@ -38,7 +41,14 @@ jobs:
     # Do not re-trigger the downloader from its own archive commit.
     if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        # Regular daily runs crawl every account inside one job; deep runs
+        # get one job per account (independent timeouts, no cross-blocking).
+        account: ${{ github.event_name == 'workflow_dispatch' && inputs.account != 'all' && fromJSON(format('[\"{0}\"]', inputs.account)) || fromJSON('["HBGrimes", "cashsarmax", "MarhelmData", "ole_sanne", "ed_fin"]') }}
+    name: ${{ matrix.account }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,49 +75,49 @@ jobs:
           chmod 600 .runtime/x-cookies.txt
           rm -f .runtime/cookies.json
 
-      - name: Select accounts
+      - name: Set account and mode
         env:
-          DISPATCH_ACCOUNT: ${{ inputs.account }}
           DISPATCH_DEEP_BACKFILL: ${{ inputs.deep_backfill }}
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "$DISPATCH_ACCOUNT" != "all" ]]; then
-            echo "ACCOUNT_FILTER=$DISPATCH_ACCOUNT" >> "$GITHUB_ENV"
-            echo "Manual run: $DISPATCH_ACCOUNT only"
-          else
-            echo "ACCOUNT_FILTER=" >> "$GITHUB_ENV"
-            echo "Run: all configured accounts"
-          fi
+          echo "ACCOUNT_FILTER=${{ matrix.account }}" >> "$GITHUB_ENV"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" && "$DISPATCH_DEEP_BACKFILL" == "true" ]]; then
             echo "DEEP_BACKFILL=true" >> "$GITHUB_ENV"
-            echo "Deep backfill: enabled"
+            echo "Deep backfill: enabled for ${{ matrix.account }}"
+          else
+            echo "Deep backfill: off (media timeline only)"
           fi
 
       - name: Download images
         run: python downloader/download_images.py
 
-      - name: Commit remaining artifacts (status report)
+      - name: Commit downloaded media and archive
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # The downloader already committed and pushed each account's media
-          # right after its download. This step sweeps up whatever is left
-          # (typically just the final download_status.json).
+          # The downloader already committed per pass/window. This sweeps up
+          # the final status file. Only explicit paths, never add -A: the
+          # runtime cookie file must never be stageable.
           git add images metadata archive
           if git diff --cached --quiet; then
             echo "Nothing left to commit."
             exit 0
           fi
-          git commit -m "Update X media archive"
-          # A queued run may have pushed while this one ran. Shallow clones
-          # cannot always rebase, so re-commit on the fetched tip instead.
+          git commit -m "Update X media archive (${{ matrix.account }})"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               exit 0
             fi
-            echo "Push rejected (attempt $attempt); re-committing on origin/main"
+            echo "Push rejected (attempt $attempt); re-applying on origin/main"
+            OURS=$(git rev-parse HEAD)
             git fetch origin main
-            git reset --soft origin/main
-            git commit -m "Update X media archive" || exit 0
+            git reset --hard origin/main
+            if ! git cherry-pick "$OURS"; then
+              git checkout --ours archive/gallery-dl-twitter.sqlite3 || true
+              git -c core.editor=true cherry-pick --continue || {
+                git cherry-pick --abort || true
+                exit 1
+              }
+            fi
           done
           echo "Could not push after 5 attempts"
           exit 1
@@ -118,12 +128,11 @@ jobs:
           import json
           from pathlib import Path
 
-          path = Path("metadata/download_status.json")
+          path = Path("metadata/status/${{ matrix.account }}.json")
           status = json.loads(path.read_text(encoding="utf-8"))
           print(json.dumps(status, indent=2))
-          if not status.get("overall_success"):
-              failed = [a["username"] for a in status.get("accounts", []) if a.get("status") != "ok"]
-              raise SystemExit(f"Required account collection failed: {', '.join(failed)}")
+          if status.get("status") != "ok":
+              raise SystemExit(f"Account collection failed: {status.get('reason')}")
           PY
 
       - name: Remove runtime credentials
