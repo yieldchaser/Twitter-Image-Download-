@@ -1,29 +1,18 @@
 {
   "username": "ole_sanne",
-  "generated_at": "2026-09-11T18:27:40.864842+00:00",
-  "mode": "deep_backfill",
-  "status": "failed",
-  "reason": "deep window 2021-09-07..2022-03-09 exited -9",
+  "generated_at": "2026-09-11T20:54:07.449963+00:00",
+  "mode": "regular",
+  "status": "ok",
+  "reason": "media extraction completed",
   "downloaded": 0,
   "committed_files": 0,
+  "returncode": 0,
   "detail": {
     "username": "ole_sanne",
     "url": "https://x.com/ole_sanne",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0,
-    "deep_backfill": {
-      "windows_total": 24,
-      "windows_with_downloads": 0,
-      "downloaded": 0,
-      "errors": [
-        {
-          "window": "2021-09-07..2022-03-09",
-          "returncode": -9
-        }
-      ],
-      "stopped_early": "12 consecutive empty windows"
-    }
+    "downloaded": 0
   }
 }
