@@ -1,18 +1,23 @@
 {
   "username": "cashsarmax",
-  "generated_at": "2026-09-11T15:26:03.744800+00:00",
-  "mode": "regular",
+  "generated_at": "2026-09-11T15:26:43.916658+00:00",
+  "mode": "deep_backfill",
   "status": "ok",
   "reason": "media extraction completed",
   "downloaded": 0,
-  "committed_files": 0,
-  "returncode": 0,
+  "committed_files": 127,
   "detail": {
     "username": "cashsarmax",
     "url": "https://x.com/cashsarmax",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0
+    "downloaded": 0,
+    "deep_backfill": {
+      "windows_total": 24,
+      "windows_with_downloads": 0,
+      "downloaded": 0,
+      "stopped_early": "3 consecutive empty windows"
+    }
   }
 }
