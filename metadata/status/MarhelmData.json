@@ -1,18 +1,9 @@
 {
   "username": "MarhelmData",
-  "generated_at": "2026-09-11T15:53:35.042137+00:00",
-  "mode": "regular",
-  "status": "ok",
-  "reason": "media extraction completed",
-  "downloaded": 0,
-  "committed_files": 0,
-  "returncode": 0,
-  "detail": {
-    "username": "MarhelmData",
-    "url": "https://x.com/MarhelmData",
-    "returncode": 0,
-    "status": "ok",
-    "reason": "media extraction completed",
-    "downloaded": 0
-  }
+  "generated_at": "2026-09-11T15:54:09.281896+00:00",
+  "mode": "deep_backfill",
+  "status": "failed",
+  "reason": "deep window 2023-09-09..2024-03-10 exited -9",
+  "downloaded": 765,
+  "committed_files": 1791
 }
