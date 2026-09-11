@@ -3,7 +3,7 @@
   "generated_at": "2026-09-11T15:54:09.454141+00:00",
   "mode": "deep_backfill",
   "status": "failed",
-  "reason": "deep window 2025-03-11..2025-09-10 exited -9",
-  "downloaded": 248,
-  "committed_files": 813
+  "reason": "deep window 2023-09-09..2024-03-10 exited -9",
+  "downloaded": 1533,
+  "committed_files": 3383
 }
