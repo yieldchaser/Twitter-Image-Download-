@@ -14,7 +14,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -32,7 +32,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -52,7 +52,7 @@
     "reply_count": 4,
     "retweet_count": 5,
     "bookmark_count": 12,
-    "view_count": 4459,
+    "view_count": 4460,
     "mentions": [
         {
             "id": 400117907,
@@ -61,8 +61,7 @@
         }
     ],
     "content": "Lian (DNB) at @ChrisVonheim : Newbuild yards are fully booked until 2030 and the only vessel sector where we have not seen a lot of orders is dry bulk, and this segment has a high age profile.\n\nDo you own dry?\n$HSHP $SBLK",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

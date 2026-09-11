@@ -6,6 +6,7 @@
   "reason": "deep window 2022-03-09..2022-09-08 exited -9",
   "downloaded": 0,
   "committed_files": 0,
+  "returncode": 0,
   "detail": {
     "username": "cashsarmax",
     "url": "https://x.com/cashsarmax",

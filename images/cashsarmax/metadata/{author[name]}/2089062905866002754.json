@@ -14,7 +14,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -32,7 +32,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -57,8 +57,7 @@
         "tankers"
     ],
     "content": "China have started drawing onshore crude stocks and removed fuel export restrictions. With increased refinery activity we could see increase imports of crude oil, question whether sanction vessels will get it.\n(Vortexa)\n#tankers",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 2,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

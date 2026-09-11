@@ -14,7 +14,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -32,7 +32,7 @@
         "date": "2012-02-08 21:11:35",
         "profile_banner": "",
         "favourites_count": 5904,
-        "followers_count": 1623,
+        "followers_count": 1624,
         "friends_count": 525,
         "listed_count": 37,
         "media_count": 764,
@@ -61,8 +61,7 @@
         }
     ],
     "content": "A record 901,000 vehicles were exported last month.  Vehicle exports have now set new records during six of the last eight months, and most recently grew year-on-year by 74%.  This has marked the strongest growth seen during this period.\n$HAUTO $WAWI\n@CommodoreJL",
-    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }
