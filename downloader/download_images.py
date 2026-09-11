@@ -139,6 +139,16 @@ def commit_account(username: str) -> int:
     of committed files, so a silent no-op pass can never masquerade as
     success."""
     git(["add", "--", f"images/{username}", "metadata", "archive"])
+    # Commit only real additions or archive growth: rewritten metadata
+    # (live view/favorite counts shift on every crawl) must not produce a
+    # noisy no-op commit on every deep-backfill window. Leftover modified
+    # files simply stay staged and ride along with the next real commit.
+    added = git(["diff", "--cached", "--name-only", "--diff-filter=A"]).stdout.split()
+    archive_changed = bool(
+        git(["diff", "--cached", "--name-only", "--", "archive"]).stdout.strip()
+    )
+    if not added and not archive_changed:
+        return 0
     staged = git(["diff", "--cached", "--name-only"]).stdout.split()
     if not staged:
         return 0
