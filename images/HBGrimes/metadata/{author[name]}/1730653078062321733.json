@@ -54,8 +54,7 @@
     "bookmark_count": 0,
     "view_count": 1237,
     "content": "Dec Capes up 9 days in a row",
-    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets since:2023-09-09 until:2024-03-10",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

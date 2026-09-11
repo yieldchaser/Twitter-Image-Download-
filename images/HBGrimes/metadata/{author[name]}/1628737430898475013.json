@@ -54,8 +54,7 @@
     "bookmark_count": 0,
     "view_count": 1062,
     "content": "Cape forward curve from yday COB",
-    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets since:2022-09-08 until:2023-03-10",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }

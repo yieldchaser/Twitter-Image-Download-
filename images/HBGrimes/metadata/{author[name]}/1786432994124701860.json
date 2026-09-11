@@ -66,8 +66,7 @@
         }
     ],
     "content": "Great event, see you next year! Thank you @GenevaDry @SamChambers",
-    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets since:2024-03-10 until:2024-09-09",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }
