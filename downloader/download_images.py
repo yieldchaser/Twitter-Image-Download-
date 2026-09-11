@@ -303,11 +303,21 @@ def main() -> int:
                 deep_summary["downloaded"] += d_downloaded
                 status["downloaded"] += d_downloaded
                 if d_code != 0 and not no_results:
-                    status["status"] = "failed"
-                    status["reason"] = f"deep window {since}..{until} exited {d_code}"
                     deep_summary.setdefault("errors", []).append(
                         {"window": f"{since}..{until}", "returncode": d_code}
                     )
+                    if d_code == -9:
+                        # Watchdog killed a silent pass: X is throttling this
+                        # session. Deep walks are resumable (the next run
+                        # fast-forwards through archived windows), so pause
+                        # here instead of burning watchdog minutes on every
+                        # remaining window. Not an account failure.
+                        deep_summary["interrupted"] = (
+                            f"watchdog killed window {since}..{until}"
+                        )
+                        break
+                    status["status"] = "failed"
+                    status["reason"] = f"deep window {since}..{until} exited {d_code}"
                 if d_downloaded == 0:
                     empty_streak += 1
                     if empty_streak >= DEEP_EMPTY_WINDOWS_STOP:
