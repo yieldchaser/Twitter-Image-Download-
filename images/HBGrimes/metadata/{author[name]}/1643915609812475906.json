@@ -54,8 +54,7 @@
     "bookmark_count": 2,
     "view_count": 2390,
     "content": "",
-    "search": "from:HBGrimes filter:media -filter:replies -filter:retweets since:2023-03-10 until:2023-09-09",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }
