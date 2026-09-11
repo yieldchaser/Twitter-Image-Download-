@@ -52,10 +52,9 @@
     "reply_count": 0,
     "retweet_count": 0,
     "bookmark_count": 2,
-    "view_count": 7208,
+    "view_count": 7209,
     "content": "🤩",
-    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "search"
+    "subcategory": "media"
 }
