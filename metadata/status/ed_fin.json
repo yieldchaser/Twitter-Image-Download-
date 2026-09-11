@@ -1,65 +1,18 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-09-11T18:27:38.568674+00:00",
-  "mode": "deep_backfill",
-  "status": "failed",
-  "reason": "deep window 2017-03-05..2017-09-04 exited -9",
-  "downloaded": 1048,
-  "committed_files": 3012,
+  "generated_at": "2026-09-11T20:53:28.842766+00:00",
+  "mode": "regular",
+  "status": "ok",
+  "reason": "media extraction completed",
+  "downloaded": 1,
+  "committed_files": 53,
+  "returncode": 0,
   "detail": {
     "username": "ed_fin",
     "url": "https://x.com/ed_fin",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0,
-    "deep_backfill": {
-      "windows_total": 24,
-      "windows_with_downloads": 5,
-      "downloaded": 1048,
-      "errors": [
-        {
-          "window": "2026-03-12..2026-09-11",
-          "returncode": -9
-        },
-        {
-          "window": "2025-09-10..2026-03-12",
-          "returncode": -9
-        },
-        {
-          "window": "2025-03-11..2025-09-10",
-          "returncode": -9
-        },
-        {
-          "window": "2024-09-09..2025-03-11",
-          "returncode": -9
-        },
-        {
-          "window": "2024-03-10..2024-09-09",
-          "returncode": -9
-        },
-        {
-          "window": "2023-09-09..2024-03-10",
-          "returncode": -9
-        },
-        {
-          "window": "2023-03-10..2023-09-09",
-          "returncode": -9
-        },
-        {
-          "window": "2022-09-08..2023-03-10",
-          "returncode": -9
-        },
-        {
-          "window": "2022-03-09..2022-09-08",
-          "returncode": -9
-        },
-        {
-          "window": "2017-03-05..2017-09-04",
-          "returncode": -9
-        }
-      ],
-      "stopped_early": "12 consecutive empty windows"
-    }
+    "downloaded": 1
   }
 }
