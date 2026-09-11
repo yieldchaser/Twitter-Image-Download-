@@ -14,8 +14,8 @@
         "date": "2021-05-05 08:04:40",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1389853433788653569/1779348246",
         "favourites_count": 1143,
-        "followers_count": 1395,
-        "friends_count": 1864,
+        "followers_count": 1394,
+        "friends_count": 1863,
         "listed_count": 20,
         "media_count": 179,
         "statuses_count": 6393,
@@ -33,8 +33,8 @@
         "date": "2021-05-05 08:04:40",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1389853433788653569/1779348246",
         "favourites_count": 1143,
-        "followers_count": 1395,
-        "friends_count": 1864,
+        "followers_count": 1394,
+        "friends_count": 1863,
         "listed_count": 20,
         "media_count": 179,
         "statuses_count": 6393,
@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 727,
     "content": "",
+    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
