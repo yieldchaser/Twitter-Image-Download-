@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 12461,
     "content": "“The vessel will be supplied by South Korea's Sinokor”",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

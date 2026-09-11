@@ -52,9 +52,10 @@
     "reply_count": 2,
     "retweet_count": 3,
     "bookmark_count": 0,
-    "view_count": 7755,
+    "view_count": 7756,
     "content": "Iraq, watching ADNOC:",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

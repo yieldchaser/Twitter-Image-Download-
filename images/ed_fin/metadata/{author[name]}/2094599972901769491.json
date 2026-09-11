@@ -54,7 +54,8 @@
     "bookmark_count": 3,
     "view_count": 6286,
     "content": "“U.S. oil company North American Blue Energy Partners ​will take over some oilfields previously controlled by several Chinese companies and a Russian firm.” 🧐\n\n• CNPC 🇨🇳\n• China Concord Resources 🇨🇳\n• Roszarubezhneft 🇷🇺",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

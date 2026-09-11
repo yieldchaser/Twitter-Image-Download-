@@ -54,7 +54,8 @@
     "bookmark_count": 25,
     "view_count": 30704,
     "content": "Now that the macro tourists have left the trade, oil tankers can safely resume their bull market. I don’t make the rules.",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -52,9 +52,10 @@
     "reply_count": 2,
     "retweet_count": 11,
     "bookmark_count": 9,
-    "view_count": 9166,
+    "view_count": 9171,
     "content": "ADNOC’s chartering arm ADMIC chartered in a VLCC belonging to AMCL, a subsidiary of China Merchants Energy Shipping, reported at 3 years for $80,000/day. 🚀",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-12 until:2026-09-11",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -1,18 +1,9 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-09-11T15:53:34.235269+00:00",
-  "mode": "regular",
-  "status": "ok",
-  "reason": "media extraction completed",
-  "downloaded": 1,
-  "committed_files": 53,
-  "returncode": 0,
-  "detail": {
-    "username": "ed_fin",
-    "url": "https://x.com/ed_fin",
-    "returncode": 0,
-    "status": "ok",
-    "reason": "media extraction completed",
-    "downloaded": 1
-  }
+  "generated_at": "2026-09-11T15:54:09.454141+00:00",
+  "mode": "deep_backfill",
+  "status": "failed",
+  "reason": "deep window 2026-03-12..2026-09-11 exited -9",
+  "downloaded": 0,
+  "committed_files": 0
 }
