@@ -28,6 +28,15 @@
       "reason": "media extraction completed",
       "downloaded": 1,
       "committed_files": 50
+    },
+    {
+      "username": "ole_sanne",
+      "url": "https://x.com/ole_sanne",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed",
+      "downloaded": 0,
+      "committed_files": 49
     }
   ],
   "overall_success": false,
