@@ -1,7 +1,7 @@
 {
   "extractor": {
     "twitter": {
-      "skip": false
+      "skip": true
     }
   }
 }

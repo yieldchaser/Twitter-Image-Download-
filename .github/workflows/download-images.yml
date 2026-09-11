@@ -85,25 +85,29 @@ jobs:
       - name: Download images
         run: python downloader/download_images.py
 
-      - name: Commit downloaded media and archive
+      - name: Commit remaining artifacts (status report)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The downloader already committed and pushed each account's media
+          # right after its download. This step sweeps up whatever is left
+          # (typically just the final download_status.json).
           git add images metadata archive
           if git diff --cached --quiet; then
-            echo "No new media or metadata."
+            echo "Nothing left to commit."
             exit 0
           fi
           git commit -m "Update X media archive"
-          # Another queued run may have pushed archive commits while this one
-          # ran. Rebase on origin/main and retry the push instead of failing.
+          # A queued run may have pushed while this one ran. Shallow clones
+          # cannot always rebase, so re-commit on the fetched tip instead.
           for attempt in 1 2 3 4 5; do
-            if git push origin main; then
+            if git push origin HEAD:main; then
               exit 0
             fi
-            echo "Push rejected (attempt $attempt); rebasing on origin/main"
+            echo "Push rejected (attempt $attempt); re-committing on origin/main"
             git fetch origin main
-            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+            git reset --soft origin/main
+            git commit -m "Update X media archive" || exit 0
           done
           echo "Could not push after 5 attempts"
           exit 1
