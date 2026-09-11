@@ -3,7 +3,51 @@
   "generated_at": "2026-09-11T15:54:09.281896+00:00",
   "mode": "deep_backfill",
   "status": "failed",
-  "reason": "deep window 2023-03-10..2023-09-09 exited -9",
-  "downloaded": 912,
-  "committed_files": 2058
+  "reason": "deep window 2017-03-05..2017-09-04 exited -9",
+  "downloaded": 944,
+  "committed_files": 2127,
+  "detail": {
+    "username": "MarhelmData",
+    "url": "https://x.com/MarhelmData",
+    "returncode": 0,
+    "status": "ok",
+    "reason": "media extraction completed",
+    "downloaded": 0,
+    "deep_backfill": {
+      "windows_total": 24,
+      "windows_with_downloads": 4,
+      "downloaded": 944,
+      "errors": [
+        {
+          "window": "2025-09-10..2026-03-12",
+          "returncode": -9
+        },
+        {
+          "window": "2024-09-09..2025-03-11",
+          "returncode": -9
+        },
+        {
+          "window": "2024-03-10..2024-09-09",
+          "returncode": -9
+        },
+        {
+          "window": "2023-09-09..2024-03-10",
+          "returncode": -9
+        },
+        {
+          "window": "2023-03-10..2023-09-09",
+          "returncode": -9
+        },
+        {
+          "window": "2020-09-06..2021-03-08",
+          "returncode": -9
+        },
+        {
+          "window": "2017-03-05..2017-09-04",
+          "returncode": -9
+        }
+      ],
+      "stopped_early": "12 consecutive empty windows"
+    }
+  }
 }
