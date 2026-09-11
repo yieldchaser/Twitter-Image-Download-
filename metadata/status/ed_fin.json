@@ -4,6 +4,6 @@
   "mode": "deep_backfill",
   "status": "failed",
   "reason": "deep window 2022-03-09..2022-09-08 exited -9",
-  "downloaded": 3190,
-  "committed_files": 6685
+  "downloaded": 3238,
+  "committed_files": 6781
 }
