@@ -1,4 +1,6 @@
 {
+  "generated_at": "2026-09-11T15:00:03.797547+00:00",
+  "mode": "regular",
   "accounts": [
     {
       "username": "HBGrimes",
@@ -6,42 +8,11 @@
       "returncode": 0,
       "status": "ok",
       "reason": "media extraction completed",
-      "downloaded": 0
-    },
-    {
-      "username": "cashsarmax",
-      "url": "https://x.com/cashsarmax",
-      "returncode": 0,
-      "status": "ok",
-      "reason": "media extraction completed",
-      "downloaded": 0
-    },
-    {
-      "username": "MarhelmData",
-      "url": "https://x.com/MarhelmData",
-      "returncode": 0,
-      "status": "ok",
-      "reason": "media extraction completed",
-      "downloaded": 0
-    },
-    {
-      "username": "ole_sanne",
-      "url": "https://x.com/ole_sanne",
-      "returncode": 0,
-      "status": "ok",
-      "reason": "media extraction completed",
-      "downloaded": 0
-    },
-    {
-      "username": "ed_fin",
-      "url": "https://x.com/ed_fin",
-      "returncode": 0,
-      "status": "ok",
-      "reason": "media extraction completed",
-      "downloaded": 0
+      "downloaded": 1,
+      "committed_files": 47
     }
   ],
-  "overall_success": true,
+  "overall_success": false,
   "expected_accounts": [
     "HBGrimes",
     "cashsarmax",
