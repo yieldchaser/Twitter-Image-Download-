@@ -1,6 +1,6 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-09-11T15:54:09.454141+00:00",
+  "generated_at": "2026-09-11T18:27:38.568674+00:00",
   "mode": "deep_backfill",
   "status": "failed",
   "reason": "deep window 2017-09-04..2018-03-06 exited -9",
