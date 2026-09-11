@@ -1,0 +1,73 @@
+{
+    "tweet_id": 1627670736235118592,
+    "retweet_id": 0,
+    "quote_id": 0,
+    "quoted_id": 0,
+    "reply_id": 0,
+    "conversation_id": 1627670736235118592,
+    "source_id": 0,
+    "date": "2023-02-20 14:05:18",
+    "author": {
+        "id": 889689521146691586,
+        "name": "ed_fin",
+        "nick": "Ed Finley–Richardson",
+        "date": "2017-07-25 03:31:26",
+        "profile_banner": "https://pbs.twimg.com/profile_banners/889689521146691586/1724324168",
+        "favourites_count": 149620,
+        "followers_count": 59978,
+        "friends_count": 714,
+        "listed_count": 1166,
+        "media_count": 18104,
+        "statuses_count": 36872,
+        "location": "On the high seas",
+        "verified": false,
+        "protected": false,
+        "profile_image": "https://pbs.twimg.com/profile_images/2038282577426231296/Xna2Tdof.jpg",
+        "description": "More shipping →\nhttp://edfin.substack.com\ninquiries: 2con.tangotwitter@gmail.com"
+    },
+    "user": {
+        "id": 889689521146691586,
+        "name": "ed_fin",
+        "nick": "Ed Finley–Richardson",
+        "date": "2017-07-25 03:31:26",
+        "profile_banner": "https://pbs.twimg.com/profile_banners/889689521146691586/1724324168",
+        "favourites_count": 149620,
+        "followers_count": 59978,
+        "friends_count": 714,
+        "listed_count": 1166,
+        "media_count": 18104,
+        "statuses_count": 36872,
+        "location": "On the high seas",
+        "verified": false,
+        "protected": false,
+        "profile_image": "https://pbs.twimg.com/profile_images/2038282577426231296/Xna2Tdof.jpg",
+        "description": "More shipping →\nhttp://edfin.substack.com\ninquiries: 2con.tangotwitter@gmail.com"
+    },
+    "lang": "en",
+    "source": "Twitter Web App",
+    "sensitive": false,
+    "sensitive_flags": [],
+    "favorite_count": 47,
+    "quote_count": 0,
+    "reply_count": 1,
+    "retweet_count": 6,
+    "bookmark_count": 1,
+    "view_count": 6286,
+    "mentions": [
+        {
+            "id": 18949452,
+            "name": "FT",
+            "nick": "Financial Times"
+        },
+        {
+            "id": 2447967992,
+            "name": "KKtheo1950",
+            "nick": "k"
+        }
+    ],
+    "content": "🇬🇧 The @FT: “A change of plans can prove very expensive. That’s what’s happening in the tanker market, where the rerouting of Russian oil products has driven the Baltic Exchange clean index up almost 70% since the start of February.”\nh/t @KKtheo1950",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2022-09-08 until:2023-03-10",
+    "count": 1,
+    "category": "twitter",
+    "subcategory": "search"
+}
