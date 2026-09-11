@@ -37,9 +37,18 @@
       "reason": "media extraction completed",
       "downloaded": 0,
       "committed_files": 49
+    },
+    {
+      "username": "ed_fin",
+      "url": "https://x.com/ed_fin",
+      "returncode": 0,
+      "status": "ok",
+      "reason": "media extraction completed",
+      "downloaded": 0,
+      "committed_files": 51
     }
   ],
-  "overall_success": false,
+  "overall_success": true,
   "expected_accounts": [
     "HBGrimes",
     "cashsarmax",
