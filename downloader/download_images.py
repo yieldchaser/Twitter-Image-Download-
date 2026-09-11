@@ -172,17 +172,13 @@ def commit_account(username: str, skip: set[str]) -> int:
         ours = git(["rev-parse", "HEAD"]).stdout.strip()
         git(["fetch", "origin", "main"])
         git(["reset", "--hard", "origin/main"])
-        pick = git(["cherry-pick", ours], check=False)
+        # -X ours resolves ANY conflicted path with our version: correct for
+        # this append-only workload (media files are per-account, the sqlite
+        # archive self-heals on the next run, status files are per-account). 
+        pick = git(["cherry-pick", "-X", "ours", ours], check=False)
         if pick.returncode != 0:
-            git(
-                ["checkout", "--ours", "archive/gallery-dl-twitter.sqlite3"],
-                check=False,
-            )
-            cont = git(
-                ["-c", "core.editor=true", "cherry-pick", "--continue"],
-                check=False,
-            )
-            if cont.returncode != 0:
+            git(["-c", "core.editor=true", "cherry-pick", "--continue"], check=False)
+            if git(["diff", "--name-only", "--diff-filter=U"]).stdout.strip():
                 git(["cherry-pick", "--abort"], check=False)
     raise SystemExit("Could not push after 5 attempts")
 
