@@ -56,7 +56,8 @@
     "bookmark_count": 12,
     "view_count": 12464,
     "content": "Fun fact: in the 18th century, the British Royal Navy adopted copper sheathing on its ship hulls to combat barnacle growth\n\nThis revolutionary change in ship building technique for a while made British ships faster and more maneuverable than those of her enemies",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

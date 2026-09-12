@@ -54,9 +54,10 @@
     "reply_count": 18,
     "retweet_count": 93,
     "bookmark_count": 102,
-    "view_count": 126958,
+    "view_count": 126957,
     "content": "Strategic oil releases set to fall off a cliff at the end of June",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

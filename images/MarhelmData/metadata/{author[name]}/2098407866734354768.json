@@ -56,7 +56,8 @@
     "bookmark_count": 3,
     "view_count": 4344,
     "content": "IEA cuts oil demand in bid to halt rising oil prices\n\nHowever, the IEA also acknowledges that production was down 1.6mb/d in August, with more than 10mb/d still shut in",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

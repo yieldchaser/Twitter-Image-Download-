@@ -54,9 +54,10 @@
     "reply_count": 16,
     "retweet_count": 137,
     "bookmark_count": 96,
-    "view_count": 175952,
+    "view_count": 175953,
     "content": "Mercuria head of freight says 10% of global ships could be forced to stop next month due to fuel shortages",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

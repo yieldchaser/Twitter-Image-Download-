@@ -56,7 +56,8 @@
     "bookmark_count": 1,
     "view_count": 2332,
     "content": "LNG charter rates... Modern X-DF/ME-GI rates exploded from ~$30k/day to nearly $280k/day before settling around $100k/day. Even after the pullback, rates remain more than 3x pre-spike levels.\n\nMaybe it's because of what happened to Qatar LNG?",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

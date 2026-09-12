@@ -56,7 +56,8 @@
     "bookmark_count": 6,
     "view_count": 5343,
     "content": "LNG shortages are doing what climate policy couldn't.\n\nAPAC thermal coal demand is projected to surge from ~440 Mt to ~500 Mt in 2026 (+60 Mt).\n\nJapan, South Korea and Taiwan alone add ~37 Mt.\n\nWhen gas disappears, coal comes back.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

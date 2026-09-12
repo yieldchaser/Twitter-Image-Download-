@@ -56,7 +56,8 @@
     "bookmark_count": 2,
     "view_count": 2207,
     "content": "FlexLNG just printed a Q2 TCE of ~$86,100/day and EPS of $0.83, nearly DOUBLE Q1's $0.36. Spot exposure paying off big time. $FLNG",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -56,7 +56,8 @@
     "bookmark_count": 1,
     "view_count": 2300,
     "content": "BW LPG's Q1 2026 spot earnings reached $63,700/day versus fixed-rate charter coverage at $46,600/day. Spot exposure is still a major earnings lever.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

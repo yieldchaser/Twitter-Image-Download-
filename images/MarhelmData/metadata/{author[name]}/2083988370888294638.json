@@ -56,7 +56,8 @@
     "bookmark_count": 11,
     "view_count": 11591,
     "content": "VLCC rates are absolutely on fire: TD3C (AG-China) TCE jumped from $401,250/day to $446,250/day in a single week, a $45,000/day gain. For context, last month it was $303,250/day. Nearly 50% higher in 4 weeks.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

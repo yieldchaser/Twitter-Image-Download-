@@ -56,7 +56,8 @@
     "bookmark_count": 9,
     "view_count": 199224,
     "content": "\"Sir, we didn't account for the sea barnacles\"",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

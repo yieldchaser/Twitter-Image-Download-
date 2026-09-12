@@ -56,7 +56,8 @@
     "bookmark_count": 6,
     "view_count": 20843,
     "content": "Russia is nearing implementation of a diesel and aviation fuel (kerosene) export ban after Ukrainian drone strikes disabled refining assets representing about 25% of the country’s diesel output and 30% of gasoline production",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

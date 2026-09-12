@@ -56,7 +56,8 @@
     "bookmark_count": 2,
     "view_count": 5075,
     "content": "China’s LPG demand is showing signs of life. Butane consumption has rebounded sharply in July after falling to its lowest level of 2026. The latest weekly reading is back above 270 kt. Could China’s LPG demand be turning the corner?",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

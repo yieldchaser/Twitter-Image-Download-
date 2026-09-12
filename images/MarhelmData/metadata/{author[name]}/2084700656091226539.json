@@ -56,7 +56,8 @@
     "bookmark_count": 24,
     "view_count": 19070,
     "content": "$WLKP Q2-26: net income basically flat YoY ($14.6M → $14.2M). \n\nBut operating cash flow? $9.1M → $129.8M. A 14x jump in a single year.\n\nSame quarter, wildly different stories depending which line you read. Distributable cash flow up 80% for H1.",
+    "search": "from:MarhelmData filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
