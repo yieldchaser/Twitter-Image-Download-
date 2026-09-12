@@ -56,7 +56,8 @@
     "bookmark_count": 0,
     "view_count": 119,
     "content": "Join hear me speak.",
+    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets since:2025-09-11 until:2026-03-13",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

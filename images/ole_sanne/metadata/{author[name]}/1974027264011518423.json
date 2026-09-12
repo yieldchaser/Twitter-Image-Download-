@@ -60,7 +60,8 @@
         "oceanAI"
     ],
     "content": "Blessed being Blessed - somewhere in India \n\n#allianzbulk #oceanAI",
+    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets since:2025-09-11 until:2026-03-13",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

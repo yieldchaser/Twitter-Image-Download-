@@ -54,9 +54,10 @@
     "reply_count": 0,
     "retweet_count": 1,
     "bookmark_count": 1,
-    "view_count": 218,
+    "view_count": 219,
     "content": "",
+    "search": "from:ole_sanne filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
