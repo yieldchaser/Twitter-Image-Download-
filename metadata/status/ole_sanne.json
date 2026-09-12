@@ -1,29 +1,18 @@
 {
   "username": "ole_sanne",
-  "generated_at": "2026-09-12T02:35:47.244672+00:00",
-  "mode": "deep_backfill",
-  "status": "ok",
-  "reason": "media extraction completed",
+  "generated_at": "2026-09-12T22:16:21.937641+00:00",
+  "mode": "regular",
+  "status": "failed",
+  "reason": "gallery-dl exited with code 8",
   "downloaded": 0,
   "committed_files": 0,
+  "returncode": 8,
   "detail": {
     "username": "ole_sanne",
     "url": "https://x.com/ole_sanne",
-    "returncode": 0,
-    "status": "ok",
-    "reason": "media extraction completed",
-    "downloaded": 0,
-    "deep_backfill": {
-      "windows_total": 24,
-      "windows_with_downloads": 0,
-      "downloaded": 0,
-      "errors": [
-        {
-          "window": "2025-03-12..2025-09-11",
-          "returncode": -9
-        }
-      ],
-      "interrupted": "watchdog killed window 2025-03-12..2025-09-11"
-    }
+    "returncode": 8,
+    "status": "failed",
+    "reason": "gallery-dl exited with code 8",
+    "downloaded": 0
   }
 }
