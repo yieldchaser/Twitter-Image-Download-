@@ -54,7 +54,8 @@
     "bookmark_count": 2,
     "view_count": 610,
     "content": "Breakwave tanker fundamentals",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

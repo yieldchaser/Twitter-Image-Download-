@@ -57,7 +57,8 @@
         "tankers"
     ],
     "content": "China have started drawing onshore crude stocks and removed fuel export restrictions. With increased refinery activity we could see increase imports of crude oil, question whether sanction vessels will get it.\n(Vortexa)\n#tankers",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 2,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

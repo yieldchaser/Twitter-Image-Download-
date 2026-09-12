@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 666,
     "content": "$DOFG orders 4x ROV support vessels to be built in Brazil (!!!) following 12 year charter with Petrobras, with delivery from 2030.\n\nThe total value of the contracts is close to USD 2.0 billion.",
+    "search": "from:cashsarmax filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

@@ -1,18 +1,29 @@
 {
   "username": "cashsarmax",
-  "generated_at": "2026-09-12T02:34:39.432723+00:00",
-  "mode": "regular",
+  "generated_at": "2026-09-12T02:35:51.670172+00:00",
+  "mode": "deep_backfill",
   "status": "ok",
   "reason": "media extraction completed",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 0,
   "detail": {
     "username": "cashsarmax",
     "url": "https://x.com/cashsarmax",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 0
+    "downloaded": 0,
+    "deep_backfill": {
+      "windows_total": 24,
+      "windows_with_downloads": 0,
+      "downloaded": 0,
+      "errors": [
+        {
+          "window": "2025-03-12..2025-09-11",
+          "returncode": -9
+        }
+      ],
+      "interrupted": "watchdog killed window 2025-03-12..2025-09-11"
+    }
   }
 }
