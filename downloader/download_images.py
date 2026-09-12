@@ -172,10 +172,12 @@ def commit_account(username: str, skip: set[str]) -> int:
         ours = git(["rev-parse", "HEAD"]).stdout.strip()
         git(["fetch", "origin", "main"])
         git(["reset", "--hard", "origin/main"])
-        # -X ours resolves ANY conflicted path with our version: correct for
-        # this append-only workload (media files are per-account, the sqlite
-        # archive self-heals on the next run, status files are per-account). 
-        pick = git(["cherry-pick", "-X", "ours", ours], check=False)
+        # Cherry-pick subtlety: -X theirs favors the PICKED commit (ours),
+        # -X ours favors HEAD (origin's stale tip). Use theirs: media and
+        # status files are per-account so only our commit ever writes them,
+        # and the only shared conflict candidate (sqlite archive) self-heals
+        # when the next run re-adds rows the other side wrote.
+        pick = git(["cherry-pick", "-X", "theirs", ours], check=False)
         if pick.returncode != 0:
             git(["-c", "core.editor=true", "cherry-pick", "--continue"], check=False)
             if git(["diff", "--name-only", "--diff-filter=U"]).stdout.strip():

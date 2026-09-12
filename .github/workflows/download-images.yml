@@ -111,10 +111,11 @@ jobs:
             OURS=$(git rev-parse HEAD)
             git fetch origin main
             git reset --hard origin/main
-            # -X ours resolves any conflicted path with our side; correct
-            # for this append-only archive workload (per-account paths,
-            # self-healing sqlite archive, per-account status files).
-            if ! git cherry-pick -X ours "$OURS"; then
+            # Cherry-pick subtlety: -X theirs favors the PICKED commit (this
+            # job's fresh files), -X ours favors HEAD (origin's stale tip).
+            # Picking ours previously re-committed stale status files over
+            # fresh ones, turning healthy jobs red in the validate step.
+            if ! git cherry-pick -X theirs "$OURS"; then
               git -c core.editor=true cherry-pick --continue || {
                 git cherry-pick --abort || true
                 exit 1
