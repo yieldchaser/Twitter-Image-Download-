@@ -1,11 +1,11 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-09-11T22:34:55.088239+00:00",
+  "generated_at": "2026-09-12T02:34:40.607791+00:00",
   "mode": "regular",
   "status": "ok",
   "reason": "media extraction completed",
-  "downloaded": 1,
-  "committed_files": 53,
+  "downloaded": 0,
+  "committed_files": 0,
   "returncode": 0,
   "detail": {
     "username": "ed_fin",
@@ -13,6 +13,6 @@
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 1
+    "downloaded": 0
   }
 }
