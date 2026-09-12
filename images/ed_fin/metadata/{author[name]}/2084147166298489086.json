@@ -54,7 +54,8 @@
     "bookmark_count": 6,
     "view_count": 11462,
     "content": "OFAC sanctioned VLCC “FT ISLAND” (311,189 dwt, built 1998, IMO # 9166675) reported sold for demolition to a scrapyard in Alang, India. \n\nShe has arrived in India. 🫡",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

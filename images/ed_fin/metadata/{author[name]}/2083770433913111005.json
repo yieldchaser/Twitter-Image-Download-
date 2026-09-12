@@ -54,7 +54,8 @@
     "bookmark_count": 57,
     "view_count": 23618,
     "content": "“~20% of all oil tankers worldwide now operate entirely outside Western regulatory reach, creating a massive parallel shipping economy. Approximately 65-70% of Russia’s seaborne oil exports are currently moved via these untraceable shadow vessels.”",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

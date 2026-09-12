@@ -54,7 +54,8 @@
     "bookmark_count": 0,
     "view_count": 8222,
     "content": "Handy size tanker CUTTA (built 2001, 38,702 dwt, IMO # 9037123) reported sold for demolition and has been beached in India. She was sanctioned by the EU, UK and Canada for dark fleet activities related to the Russian trade.",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

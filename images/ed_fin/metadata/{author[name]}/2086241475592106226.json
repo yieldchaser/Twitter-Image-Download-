@@ -54,7 +54,8 @@
     "bookmark_count": 87,
     "view_count": 28559,
     "content": "“The Trump administration structured the SPR releases as an “oil exchange” program (...) Participants “borrow” oil and are contractually obligated to repay the oil “in kind” from Nov 2026—2029 with a 18-24% premium (...) adding millions of barrels to the reserve at no cost.”",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }

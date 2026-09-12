@@ -54,7 +54,8 @@
     "bookmark_count": 1,
     "view_count": 5732,
     "content": "🫡",
+    "search": "from:ed_fin filter:media -filter:replies -filter:retweets since:2026-03-13 until:2026-09-12",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
