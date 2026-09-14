@@ -2,18 +2,19 @@
 
 Generated: 2026-09-14
 
-Total images: 6495 in 666 series across 8 type folders.
+Total images: 6500 in 667 series across 8 type folders.
 
 Per-type totals:
 
 - charts: 1793 files in 274 series
 - commentary: 336 files in 37 series
-- documents: 1370 files in 115 series
+- documents: 1371 files in 115 series
 - maps: 170 files in 3 series
 - news: 453 files in 49 series
 - other: 516 files in 32 series
 - photos: 560 files in 23 series
 - tables: 1297 files in 133 series
+- _inbox: 4 files in 1 series
 
 ## charts (1793 files, 274 series)
 
@@ -336,12 +337,12 @@ Per-type totals:
 | x-profile-screenshot | 1 | 2023-08-07..2023-08-07 | ed_fin | X profile of copycat account |
 | xclusiv-vlcc-market-weekly | 1 | 2022-09-01..2022-09-01 | ed_fin | Xclusiv on VLCC newbuilding appetite |
 
-## documents (1370 files, 115 series)
+## documents (1371 files, 115 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | earnings-results | 447 | 2022-05-04..2026-08-28 | MarhelmData,cashsarmax,ed_fin | Marhelm results coming this week calendar |
-| company-press-releases | 205 | 2021-07-02..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Okeanis Eco Tankers Q2 2025 results |
+| company-press-releases | 206 | 2021-07-02..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Okeanis Eco Tankers Q2 2025 results |
 | pareto-research | 138 | 2022-06-22..2026-03-15 | MarhelmData,cashsarmax,ed_fin | Pareto tanker market commentary text |
 | poten-tanker-opinion | 89 | 2022-04-02..2026-09-12 | MarhelmData,ed_fin | Poten Scenario 3 Hormuz excerpt |
 | gibson-weekly-tanker-report | 38 | 2022-04-04..2026-06-14 | MarhelmData,cashsarmax,ed_fin | Gibson weekly tanker market report |
@@ -720,6 +721,12 @@ Per-type totals:
 | westlake-facility-closures-table | 1 | 2025-12-18..2025-12-18 | MarhelmData | Westlake facilities and capacity table |
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
+
+## _inbox arrivals (4 files, 1 series)
+
+| series | files | date range | accounts | example |
+| --- | --- | --- | --- | --- |
+| ed_fin | 4 | 2026-09-12..2026-09-14 | ed_fin | unclassified ed_fin 2026-09-14 |
 
 ## How to find things
 
