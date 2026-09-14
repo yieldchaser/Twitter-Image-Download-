@@ -35,9 +35,17 @@ The number of historical posts/media that can be retrieved depends on the X API 
 
 ## Curated library
 
-Browsable, curated copy of the archive lives under `library/`, grouped by
-content type and recurring series. See `library/README.md` for the folder
-guide, `library/INDEX.md` for the per-series listing, and `library/catalog.csv`
-for the per-image metadata table. New downloads are filed into the library
-automatically after each run (exact reposts and template matches by
-`downloader/classify_new.py`; the rest wait in `library/_inbox/` for review).
+Browsable, curated copy of the archive lives under `library/` (6495 images
+in 666 series across 8 type folders), grouped by content type and recurring
+series. See `library/README.md` for the folder guide, `library/INDEX.md`
+for the per-series listing, and `library/catalog.csv` for the per-image
+metadata table.
+
+Pipeline: gallery-dl (pinned to 1.32.11; 1.32.12 breaks X extraction with
+a Cloudflare 403) downloads each account in a per-account matrix job, then
+a single downstream `file` job runs `downloader/classify_new.py`. It
+auto-files exact reposts (sha1 already in the catalog) and template matches
+(dHash distance <= 6 with a margin of >= 4 over the runner-up series;
+near-identical layouts at distance <= 2 file with no margin required),
+removes redundant re-downloads already archived on disk, and queues the
+rest in `library/_inbox/<account>/` for review.

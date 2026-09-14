@@ -9,24 +9,34 @@ New images are *.jpg/*.jpeg/*.png files sitting directly inside
 images/<account>/ (metadata/ is never descended into; anything else is
 ignored). Each new image is classified:
 
-  (a) sha1 already present in library/catalog.csv -> filed into the same
+  (a) redundant re-download: (account, tweet_id, num) already has a
+      catalog row AND that row's target exists on disk -> the content is
+      already archived, so the new file is removed (os.remove) after
+      logging `already archived at <target>, removing redundant download`.
+      Runs BEFORE hashing, so it also catches re-downloads whose bytes
+      differ slightly (re-encoded) that sha1 matching misses;
+  (b) sha1 already present in library/catalog.csv -> filed into the same
       series as that row (exact repost);
-  (b) else the closest perceptual-hash (dHash) template matches with
-      distance <= PHASH_AUTO_MAX and a margin over the runner-up of at
-      least PHASH_MARGIN_MIN -> inherits that row's type/series;
-  (c) else -> library/_inbox/<account>/ for human/agent review.
+  (c) else the closest perceptual-hash (dHash) template match: best
+      distance <= PHASH_NEAR_MAX (2) auto-files without requiring a
+      margin (near-identical layout = same template); otherwise best
+      distance 3..PHASH_AUTO_MAX (6) with a margin over the runner-up of
+      at least PHASH_MARGIN_MIN (4) -> inherits that row's type/series;
+  (d) else -> library/_inbox/<account>/ for human/agent review.
 
 Auto-filed rows are appended to catalog.csv, library/phashes.json is
 updated (new entries added, stale entries pruned), files are moved into
 place, and library/INDEX.md is regenerated from the catalog.
 
 Corrupt/unreadable images are left in place with a warning on stdout.
-Nothing is ever deleted, except for one provable byte-identical case:
-when a new image's sha1 is already in the catalog AND that catalog target
-exists on disk, the content is already archived, so the redundant download
-is removed (os.remove) after logging
-`already archived at <target>, removing redundant download`.
-This prevents gallery-dl re-downloads of archived bytes from appending
+Nothing is ever deleted, except for two redundant-download cases:
+when (account, tweet_id, num) already has a catalog row whose target
+exists on disk (checked before hashing; covers re-encoded re-downloads
+sha1 matching misses), and the provable byte-identical case (a new
+image's sha1 is already in the catalog AND that catalog target exists
+on disk). In both cases the redundant download is removed (os.remove)
+after logging `already archived at <target>, removing redundant download`.
+This prevents gallery-dl re-downloads of archived images from appending
 duplicate-target rows on every run. Always exits 0.
 """
 
@@ -53,11 +63,13 @@ INDEX = ROOT / "library" / "INDEX.md"
 IMAGES = ROOT / "images"
 LIBRARY = ROOT / "library"
 
-# dHash auto-file policy: accept the best template match only when it is
-# close (<= PHASH_AUTO_MAX bits different) and unambiguous (runner-up is
-# at least PHASH_MARGIN_MIN bits further away).
+# dHash auto-file policy: best template match at distance <= PHASH_NEAR_MAX
+# (near-identical layout = same template) auto-files without requiring a
+# margin; distances 3..PHASH_AUTO_MAX still need to be unambiguous
+# (runner-up at least PHASH_MARGIN_MIN bits further away).
 PHASH_AUTO_MAX = 6
 PHASH_MARGIN_MIN = 4
+PHASH_NEAR_MAX = 2
 
 CATALOG_COLUMNS = [
     "file", "account", "date", "tweet_id", "num", "width", "height",
@@ -340,6 +352,25 @@ def classify() -> int:
         if row.get("sha1") and row["sha1"] not in sha1_lookup:
             sha1_lookup[row["sha1"]] = row
     target_lookup = {row.get("target", ""): row for row in rows}
+    # Redundant-download lookup by (account, tweet_id, num). When several
+    # rows share the key, prefer one whose target exists on disk.
+    triple_lookup: dict[tuple[str, str, str], dict] = {}
+    for row in rows:
+        key = (row.get("account", ""), row.get("tweet_id", ""),
+               row.get("num", ""))
+        if not key[0] or not key[1] or not key[2]:
+            continue
+        prev = triple_lookup.get(key)
+        if prev is None:
+            triple_lookup[key] = row
+        else:
+            prev_target = prev.get("target", "")
+            prev_ok = (bool(prev_target)
+                       and (ROOT / prev_target.replace("\\", "/")).is_file())
+            cur_target = row.get("target", "")
+            if (not prev_ok and cur_target
+                    and (ROOT / cur_target.replace("\\", "/")).is_file()):
+                triple_lookup[key] = row
 
     # Backfill hashes for catalogued targets and any stray library images
     # missing from phashes.json (first run: the full ~6489-image build).
@@ -391,6 +422,21 @@ def classify() -> int:
                 continue
             found += 1
             date, _, tweet_id, num = parsed
+            # Redundant-download guard (before hashing): gallery-dl
+            # re-downloads of an archived (account, tweet_id, num) may be
+            # re-encoded so sha1 matching misses them. When the catalogued
+            # target still exists on disk the image is already archived.
+            prior = triple_lookup.get((account, tweet_id, num))
+            if prior is not None:
+                prior_target = prior.get("target", "")
+                if (prior_target
+                        and (ROOT / prior_target.replace("\\", "/")).is_file()):
+                    log(f"already archived at {prior_target}, removing redundant download")
+                    try:
+                        os.remove(src)
+                    except OSError as exc:
+                        log(f"WARNING: could not remove redundant download {src} ({exc})")
+                    continue
             try:
                 digest = sha1_of(src)
             except OSError as exc:
@@ -427,17 +473,23 @@ def classify() -> int:
             reason = ""
             if match is not None:
                 reason = "exact"
-            elif len(pool) >= 2:
+            elif pool:
                 # Margin is judged between series, not files: several
                 # near-identical templates inside one recurring series must
-                # not veto each other.
+                # not veto each other. A near-identical layout
+                # (d <= PHASH_NEAR_MAX) is the same template, so the margin
+                # is waived; distances 3..PHASH_AUTO_MAX still need it.
                 best_per_series: dict[tuple[str, str], list] = {}
                 for placed0, h, t in pool:
                     d = hamming(dh, h)
                     if placed0 not in best_per_series or d < best_per_series[placed0][0]:
                         best_per_series[placed0] = [d, t]
                 ranked = sorted(best_per_series.values())
-                if len(ranked) >= 2:
+                if ranked and ranked[0][0] <= PHASH_NEAR_MAX:
+                    best, best_target = ranked[0]
+                    match = target_lookup[best_target]
+                    reason = f"template d={best} margin=waived"
+                elif len(ranked) >= 2:
                     (best, best_target), (second, _) = ranked[0], ranked[1]
                     if best <= PHASH_AUTO_MAX and second - best >= PHASH_MARGIN_MIN:
                         match = target_lookup[best_target]
@@ -495,6 +547,7 @@ def classify() -> int:
             target_lookup[target] = new_rows[-1]
             if digest not in sha1_lookup:
                 sha1_lookup[digest] = new_rows[-1]
+            triple_lookup[(account, tweet_id, num)] = new_rows[-1]
         per_account[account] = {"found": found, "auto": auto,
                                 "inbox": inbox_n, "breakdown": breakdown}
 

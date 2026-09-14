@@ -2,7 +2,7 @@
 
 Generated: 2026-09-14
 
-Total images: 6498 in 667 series across 8 type folders.
+Total images: 6495 in 666 series across 8 type folders.
 
 Per-type totals:
 
@@ -11,10 +11,9 @@ Per-type totals:
 - documents: 1370 files in 115 series
 - maps: 170 files in 3 series
 - news: 453 files in 49 series
-- other: 516 files in 32 series
+- other: 517 files in 32 series
 - photos: 560 files in 23 series
 - tables: 1297 files in 133 series
-- _inbox: 4 files in 1 series
 
 ## charts (1792 files, 274 series)
 
@@ -519,11 +518,11 @@ Per-type totals:
 | ship-and-bunker-news | 1 | 2024-02-07..2024-02-07 | ed_fin | Red Sea diversions cut boxship idling |
 | times-of-israel-news | 1 | 2023-02-17..2023-02-17 | ed_fin | Times of Israel report on Campo Square tanker |
 
-## other (516 files, 32 series)
+## other (517 files, 32 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| memes | 425 | 2018-09-12..2026-09-12 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Yes meme |
+| memes | 426 | 2018-09-12..2026-09-14 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Yes meme |
 | marhelm-interviews-page | 19 | 2024-09-01..2026-09-10 | MarhelmData | Marhelm interviews page Belships interview |
 | marhelm-interview-pages | 18 | 2023-12-14..2026-04-04 | MarhelmData | Marhelm interviews page |
 | industry-infographics | 10 | 2021-11-29..2026-06-28 | ed_fin | Manufactured fertilizer production processes |
@@ -721,12 +720,6 @@ Per-type totals:
 | westlake-facility-closures-table | 1 | 2025-12-18..2025-12-18 | MarhelmData | Westlake facilities and capacity table |
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
-
-## _inbox arrivals (4 files, 1 series)
-
-| series | files | date range | accounts | example |
-| --- | --- | --- | --- | --- |
-| ed_fin | 4 | 2026-09-12..2026-09-14 | ed_fin | unclassified ed_fin 2026-09-14 |
 
 ## How to find things
 
