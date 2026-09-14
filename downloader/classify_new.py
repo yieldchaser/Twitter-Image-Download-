@@ -21,7 +21,13 @@ updated (new entries added, stale entries pruned), files are moved into
 place, and library/INDEX.md is regenerated from the catalog.
 
 Corrupt/unreadable images are left in place with a warning on stdout.
-Nothing is ever deleted. Always exits 0.
+Nothing is ever deleted, except for one provable byte-identical case:
+when a new image's sha1 is already in the catalog AND that catalog target
+exists on disk, the content is already archived, so the redundant download
+is removed (os.remove) after logging
+`already archived at <target>, removing redundant download`.
+This prevents gallery-dl re-downloads of archived bytes from appending
+duplicate-target rows on every run. Always exits 0.
 """
 
 from __future__ import annotations
@@ -171,17 +177,53 @@ def load_catalog() -> list[dict]:
         missing = [c for c in CATALOG_COLUMNS if c not in rows[0]]
         if missing:
             log(f"WARNING: catalog.csv missing columns {missing}")
+    # Dedupe by target (keep last occurrence). Guards against
+    # double-append artifacts; no-op when targets are unique.
+    counts: dict[str, int] = {}
+    for row in rows:
+        target = row.get("target", "")
+        if target:
+            counts[target] = counts.get(target, 0) + 1
+    dup_total = sum(n - 1 for n in counts.values() if n > 1)
+    if dup_total:
+        log(f"WARNING: catalog.csv has {dup_total} duplicate "
+            f"target row(s); keeping last occurrence.")
+        seen: set[str] = set()
+        kept_rev: list[dict] = []
+        for row in reversed(rows):
+            target = row.get("target", "")
+            if target:
+                if target in seen:
+                    continue
+                seen.add(target)
+            kept_rev.append(row)
+        rows = list(reversed(kept_rev))
     return rows
 
 
 def load_phashes() -> dict:
     if not PHASHES.exists():
         return {}
+    dup_count = 0
+
+    def _hook(pairs: list) -> dict:
+        nonlocal dup_count
+        seen_keys: set = set()
+        for key, _ in pairs:
+            if key in seen_keys:
+                dup_count += 1
+            seen_keys.add(key)
+        return dict(pairs)  # dict keeps last occurrence
+
     try:
-        data = json.loads(PHASHES.read_text(encoding="utf-8"))
+        data = json.loads(PHASHES.read_text(encoding="utf-8"),
+                           object_pairs_hook=_hook)
     except ValueError as exc:
         log(f"WARNING: {PHASHES} unparsable ({exc}); rebuilding from scratch.")
         return {}
+    if dup_count:
+        log(f"WARNING: {PHASHES.name} has {dup_count} duplicate "
+            f"key(s); keeping last occurrence.")
     return data if isinstance(data, dict) else {}
 
 
@@ -364,6 +406,20 @@ def classify() -> int:
                 continue
 
             match = sha1_lookup.get(digest)
+            if match is not None:
+                # Single exception to never-delete: gallery-dl occasionally
+                # re-downloads bytes already archived (identical sha1). When
+                # the catalogued target still exists on disk the content is
+                # provably already archived, so remove the redundant download
+                # instead of appending a duplicate-target row.
+                existing_target = match.get("target", "")
+                if existing_target and (ROOT / existing_target.replace("\\", "/")).is_file():
+                    log(f"already archived at {existing_target}, removing redundant download")
+                    try:
+                        os.remove(src)
+                    except OSError as exc:
+                        log(f"WARNING: could not remove redundant download {src} ({exc})")
+                    continue
             if match is not None and is_inbox_row(match):
                 # A duplicate of an unreviewed inbox file is still
                 # unreviewed: route to this account's inbox, not to _inbox.

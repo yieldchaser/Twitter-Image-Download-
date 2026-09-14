@@ -91,9 +91,6 @@ jobs:
       - name: Download images
         run: python downloader/download_images.py
 
-      - name: File new images into library
-        run: python downloader/classify_new.py
-
       - name: Commit downloaded media and archive
         run: |
           git config user.name "github-actions[bot]"
@@ -101,7 +98,7 @@ jobs:
           # The downloader already committed per pass/window. This sweeps up
           # the final status file. Only explicit paths, never add -A: the
           # runtime cookie file must never be stageable.
-          git add images metadata archive library
+          git add images metadata archive
           if git diff --cached --quiet; then
             echo "Nothing left to commit."
             exit 0
@@ -145,3 +142,57 @@ jobs:
       - name: Remove runtime credentials
         if: always()
         run: rm -rf .runtime
+
+  file:
+    name: File new images into library
+    needs: [download]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install filing deps
+        run: python -m pip install --upgrade pillow
+
+      - name: Run filer
+        run: python downloader/classify_new.py
+
+      - name: Commit filed library
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Single writer for library/*: only this job files images into
+          # the library, so parallel download jobs cannot clobber each
+          # other's catalog rows. Only explicit paths, never add -A.
+          git add library
+          if git diff --cached --quiet; then
+            echo "Nothing left to commit."
+            exit 0
+          fi
+          git commit -m "File new downloads into library"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); re-applying on origin/main"
+            OURS=$(git rev-parse HEAD)
+            git fetch origin main
+            git reset --hard origin/main
+            # Cherry-pick subtlety: -X theirs favors the PICKED commit (this
+            # job's fresh files), -X ours favors HEAD (origin's stale tip).
+            if ! git cherry-pick -X theirs "$OURS"; then
+              git -c core.editor=true cherry-pick --continue || {
+                git cherry-pick --abort || true
+                exit 1
+              }
+            fi
+          done
+          echo "Could not push after 5 attempts"
+          exit 1
