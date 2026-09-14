@@ -8,30 +8,31 @@ Automated archive of image media posted by selected public X accounts.
 - `@casharmax`
 - `@MarhelmData`
 - `@ole_sanne`
+- `@ed_fin`
 
 ## How it works
 
-The GitHub Action uses the X API with the `X_BEARER_TOKEN` repository secret. It paginates through each account's available posts, finds attached media, downloads the original image URL when available, and commits new files to the repository.
+The GitHub Action (**Download X Images**) runs gallery-dl with the `X_COOKIES` repository secret. A per-account matrix job pages each account's media timeline (plus deep-backfill search windows on demand), downloads new images, and commits them; a single downstream job then files the newcomers into `library/`.
 
-Files are named from the post date, account, and a sanitized version of the post text, for example:
+Files keep downloader names built from post date, account, tweet ID, and image number, for example:
 
-`2026-08-23_casharmax_Tanker_secondhand_values_Xclusiv_abc123.jpg`
+`2026-08-23_casharmax_1831044222960681371_1.jpg`
 
-A JSONL metadata file is also maintained for each account under `metadata/`, containing the post ID, complete post text, X URL, media key, source media URL, filename, and alt text when supplied by X.
+Per-tweet metadata JSONs sit alongside under `images/<account>/metadata/`, and per-account run status under `metadata/status/`.
 
 ## Credential
 
-Create a repository Actions secret named `X_BEARER_TOKEN`. Never commit the token to the repository.
+Create a repository Actions secret named `X_COOKIES` holding a Cookie-Editor JSON export of x.com cookies. Never commit cookies to the repository. Refresh the export when the session expires.
 
 ## Runs
 
-- Manual: GitHub Actions → **Download X Images** → **Run workflow**
-- Scheduled: daily
-- Also runs after changes are pushed to `main`
+- Manual: GitHub Actions → **Download X Images** → **Run workflow** (all accounts or one)
+- Scheduled: daily 20:17 UTC
+- Also runs after human pushes to `main` (the bot's own commits don't retrigger it)
 
-## Important API limitation
+## Limitations
 
-The number of historical posts/media that can be retrieved depends on the X API access level associated with the token. The downloader will retrieve everything the API makes available and paginate through it; it cannot bypass X API limits.
+X rate-limits and Cloudflare-protects automated access: gallery-dl is pinned to a known-good version (see below) and runs fail loudly at validation rather than silently when X changes its defenses. Historical reach depends on what X serves the logged-in session.
 
 ## Curated library
 
