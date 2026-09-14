@@ -1,12 +1,12 @@
 {
-    "tweet_id": 2087647704998638076,
+    "tweet_id": 2099524785999081866,
     "retweet_id": 0,
     "quote_id": 0,
     "quoted_id": 0,
     "reply_id": 0,
-    "conversation_id": 2087647704998638076,
+    "conversation_id": 2099524785999081866,
     "source_id": 0,
-    "date": "2026-08-12 21:09:34",
+    "date": "2026-09-14 15:44:50",
     "author": {
         "id": 889689521146691586,
         "name": "ed_fin",
@@ -47,13 +47,20 @@
     "source": "Twitter for Android",
     "sensitive": false,
     "sensitive_flags": [],
-    "favorite_count": 78,
-    "quote_count": 0,
+    "favorite_count": 26,
+    "quote_count": 1,
     "reply_count": 3,
-    "retweet_count": 0,
-    "bookmark_count": 1,
-    "view_count": 6088,
-    "content": "Greetings from Bodega   🇺🇸",
+    "retweet_count": 2,
+    "bookmark_count": 5,
+    "view_count": 3008,
+    "mentions": [
+        {
+            "id": 2769488952,
+            "name": "TankersInt",
+            "nick": "Tankers International"
+        }
+    ],
+    "content": "Mother of God. \nvia the @TankersInt app",
     "count": 1,
     "category": "twitter",
     "subcategory": "media"
