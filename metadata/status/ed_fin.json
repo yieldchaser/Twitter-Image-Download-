@@ -1,18 +1,18 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-09-14T13:24:45.036679+00:00",
+  "generated_at": "2026-09-14T13:43:35.716241+00:00",
   "mode": "regular",
-  "status": "failed",
-  "reason": "gallery-dl exited with code 8",
-  "downloaded": 0,
-  "committed_files": 0,
-  "returncode": 8,
+  "status": "ok",
+  "reason": "media extraction completed",
+  "downloaded": 4,
+  "committed_files": 60,
+  "returncode": 0,
   "detail": {
     "username": "ed_fin",
     "url": "https://x.com/ed_fin",
-    "returncode": 8,
-    "status": "failed",
-    "reason": "gallery-dl exited with code 8",
-    "downloaded": 0
+    "returncode": 0,
+    "status": "ok",
+    "reason": "media extraction completed",
+    "downloaded": 4
   }
 }

@@ -2,18 +2,19 @@
 
 Generated: 2026-09-14
 
-Total images: 6489 in 666 series across 8 type folders.
+Total images: 6493 in 667 series across 8 type folders.
 
 Per-type totals:
 
 - charts: 1791 files in 274 series
 - commentary: 336 files in 37 series
-- documents: 1369 files in 115 series
+- documents: 1370 files in 115 series
 - maps: 170 files in 3 series
 - news: 453 files in 49 series
 - other: 515 files in 32 series
 - photos: 559 files in 23 series
 - tables: 1296 files in 133 series
+- _inbox: 3 files in 1 series
 
 ## charts (1791 files, 274 series)
 
@@ -336,12 +337,12 @@ Per-type totals:
 | x-profile-screenshot | 1 | 2023-08-07..2023-08-07 | ed_fin | X profile of copycat account |
 | xclusiv-vlcc-market-weekly | 1 | 2022-09-01..2022-09-01 | ed_fin | Xclusiv on VLCC newbuilding appetite |
 
-## documents (1369 files, 115 series)
+## documents (1370 files, 115 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | earnings-results | 447 | 2022-05-04..2026-08-28 | MarhelmData,cashsarmax,ed_fin | Marhelm results coming this week calendar |
-| company-press-releases | 205 | 2021-07-02..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Okeanis Eco Tankers Q2 2025 results |
+| company-press-releases | 206 | 2021-07-02..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Okeanis Eco Tankers Q2 2025 results |
 | pareto-research | 138 | 2022-06-22..2026-03-15 | MarhelmData,cashsarmax,ed_fin | Pareto tanker market commentary text |
 | poten-tanker-opinion | 88 | 2022-04-02..2026-08-22 | MarhelmData,ed_fin | Poten Scenario 3 Hormuz excerpt |
 | gibson-weekly-tanker-report | 38 | 2022-04-04..2026-06-14 | MarhelmData,cashsarmax,ed_fin | Gibson weekly tanker market report |
@@ -491,7 +492,7 @@ Per-type totals:
 | al-jazeera-news | 1 | 2025-05-06..2025-05-06 | MarhelmData | Al Jazeera Pakistan response article |
 | arctic-energy-offshore-brief | 1 | 2023-09-01..2023-09-01 | ed_fin | Offshore company contract updates brief |
 | bbc-news | 1 | 2025-02-08..2025-02-08 | ed_fin | India minister on shadow tanker fleet |
-| bfm-news | 1 | 2023-03-09..2023-03-09 | ed_fin | Intermarche warns of unleaded fuel shortage |
+| bfm-news | 1 | 2023-03-09..2023-03-09 | ed_fin | Intermarché warns of unleaded fuel shortage |
 | bnk-invest-news | 1 | 2023-02-14..2023-02-14 | ed_fin | STNG crosses above analyst target |
 | businesskorea-news | 1 | 2023-03-05..2023-03-05 | ed_fin | South Korean shipyard foreign worker visas |
 | china-daily-news | 1 | 2022-09-07..2022-09-07 | ed_fin | China shipbuilders to enter high growth era |
@@ -720,6 +721,12 @@ Per-type totals:
 | westlake-facility-closures-table | 1 | 2025-12-18..2025-12-18 | MarhelmData | Westlake facilities and capacity table |
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
+
+## _inbox arrivals (3 files, 1 series)
+
+| series | files | date range | accounts | example |
+| --- | --- | --- | --- | --- |
+| ed_fin | 3 | 2026-09-12..2026-09-14 | ed_fin | unclassified ed_fin 2026-09-12 |
 
 ## How to find things
 
