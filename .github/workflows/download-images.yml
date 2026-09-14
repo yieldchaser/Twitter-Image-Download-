@@ -47,7 +47,7 @@ jobs:
       matrix:
         # Regular daily runs crawl every account inside one job; deep runs
         # get one job per account (independent timeouts, no cross-blocking).
-        account: ${{ github.event_name == 'workflow_dispatch' && inputs.account != 'all' && fromJSON(format('[\"{0}\"]', inputs.account)) || fromJSON('["HBGrimes", "cashsarmax", "MarhelmData", "ole_sanne", "ed_fin"]') }}
+        account: ${{ github.event_name == 'workflow_dispatch' && inputs.account != 'all' && fromJSON(format('["{0}"]', inputs.account)) || fromJSON('["HBGrimes", "cashsarmax", "MarhelmData", "ole_sanne", "ed_fin"]') }}
     name: ${{ matrix.account }}
     steps:
       - name: Checkout
@@ -59,7 +59,8 @@ jobs:
           python-version: "3.12"
 
       - name: Install gallery-dl
-        run: python -m pip install --upgrade gallery-dl pillow
+        # Pinned: 1.32.12 breaks X extraction (Cloudflare 403 on transaction init); revisit on upstream fix
+        run: python -m pip install --upgrade "gallery-dl==1.32.11" pillow
 
       - name: Prepare X cookies
         env:
