@@ -2,25 +2,24 @@
 
 Generated: 2026-09-14
 
-Total images: 6492 in 667 series across 8 type folders.
+Total images: 6495 in 666 series across 8 type folders.
 
 Per-type totals:
 
-- charts: 1792 files in 274 series
+- charts: 1793 files in 274 series
 - commentary: 336 files in 37 series
-- documents: 1369 files in 115 series
+- documents: 1370 files in 115 series
 - maps: 170 files in 3 series
 - news: 453 files in 49 series
-- other: 515 files in 32 series
-- photos: 559 files in 23 series
-- tables: 1296 files in 133 series
-- _inbox: 2 files in 1 series
+- other: 516 files in 32 series
+- photos: 560 files in 23 series
+- tables: 1297 files in 133 series
 
-## charts (1792 files, 274 series)
+## charts (1793 files, 274 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| dry-bulk-rates-charts | 121 | 2021-01-08..2026-09-02 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Capesize FFA vs spot distributions |
+| dry-bulk-rates-charts | 122 | 2021-01-08..2026-09-12 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Capesize FFA vs spot distributions |
 | vortexa-charts | 119 | 2022-06-06..2026-09-01 | MarhelmData,cashsarmax,ed_fin | OPEC crude Suezmax tonne-day demand |
 | shipping-equities-charts | 101 | 2021-10-26..2026-05-17 | MarhelmData,cashsarmax,ed_fin | DOF Group ASA share price chart |
 | oil-prices-charts | 70 | 2021-11-26..2026-07-20 | HBGrimes,MarhelmData,cashsarmax,ed_fin | ICE Gasoil Feb futures candlestick chart |
@@ -337,14 +336,14 @@ Per-type totals:
 | x-profile-screenshot | 1 | 2023-08-07..2023-08-07 | ed_fin | X profile of copycat account |
 | xclusiv-vlcc-market-weekly | 1 | 2022-09-01..2022-09-01 | ed_fin | Xclusiv on VLCC newbuilding appetite |
 
-## documents (1369 files, 115 series)
+## documents (1370 files, 115 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | earnings-results | 447 | 2022-05-04..2026-08-28 | MarhelmData,cashsarmax,ed_fin | Marhelm results coming this week calendar |
 | company-press-releases | 205 | 2021-07-02..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Okeanis Eco Tankers Q2 2025 results |
 | pareto-research | 138 | 2022-06-22..2026-03-15 | MarhelmData,cashsarmax,ed_fin | Pareto tanker market commentary text |
-| poten-tanker-opinion | 88 | 2022-04-02..2026-08-22 | MarhelmData,ed_fin | Poten Scenario 3 Hormuz excerpt |
+| poten-tanker-opinion | 89 | 2022-04-02..2026-09-12 | MarhelmData,ed_fin | Poten Scenario 3 Hormuz excerpt |
 | gibson-weekly-tanker-report | 38 | 2022-04-04..2026-06-14 | MarhelmData,cashsarmax,ed_fin | Gibson weekly tanker market report |
 | jefferies-research | 34 | 2022-07-22..2026-04-24 | cashsarmax,ed_fin | Capacity lost due to Red Sea re-routing |
 | arctic-securities-research | 25 | 2022-08-26..2026-02-24 | cashsarmax,ed_fin | Compliant tanker fleet growth negative |
@@ -519,11 +518,11 @@ Per-type totals:
 | ship-and-bunker-news | 1 | 2024-02-07..2024-02-07 | ed_fin | Red Sea diversions cut boxship idling |
 | times-of-israel-news | 1 | 2023-02-17..2023-02-17 | ed_fin | Times of Israel report on Campo Square tanker |
 
-## other (515 files, 32 series)
+## other (516 files, 32 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| memes | 424 | 2018-09-12..2026-09-11 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Yes meme |
+| memes | 425 | 2018-09-12..2026-09-12 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Yes meme |
 | marhelm-interviews-page | 19 | 2024-09-01..2026-09-10 | MarhelmData | Marhelm interviews page Belships interview |
 | marhelm-interview-pages | 18 | 2023-12-14..2026-04-04 | MarhelmData | Marhelm interviews page |
 | industry-infographics | 10 | 2021-11-29..2026-06-28 | ed_fin | Manufactured fertilizer production processes |
@@ -556,14 +555,14 @@ Per-type totals:
 | visual-capitalist-infographic | 1 | 2022-07-26..2022-07-26 | ed_fin | World's largest container shipping companies |
 | war-sanctions-sponsors-listing | 1 | 2023-03-05..2023-03-05 | ed_fin | International Sponsors of War listing |
 
-## photos (559 files, 23 series)
+## photos (560 files, 23 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | people-and-events-photos | 211 | 2022-04-11..2026-08-17 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | John Fredriksen portrait |
 | personal-photos | 148 | 2018-09-07..2026-08-12 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Vintage black and white dinner party photo |
 | vessel-photos | 127 | 2021-10-09..2026-08-31 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Burning fuel tanker at Panama Canal terminal |
-| historical-photos | 23 | 2022-05-18..2026-06-01 | MarhelmData,ed_fin,ole_sanne | Panama Canal construction workers |
+| historical-photos | 24 | 2022-05-18..2026-09-14 | MarhelmData,ed_fin,ole_sanne | Panama Canal construction workers |
 | news-illustration-photos | 11 | 2022-03-18..2026-05-31 | MarhelmData,ed_fin,ole_sanne | Portrait tied to Panama canal dispute |
 | port-photos | 8 | 2022-03-28..2025-07-24 | MarhelmData,ed_fin | Miraflores Locks Panama Canal photo |
 | shipyard-photos | 5 | 2022-04-16..2025-03-07 | ed_fin | Aerial view of Hyundai shipyard |
@@ -584,7 +583,7 @@ Per-type totals:
 | shipyard-brochure-photo | 1 | 2024-12-12..2024-12-12 | cashsarmax | China Merchants Industry brochures |
 | weather-damage-photos | 1 | 2025-02-14..2025-02-14 | ed_fin | Cyclone damage at Port Hedland |
 
-## tables (1296 files, 133 series)
+## tables (1297 files, 133 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
@@ -602,7 +601,7 @@ Per-type totals:
 | marhelm-stock-picks | 16 | 2023-06-21..2026-06-15 | MarhelmData | Marhelm trade ideas year-to-date performance |
 | infinity-lpg-rate-stipulations | 9 | 2025-07-24..2025-08-05 | ed_fin | Infinity LPG rate stipulations 24 Jul 2025 |
 | commodity-futures-quotes | 8 | 2023-08-01..2026-04-07 | MarhelmData,ed_fin | Crude oil futures quotes table |
-| morgan-stanley-research | 7 | 2023-03-10..2026-08-18 | ed_fin | Morgan Stanley HK/China transport coverage |
+| morgan-stanley-research | 8 | 2023-03-10..2026-09-13 | ed_fin | Morgan Stanley HK/China transport coverage |
 | options-flow-tables | 7 | 2023-01-10..2026-01-05 | ed_fin | FRO option chain |
 | best-oasis-ship-recycling-report | 6 | 2022-09-03..2025-10-04 | cashsarmax,ed_fin | Four SK LNG carriers sold for scrap |
 | breakwave-tanker-fundamentals | 6 | 2025-01-17..2026-05-06 | cashsarmax | Breakwave tanker fundamentals table |
@@ -721,12 +720,6 @@ Per-type totals:
 | westlake-facility-closures-table | 1 | 2025-12-18..2025-12-18 | MarhelmData | Westlake facilities and capacity table |
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
-
-## _inbox arrivals (2 files, 1 series)
-
-| series | files | date range | accounts | example |
-| --- | --- | --- | --- | --- |
-| MarhelmData | 2 | 2026-09-12..2026-09-12 | MarhelmData | unclassified MarhelmData 2026-09-12 |
 
 ## How to find things
 
