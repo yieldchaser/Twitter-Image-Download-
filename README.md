@@ -38,4 +38,6 @@ The number of historical posts/media that can be retrieved depends on the X API 
 Browsable, curated copy of the archive lives under `library/`, grouped by
 content type and recurring series. See `library/README.md` for the folder
 guide, `library/INDEX.md` for the per-series listing, and `library/catalog.csv`
-for the per-image metadata table.
+for the per-image metadata table. New downloads are filed into the library
+automatically after each run (exact reposts and template matches by
+`downloader/classify_new.py`; the rest wait in `library/_inbox/` for review).

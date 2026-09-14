@@ -59,7 +59,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install gallery-dl
-        run: python -m pip install --upgrade gallery-dl
+        run: python -m pip install --upgrade gallery-dl pillow
 
       - name: Prepare X cookies
         env:
@@ -90,6 +90,9 @@ jobs:
       - name: Download images
         run: python downloader/download_images.py
 
+      - name: File new images into library
+        run: python downloader/classify_new.py
+
       - name: Commit downloaded media and archive
         run: |
           git config user.name "github-actions[bot]"
@@ -97,7 +100,7 @@ jobs:
           # The downloader already committed per pass/window. This sweeps up
           # the final status file. Only explicit paths, never add -A: the
           # runtime cookie file must never be stageable.
-          git add images metadata archive
+          git add images metadata archive library
           if git diff --cached --quiet; then
             echo "Nothing left to commit."
             exit 0

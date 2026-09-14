@@ -34,3 +34,30 @@ Finding things:
 Note: `images/` remains the raw downloader sync area. New downloads land under
 `images/<account>/`, and the per-tweet metadata JSONs stay under
 `images/<account>/metadata/`.
+
+New arrivals & review inbox
+---------------------------
+
+After each download, `downloader/classify_new.py` (run by the workflow right
+after the download step) files the new images into the library automatically:
+
+- Exact reposts (sha1 already in `catalog.csv`) are filed into the same
+  series as the earlier copy.
+- Otherwise the image's dHash (perceptual hash) is compared against
+  `phashes.json`, which holds one hash per library image. The closest
+  template series wins when it is close (at most `PHASH_AUTO_MAX = 6` bits
+  different) and unambiguous (at least `PHASH_MARGIN_MIN = 4` bits ahead of
+  the runner-up series). The image inherits that series' type, publisher,
+  and recurrence, and is logged in `catalog.csv` as `auto-filed ...`.
+- Anything else lands in `library/_inbox/<account>/` with catalog
+  `type='inbox'` and `notes='needs review'`, and shows up in `INDEX.md`
+  under an `_inbox arrivals` section until the inbox is empty.
+
+Review flow for inbox items (human or agent): inspect the image and its
+tweet text (via the `subject` column or `images/<account>/metadata/`), move
+the file into the right `library/<type>/<series>/` folder (creating the
+series folder when it starts a new recurring publication), then update that
+row in `catalog.csv` — set `file`/`target` to the new path and fill in the
+real `type`, `series`, `title`, `publisher`, and `recurrence`. The next
+classifier run picks up the corrected row, refreshes `phashes.json`, and
+regenerates `INDEX.md`.
