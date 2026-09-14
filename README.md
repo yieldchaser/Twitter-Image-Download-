@@ -32,3 +32,10 @@ Create a repository Actions secret named `X_BEARER_TOKEN`. Never commit the toke
 ## Important API limitation
 
 The number of historical posts/media that can be retrieved depends on the X API access level associated with the token. The downloader will retrieve everything the API makes available and paginate through it; it cannot bypass X API limits.
+
+## Curated library
+
+Browsable, curated copy of the archive lives under `library/`, grouped by
+content type and recurring series. See `library/README.md` for the folder
+guide, `library/INDEX.md` for the per-series listing, and `library/catalog.csv`
+for the per-image metadata table.
