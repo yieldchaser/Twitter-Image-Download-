@@ -1,8 +1,8 @@
 # Library index
 
-Generated: 2026-09-14
+Generated: 2026-09-16
 
-Total images: 6496 in 667 series across 8 type folders.
+Total images: 6499 in 668 series across 8 type folders.
 
 Per-type totals:
 
@@ -14,7 +14,7 @@ Per-type totals:
 - other: 517 files in 32 series
 - photos: 560 files in 23 series
 - tables: 1297 files in 133 series
-- _inbox: 1 files in 1 series
+- _inbox: 4 files in 2 series
 
 ## charts (1792 files, 274 series)
 
@@ -722,11 +722,12 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (1 files, 1 series)
+## _inbox arrivals (4 files, 2 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| ed_fin | 1 | 2026-09-14..2026-09-14 | ed_fin | unclassified ed_fin 2026-09-14 |
+| ed_fin | 3 | 2026-09-14..2026-09-15 | ed_fin | unclassified ed_fin 2026-09-15 |
+| MarhelmData | 1 | 2026-09-15..2026-09-15 | MarhelmData | unclassified MarhelmData 2026-09-15 |
 
 ## How to find things
 
