@@ -1,12 +1,12 @@
 {
-    "tweet_id": 2055542406834012456,
+    "tweet_id": 2101974779406283181,
     "retweet_id": 0,
     "quote_id": 0,
     "quoted_id": 0,
     "reply_id": 0,
-    "conversation_id": 2055542406834012456,
+    "conversation_id": 2101974779406283181,
     "source_id": 0,
-    "date": "2026-05-16 06:54:34",
+    "date": "2026-09-21 10:00:14",
     "author": {
         "id": 486955929,
         "name": "cashsarmax",
@@ -44,23 +44,16 @@
         "description": "Just an semi-autist that likes floating steel that transports stuff around the globe."
     },
     "lang": "en",
-    "source": "Twitter Web App",
+    "source": "Twitter for iPhone",
     "sensitive": false,
     "sensitive_flags": [],
-    "favorite_count": 15,
+    "favorite_count": 29,
     "quote_count": 0,
     "reply_count": 1,
-    "retweet_count": 1,
-    "bookmark_count": 1,
-    "view_count": 1099,
-    "mentions": [
-        {
-            "id": 92786782,
-            "name": "CommodoreJL",
-            "nick": "Commodore"
-        }
-    ],
-    "content": "A record 901,000 vehicles were exported last month.  Vehicle exports have now set new records during six of the last eight months, and most recently grew year-on-year by 74%.  This has marked the strongest growth seen during this period.\n$HAUTO $WAWI\n@CommodoreJL",
+    "retweet_count": 4,
+    "bookmark_count": 5,
+    "view_count": 1230,
+    "content": "Trafigura launches Volare shipping in Oslo under ticker $VLCC. Operates six VLCCs and 8 on order",
     "count": 1,
     "category": "twitter",
     "subcategory": "media"
