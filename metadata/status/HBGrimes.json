@@ -1,18 +1,18 @@
 {
   "username": "HBGrimes",
-  "generated_at": "2026-09-23T22:56:46.387786+00:00",
+  "generated_at": "2026-09-24T23:12:05.814706+00:00",
   "mode": "regular",
-  "status": "ok",
-  "reason": "media extraction completed",
+  "status": "failed",
+  "reason": "gallery-dl exited with code 4",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 0,
+  "returncode": 4,
   "detail": {
     "username": "HBGrimes",
     "url": "https://x.com/HBGrimes",
-    "returncode": 0,
-    "status": "ok",
-    "reason": "media extraction completed",
+    "returncode": 4,
+    "status": "failed",
+    "reason": "gallery-dl exited with code 4",
     "downloaded": 0
   }
 }
