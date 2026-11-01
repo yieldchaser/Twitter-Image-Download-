@@ -60,7 +60,7 @@ jobs:
 
       - name: Install gallery-dl
         # Pinned: 1.32.12 breaks X extraction (Cloudflare 403 on transaction init); revisit on upstream fix
-        run: python -m pip install --upgrade "gallery-dl==1.32.11" pillow
+        run: python -m pip install --upgrade "gallery-dl==1.32.18" pillow
 
       - name: Prepare X cookies
         env:
