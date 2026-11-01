@@ -1,18 +1,18 @@
 {
   "username": "ed_fin",
-  "generated_at": "2026-11-01T20:57:29.570842+00:00",
+  "generated_at": "2026-11-01T21:10:54.315572+00:00",
   "mode": "regular",
   "status": "failed",
-  "reason": "gallery-dl exited with code 4",
+  "reason": "gallery-dl exited with code 8",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 4,
+  "returncode": 8,
   "detail": {
     "username": "ed_fin",
     "url": "https://x.com/ed_fin",
-    "returncode": 4,
+    "returncode": 8,
     "status": "failed",
-    "reason": "gallery-dl exited with code 4",
+    "reason": "gallery-dl exited with code 8",
     "downloaded": 0
   }
 }
