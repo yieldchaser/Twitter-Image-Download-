@@ -1,18 +1,18 @@
 {
   "username": "ole_sanne",
-  "generated_at": "2026-10-31T23:22:02.541280+00:00",
+  "generated_at": "2026-11-01T20:57:26.850780+00:00",
   "mode": "regular",
   "status": "failed",
-  "reason": "gallery-dl exited with code 4",
+  "reason": "gallery-dl exited with code 8",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 4,
+  "returncode": 8,
   "detail": {
     "username": "ole_sanne",
     "url": "https://x.com/ole_sanne",
-    "returncode": 4,
+    "returncode": 8,
     "status": "failed",
-    "reason": "gallery-dl exited with code 4",
+    "reason": "gallery-dl exited with code 8",
     "downloaded": 0
   }
 }
