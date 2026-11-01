@@ -1,18 +1,18 @@
 {
   "username": "MarhelmData",
-  "generated_at": "2026-11-01T21:11:00.972197+00:00",
+  "generated_at": "2026-11-01T23:34:04.177420+00:00",
   "mode": "regular",
-  "status": "failed",
-  "reason": "gallery-dl exited with code 8",
-  "downloaded": 0,
-  "committed_files": 0,
-  "returncode": 8,
+  "status": "ok",
+  "reason": "media extraction completed",
+  "downloaded": 38,
+  "committed_files": 121,
+  "returncode": 0,
   "detail": {
     "username": "MarhelmData",
     "url": "https://x.com/MarhelmData",
-    "returncode": 8,
-    "status": "failed",
-    "reason": "gallery-dl exited with code 8",
-    "downloaded": 0
+    "returncode": 0,
+    "status": "ok",
+    "reason": "media extraction completed",
+    "downloaded": 38
   }
 }
