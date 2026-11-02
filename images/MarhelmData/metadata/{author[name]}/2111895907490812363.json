@@ -46,7 +46,7 @@
         "description": "Shipping data, commodities, and trade flow analysis. We provide a data platform, private discord, and weekly report. Made by investors, for investors."
     },
     "lang": "en",
-    "source": "Twitter Web App",
+    "source": "",
     "sensitive": false,
     "sensitive_flags": [],
     "favorite_count": 10,
@@ -54,7 +54,7 @@
     "reply_count": 0,
     "retweet_count": 2,
     "bookmark_count": 3,
-    "view_count": 2868,
+    "view_count": 2867,
     "content": "Gibson chart of sanctioned tankers by vessel class",
     "count": 1,
     "category": "twitter",
