@@ -1,8 +1,8 @@
 # Library index
 
-Generated: 2026-09-24
+Generated: 2026-11-02
 
-Total images: 6515 in 671 series across 8 type folders.
+Total images: 6571 in 671 series across 8 type folders.
 
 Per-type totals:
 
@@ -13,8 +13,8 @@ Per-type totals:
 - news: 453 files in 49 series
 - other: 517 files in 32 series
 - photos: 560 files in 23 series
-- tables: 1297 files in 133 series
-- _inbox: 20 files in 5 series
+- tables: 1298 files in 133 series
+- _inbox: 75 files in 5 series
 
 ## charts (1792 files, 274 series)
 
@@ -584,7 +584,7 @@ Per-type totals:
 | shipyard-brochure-photo | 1 | 2024-12-12..2024-12-12 | cashsarmax | China Merchants Industry brochures |
 | weather-damage-photos | 1 | 2025-02-14..2025-02-14 | ed_fin | Cyclone damage at Port Hedland |
 
-## tables (1297 files, 133 series)
+## tables (1298 files, 133 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
@@ -595,7 +595,7 @@ Per-type totals:
 | tce-rates-tables | 100 | 2021-09-16..2026-09-11 | MarhelmData,cashsarmax,ed_fin | Tanker TCE rates by route |
 | fixture-lists | 63 | 2022-05-13..2026-08-28 | MarhelmData,cashsarmax,ed_fin | VLCC MEG activity panel |
 | newbuild-prices | 28 | 2021-10-16..2026-04-22 | MarhelmData,cashsarmax,ed_fin | Dry bulk and tanker newbuilding prices |
-| breakwave-fundamentals | 23 | 2021-12-29..2026-09-01 | cashsarmax,ed_fin | Breakwave dry bulk fundamentals table |
+| breakwave-fundamentals | 24 | 2021-12-29..2026-10-04 | cashsarmax,ed_fin | Breakwave dry bulk fundamentals table |
 | newbuilding-orders | 19 | 2022-06-15..2026-04-01 | MarhelmData,cashsarmax,ed_fin | Newbuilding orders |
 | dry-bulk-rates-tables | 17 | 2021-10-01..2026-01-24 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Banchero Costa capesize rate assessments |
 | fleet-overview-tables | 17 | 2022-06-14..2026-03-06 | MarhelmData,cashsarmax,ed_fin | Euroseas fleet profile table |
@@ -722,15 +722,15 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (20 files, 5 series)
+## _inbox arrivals (75 files, 5 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
+| MarhelmData | 42 | 2026-09-15..2026-11-01 | MarhelmData | unclassified MarhelmData 2026-10-18 |
+| cashsarmax | 18 | 2026-09-21..2026-10-18 | cashsarmax | unclassified cashsarmax 2026-10-18 |
 | ed_fin | 12 | 2026-09-14..2026-09-23 | ed_fin | unclassified ed_fin 2026-09-18 |
-| MarhelmData | 4 | 2026-09-15..2026-09-17 | MarhelmData | unclassified MarhelmData 2026-09-17 |
 | ole_sanne | 2 | 2026-09-16..2026-09-23 | ole_sanne | unclassified ole_sanne 2026-09-16 |
 | HBGrimes | 1 | 2026-09-17..2026-09-17 | HBGrimes | unclassified HBGrimes 2026-09-17 |
-| cashsarmax | 1 | 2026-09-21..2026-09-21 | cashsarmax | unclassified cashsarmax 2026-09-21 |
 
 ## How to find things
 
