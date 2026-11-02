@@ -1,18 +1,18 @@
 {
   "username": "cashsarmax",
-  "generated_at": "2026-11-02T02:55:03.037707+00:00",
+  "generated_at": "2026-11-02T03:09:12.638044+00:00",
   "mode": "regular",
-  "status": "ok",
-  "reason": "media extraction completed",
+  "status": "failed",
+  "reason": "gallery-dl exited with code 8",
   "downloaded": 0,
   "committed_files": 0,
-  "returncode": 0,
+  "returncode": 8,
   "detail": {
     "username": "cashsarmax",
     "url": "https://x.com/cashsarmax",
-    "returncode": 0,
-    "status": "ok",
-    "reason": "media extraction completed",
+    "returncode": 8,
+    "status": "failed",
+    "reason": "gallery-dl exited with code 8",
     "downloaded": 0
   }
 }
