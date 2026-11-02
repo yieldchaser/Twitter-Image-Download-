@@ -39,8 +39,7 @@
           "directory": "metadata/{author[name]}"
         }
       ]
-    },
-    "browser": "chrome"
+    }
   },
   "output": {
     "log": {
