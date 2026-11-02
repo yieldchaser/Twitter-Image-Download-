@@ -44,6 +44,7 @@ jobs:
     timeout-minutes: 360
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         # Regular daily runs crawl every account inside one job; deep runs
         # get one job per account (independent timeouts, no cross-blocking).
@@ -58,9 +59,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install gallery-dl
-        # Pinned: 1.32.12 breaks X extraction (Cloudflare 403 on transaction init); revisit on upstream fix
-        run: python -m pip install --upgrade "gallery-dl==1.32.18" pillow
+      - name: Install gallery-dl and dependencies
+        # gallery-dl 1.32.19 + curl-cffi for TLS Chrome impersonation (bypasses Cloudflare 403 on transaction init)
+        run: python -m pip install --upgrade "gallery-dl==1.32.19" curl-cffi pillow
 
       - name: Prepare X cookies
         env:
@@ -152,6 +153,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest main
+        run: git pull origin main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -169,9 +175,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Single writer for library/*: only this job files images into
-          # the library, so parallel download jobs cannot clobber each
-          # other's catalog rows. Only explicit paths, never add -A.
-          git add library
+          # the library. Stage library additions and images/ moves/deletions.
+          git add library images
           if git diff --cached --quiet; then
             echo "Nothing left to commit."
             exit 0

@@ -226,7 +226,7 @@ def run_pass(username: str, url: str, deep: bool) -> tuple[int, str, int]:
     cmd = [
         sys.executable,
         "-m",
-        "gallery_dl",
+        "downloader.run_gallery_dl",
         "--config",
         str(GALLERY_CONFIG),
     ]

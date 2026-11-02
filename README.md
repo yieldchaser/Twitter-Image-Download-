@@ -42,10 +42,9 @@ series. See `library/README.md` for the folder guide, `library/INDEX.md`
 for the per-series listing, and `library/catalog.csv` for the per-image
 metadata table.
 
-Pipeline: gallery-dl (pinned to 1.32.18: 1.32.11 broke on X's new `ondemand.s` client file from
-2026-09-24, fixed upstream in 1.32.12; 1.32.12 had once broken X extraction with
-a Cloudflare 403) downloads each account in a per-account matrix job, then
-a single downstream `file` job runs `downloader/classify_new.py`. It
+Pipeline: gallery-dl (1.32.19 with curl-cffi Chrome TLS impersonation to bypass
+Cloudflare 403 on client transaction init) downloads each account in a per-account matrix
+job (max-parallel: 1), then a single downstream `file` job runs `downloader/classify_new.py`. It
 auto-files exact reposts (sha1 already in the catalog) and template matches
 (dHash distance <= 6 with a margin of >= 4 over the runner-up series;
 near-identical layouts at distance <= 2 file with no margin required),

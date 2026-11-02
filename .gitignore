@@ -220,3 +220,4 @@ __marimo__/
 # Runtime credentials and transient state (X session cookies MUST never
 # be committed; the X_COOKIES GitHub secret is materialized here at runtime)
 .runtime/
+.freebuff/
