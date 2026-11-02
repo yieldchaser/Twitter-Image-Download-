@@ -2,7 +2,7 @@
 
 Generated: 2026-11-02
 
-Total images: 6571 in 671 series across 8 type folders.
+Total images: 6617 in 671 series across 8 type folders.
 
 Per-type totals:
 
@@ -12,9 +12,9 @@ Per-type totals:
 - maps: 170 files in 3 series
 - news: 453 files in 49 series
 - other: 517 files in 32 series
-- photos: 560 files in 23 series
-- tables: 1298 files in 133 series
-- _inbox: 75 files in 5 series
+- photos: 561 files in 23 series
+- tables: 1303 files in 133 series
+- _inbox: 115 files in 5 series
 
 ## charts (1792 files, 274 series)
 
@@ -556,14 +556,14 @@ Per-type totals:
 | visual-capitalist-infographic | 1 | 2022-07-26..2022-07-26 | ed_fin | World's largest container shipping companies |
 | war-sanctions-sponsors-listing | 1 | 2023-03-05..2023-03-05 | ed_fin | International Sponsors of War listing |
 
-## photos (560 files, 23 series)
+## photos (561 files, 23 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | people-and-events-photos | 211 | 2022-04-11..2026-08-17 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | John Fredriksen portrait |
 | personal-photos | 148 | 2018-09-07..2026-08-12 | HBGrimes,MarhelmData,cashsarmax,ed_fin,ole_sanne | Vintage black and white dinner party photo |
 | vessel-photos | 127 | 2021-10-09..2026-08-31 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Burning fuel tanker at Panama Canal terminal |
-| historical-photos | 24 | 2022-05-18..2026-09-14 | MarhelmData,ed_fin,ole_sanne | Panama Canal construction workers |
+| historical-photos | 25 | 2022-05-18..2026-10-14 | MarhelmData,ed_fin,ole_sanne | Panama Canal construction workers |
 | news-illustration-photos | 11 | 2022-03-18..2026-05-31 | MarhelmData,ed_fin,ole_sanne | Portrait tied to Panama canal dispute |
 | port-photos | 8 | 2022-03-28..2025-07-24 | MarhelmData,ed_fin | Miraflores Locks Panama Canal photo |
 | shipyard-photos | 5 | 2022-04-16..2025-03-07 | ed_fin | Aerial view of Hyundai shipyard |
@@ -584,13 +584,13 @@ Per-type totals:
 | shipyard-brochure-photo | 1 | 2024-12-12..2024-12-12 | cashsarmax | China Merchants Industry brochures |
 | weather-damage-photos | 1 | 2025-02-14..2025-02-14 | ed_fin | Cyclone damage at Port Hedland |
 
-## tables (1298 files, 133 series)
+## tables (1303 files, 133 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| infinity-rate-stipulations | 327 | 2023-01-16..2026-09-10 | ed_fin | Infinity shipbrokers clean tanker rate stipulations |
-| freight-futures-quotes | 177 | 2021-09-06..2026-09-08 | HBGrimes,cashsarmax,ed_fin,ole_sanne | Cape FFA curve screen |
-| stock-quotes-screens | 147 | 2021-05-13..2026-09-04 | MarhelmData,cashsarmax,ed_fin,ole_sanne | Shipping stocks watchlist quotes |
+| infinity-rate-stipulations | 330 | 2023-01-16..2026-10-05 | ed_fin | Infinity shipbrokers clean tanker rate stipulations |
+| freight-futures-quotes | 178 | 2021-09-06..2026-09-24 | HBGrimes,cashsarmax,ed_fin,ole_sanne | Cape FFA curve screen |
+| stock-quotes-screens | 148 | 2021-05-13..2026-10-05 | MarhelmData,cashsarmax,ed_fin,ole_sanne | Shipping stocks watchlist quotes |
 | secondhand-prices | 131 | 2021-10-10..2026-08-23 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Tanker secondhand prices |
 | tce-rates-tables | 100 | 2021-09-16..2026-09-11 | MarhelmData,cashsarmax,ed_fin | Tanker TCE rates by route |
 | fixture-lists | 63 | 2022-05-13..2026-08-28 | MarhelmData,cashsarmax,ed_fin | VLCC MEG activity panel |
@@ -722,14 +722,14 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (75 files, 5 series)
+## _inbox arrivals (115 files, 5 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
+| ed_fin | 51 | 2026-09-14..2026-11-02 | ed_fin | unclassified ed_fin 2026-10-23 |
 | MarhelmData | 42 | 2026-09-15..2026-11-01 | MarhelmData | unclassified MarhelmData 2026-10-18 |
 | cashsarmax | 18 | 2026-09-21..2026-10-18 | cashsarmax | unclassified cashsarmax 2026-10-18 |
-| ed_fin | 12 | 2026-09-14..2026-09-23 | ed_fin | unclassified ed_fin 2026-09-18 |
-| ole_sanne | 2 | 2026-09-16..2026-09-23 | ole_sanne | unclassified ole_sanne 2026-09-16 |
+| ole_sanne | 3 | 2026-09-16..2026-10-20 | ole_sanne | unclassified ole_sanne 2026-09-16 |
 | HBGrimes | 1 | 2026-09-17..2026-09-17 | HBGrimes | unclassified HBGrimes 2026-09-17 |
 
 ## How to find things
