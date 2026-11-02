@@ -1,18 +1,18 @@
 {
   "username": "ole_sanne",
-  "generated_at": "2026-11-02T03:10:35.192911+00:00",
+  "generated_at": "2026-11-02T03:25:26.761223+00:00",
   "mode": "regular",
-  "status": "failed",
-  "reason": "gallery-dl exited with code 8",
-  "downloaded": 0,
-  "committed_files": 0,
-  "returncode": 8,
+  "status": "ok",
+  "reason": "media extraction completed",
+  "downloaded": 2,
+  "committed_files": 53,
+  "returncode": 0,
   "detail": {
     "username": "ole_sanne",
     "url": "https://x.com/ole_sanne",
-    "returncode": 8,
-    "status": "failed",
-    "reason": "gallery-dl exited with code 8",
-    "downloaded": 0
+    "returncode": 0,
+    "status": "ok",
+    "reason": "media extraction completed",
+    "downloaded": 2
   }
 }
