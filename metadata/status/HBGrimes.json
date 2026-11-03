@@ -1,11 +1,11 @@
 {
   "username": "HBGrimes",
-  "generated_at": "2026-11-02T04:07:38.451060+00:00",
+  "generated_at": "2026-11-03T02:16:28.141118+00:00",
   "mode": "regular",
   "status": "ok",
   "reason": "media extraction completed",
   "downloaded": 1,
-  "committed_files": 2,
+  "committed_files": 6,
   "returncode": 0,
   "detail": {
     "username": "HBGrimes",
