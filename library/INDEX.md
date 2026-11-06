@@ -1,8 +1,8 @@
 # Library index
 
-Generated: 2026-11-05
+Generated: 2026-11-06
 
-Total images: 6629 in 671 series across 8 type folders.
+Total images: 6634 in 671 series across 8 type folders.
 
 Per-type totals:
 
@@ -14,7 +14,7 @@ Per-type totals:
 - other: 519 files in 32 series
 - photos: 561 files in 23 series
 - tables: 1303 files in 133 series
-- _inbox: 119 files in 5 series
+- _inbox: 124 files in 5 series
 
 ## charts (1792 files, 274 series)
 
@@ -722,12 +722,12 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (119 files, 5 series)
+## _inbox arrivals (124 files, 5 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
-| MarhelmData | 49 | 2026-09-15..2026-11-04 | MarhelmData | unclassified MarhelmData 2026-10-18 |
-| ed_fin | 48 | 2026-09-14..2026-11-03 | ed_fin | unclassified ed_fin 2026-10-23 |
+| MarhelmData | 53 | 2026-09-15..2026-11-06 | MarhelmData | unclassified MarhelmData 2026-10-18 |
+| ed_fin | 49 | 2026-09-14..2026-11-05 | ed_fin | unclassified ed_fin 2026-10-23 |
 | cashsarmax | 18 | 2026-09-21..2026-10-18 | cashsarmax | unclassified cashsarmax 2026-10-18 |
 | ole_sanne | 3 | 2026-09-16..2026-10-20 | ole_sanne | unclassified ole_sanne 2026-09-16 |
 | HBGrimes | 1 | 2026-09-17..2026-09-17 | HBGrimes | unclassified HBGrimes 2026-09-17 |
