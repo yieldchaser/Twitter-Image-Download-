@@ -1,8 +1,8 @@
 # Library index
 
-Generated: 2026-11-07
+Generated: 2026-11-08
 
-Total images: 6641 in 671 series across 8 type folders.
+Total images: 6815 in 672 series across 8 type folders.
 
 Per-type totals:
 
@@ -14,7 +14,7 @@ Per-type totals:
 - other: 519 files in 32 series
 - photos: 561 files in 23 series
 - tables: 1303 files in 133 series
-- _inbox: 131 files in 5 series
+- _inbox: 305 files in 6 series
 
 ## charts (1792 files, 274 series)
 
@@ -722,10 +722,11 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (131 files, 5 series)
+## _inbox arrivals (305 files, 6 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
+| blexicanasfff | 174 | 2024-06-18..2026-11-05 | blexicanasfff | unclassified blexicanasfff 2025-07-08 |
 | MarhelmData | 56 | 2026-09-15..2026-11-06 | MarhelmData | unclassified MarhelmData 2026-10-18 |
 | ed_fin | 52 | 2026-09-14..2026-11-07 | ed_fin | unclassified ed_fin 2026-10-23 |
 | cashsarmax | 19 | 2026-09-21..2026-11-07 | cashsarmax | unclassified cashsarmax 2026-10-18 |
