@@ -1,0 +1,18 @@
+{
+  "username": "blexicanasfff",
+  "generated_at": "2026-11-08T05:19:17.465404+00:00",
+  "mode": "regular",
+  "status": "ok",
+  "reason": "media extraction completed",
+  "downloaded": 175,
+  "committed_files": 320,
+  "returncode": 0,
+  "detail": {
+    "username": "blexicanasfff",
+    "url": "https://x.com/blexicanasfff",
+    "returncode": 0,
+    "status": "ok",
+    "reason": "media extraction completed",
+    "downloaded": 175
+  }
+}
