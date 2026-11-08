@@ -1,11 +1,11 @@
 {
   "username": "MarhelmData",
-  "generated_at": "2026-11-08T05:17:12.798493+00:00",
+  "generated_at": "2026-11-08T05:35:45.406909+00:00",
   "mode": "regular",
   "status": "ok",
   "reason": "media extraction completed",
   "downloaded": 7,
-  "committed_files": 62,
+  "committed_files": 17,
   "returncode": 0,
   "detail": {
     "username": "MarhelmData",
