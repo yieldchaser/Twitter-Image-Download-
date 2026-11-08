@@ -193,12 +193,6 @@
       "persons": 0,
       "reason": "faces=3"
     },
-    "2025-01-01_blexicanasfff_1874562416333504871_2.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
-    },
     "2025-01-02_blexicanasfff_1874868728816660839_1.jpg": {
       "keep": true,
       "faces": 2,
@@ -414,12 +408,6 @@
       "faces": 1,
       "persons": 0,
       "reason": "faces=1"
-    },
-    "2025-07-30_blexicanasfff_1950360832061092213_1.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
     },
     "2025-07-30_blexicanasfff_1950677017592013005_1.jpg": {
       "keep": true,
@@ -805,29 +793,11 @@
       "persons": 0,
       "reason": "faces=1"
     },
-    "2026-06-17_blexicanasfff_2067118428381388996_1.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
-    },
     "2026-06-17_blexicanasfff_2067118428381388996_2.jpg": {
       "keep": true,
       "faces": 1,
       "persons": 0,
       "reason": "faces=1"
-    },
-    "2026-06-17_blexicanasfff_2067118428381388996_3.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
-    },
-    "2026-06-17_blexicanasfff_2067118428381388996_4.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
     },
     "2026-06-17_blexicanasfff_2067204222752264394_1.jpg": {
       "keep": true,
@@ -846,12 +816,6 @@
       "faces": 0,
       "persons": 1,
       "reason": "persons=1"
-    },
-    "2026-06-23_blexicanasfff_2069512929553076695_1.jpg": {
-      "keep": false,
-      "faces": 0,
-      "persons": 0,
-      "reason": "no people"
     },
     "2026-07-03_blexicanasfff_2073081109974270079_1.jpg": {
       "keep": true,
