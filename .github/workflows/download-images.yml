@@ -145,6 +145,64 @@ jobs:
         if: always()
         run: rm -rf .runtime
 
+  curate:
+    name: Curate person photos
+    needs: [download]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest main
+        run: git pull origin main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install OpenCV
+        run: python -m pip install --upgrade opencv-python-headless
+
+      - name: Curate account folders
+        # Accounts flagged curate_photos in config/accounts.json keep only
+        # images with people in them; everything else moves to _skipped/.
+        run: python downloader/curate_photos.py
+
+      - name: Commit curated folders
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images metadata/curation
+          if git diff --cached --quiet; then
+            echo "Nothing left to commit."
+            exit 0
+          fi
+          git commit -m "Curate person photos"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); re-applying on origin/main"
+            OURS=$(git rev-parse HEAD)
+            git fetch origin main
+            git reset --hard origin/main
+            # Same polarity rule as the download job: -X theirs keeps the
+            # picked commit (this job's fresh curation).
+            if ! git cherry-pick -X theirs "$OURS"; then
+              git -c core.editor=true cherry-pick --continue || {
+                git cherry-pick --abort || true
+                exit 1
+              }
+            fi
+          done
+          echo "Could not push after 5 attempts"
+          exit 1
+
   file:
     name: File new images into library
     needs: [download]

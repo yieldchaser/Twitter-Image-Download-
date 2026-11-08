@@ -11,6 +11,11 @@ Automated archive of image media posted by selected public X accounts.
 - `@ed_fin`
 - `@blexicanasfff`
 
+`@blexicanasfff` is curated: a post-download pass keeps only photos where she
+(or a group of people) appears in `images/blexicanasfff/`; screenshots, memes and
+unrelated media are moved to `images/blexicanasfff/_skipped/`, so that folder
+stays a single clean photo set. Her images are not filed into `library/`.
+
 ## How it works
 
 The GitHub Action (**Download X Images**) runs gallery-dl with the `X_COOKIES` repository secret. A per-account matrix job pages each account's media timeline (plus deep-backfill search windows on demand), downloads new images, and commits them; a single downstream job then files the newcomers into `library/`.

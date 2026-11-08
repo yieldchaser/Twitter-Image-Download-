@@ -86,17 +86,18 @@ def log(msg: str) -> None:
 
 
 def load_accounts() -> list[str]:
-    accounts = [a["username"] for a in
-                json.loads(CONFIG.read_text(encoding="utf-8"))["accounts"]]
+    entries = json.loads(CONFIG.read_text(encoding="utf-8"))["accounts"]
     account_filter = os.environ.get("ACCOUNT_FILTER", "").strip().lower()
     if account_filter:
-        matched = [a for a in accounts if a.lower() == account_filter]
-        if not matched:
+        entries = [a for a in entries
+                   if a["username"].lower() == account_filter]
+        if not entries:
             log(f"WARNING: ACCOUNT_FILTER did not match a configured "
                 f"account: {account_filter!r}; nothing to do.")
             return []
-        return matched
-    return accounts
+    # Curated accounts keep their downloads together in images/<account>/
+    # instead of being scattered across library/ series folders.
+    return [a["username"] for a in entries if a.get("file_into_library", True)]
 
 
 def sha1_of(path: Path) -> str:
