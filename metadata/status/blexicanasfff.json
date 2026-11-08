@@ -1,18 +1,29 @@
 {
   "username": "blexicanasfff",
-  "generated_at": "2026-11-08T05:19:17.465404+00:00",
-  "mode": "regular",
+  "generated_at": "2026-11-08T05:21:24.222461+00:00",
+  "mode": "deep_backfill",
   "status": "ok",
   "reason": "media extraction completed",
   "downloaded": 175,
   "committed_files": 320,
-  "returncode": 0,
   "detail": {
     "username": "blexicanasfff",
     "url": "https://x.com/blexicanasfff",
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 175
+    "downloaded": 175,
+    "deep_backfill": {
+      "windows_total": 24,
+      "windows_with_downloads": 0,
+      "downloaded": 0,
+      "errors": [
+        {
+          "window": "2021-11-04..2022-05-06",
+          "returncode": -9
+        }
+      ],
+      "interrupted": "watchdog killed window 2021-11-04..2022-05-06"
+    }
   }
 }

@@ -14,7 +14,7 @@
         "date": "2023-03-22 05:40:24",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1638415222229663746/1779573459",
         "favourites_count": 164887,
-        "followers_count": 91236,
+        "followers_count": 91248,
         "friends_count": 397,
         "listed_count": 154,
         "media_count": 207,
@@ -33,7 +33,7 @@
         "date": "2023-03-22 05:40:24",
         "profile_banner": "https://pbs.twimg.com/profile_banners/1638415222229663746/1779573459",
         "favourites_count": 164887,
-        "followers_count": 91236,
+        "followers_count": 91248,
         "friends_count": 397,
         "listed_count": 154,
         "media_count": 207,
@@ -54,9 +54,10 @@
     "reply_count": 225,
     "retweet_count": 486,
     "bookmark_count": 4730,
-    "view_count": 3604891,
+    "view_count": 3604892,
     "content": "still have 4 more sessions",
+    "search": "from:blexicanasfff filter:media -filter:replies -filter:retweets since:2024-05-07 until:2024-11-06",
     "count": 1,
     "category": "twitter",
-    "subcategory": "media"
+    "subcategory": "search"
 }
