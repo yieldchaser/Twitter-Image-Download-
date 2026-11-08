@@ -11,10 +11,11 @@ Automated archive of image media posted by selected public X accounts.
 - `@ed_fin`
 - `@blexicanasfff`
 
-`@blexicanasfff` is curated: a post-download pass keeps only photos where she
-(or a group of people) appears in `images/blexicanasfff/`; screenshots, memes and
-unrelated media are moved to `images/blexicanasfff/_skipped/`, so that folder
-stays a single clean photo set. Her images are not filed into `library/`.
+`@blexicanasfff` is curated: a post-download pass keeps only images that show
+at least one person - solo shots, couples, groups and collages, face or body
+only - in `images/blexicanasfff/`; flowers, objects, scenery, screenshots, text
+cards and memes move to `images/blexicanasfff/_skipped/`, so that folder stays a
+single clean photo set. Her images are not filed into `library/`.
 
 ## How it works
 

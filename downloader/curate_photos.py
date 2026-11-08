@@ -1,29 +1,24 @@
 #!/usr/bin/env python3
-"""Curate an account's downloads down to photos of people.
+"""Curate an account's downloads down to photos that contain people.
 
 Accounts opt in with ``"curate_photos": true`` in config/accounts.json. For
-each of them this pass looks at every image sitting directly in
-``images/<account>/`` and decides:
+each of them every image sitting directly in ``images/<account>/`` is kept
+when it shows at least one person - one or many, group shots and collages
+alike, face or body - and moved to ``images/<account>/_skipped/`` when it
+shows none (flowers, objects, scenery, screenshots, text cards, memes).
 
-  * keep  - at least one face matches the account owner, or the image has
-            two or more faces (her with company / a couple of girls)
-  * skip  - anything else: screenshots, memes, text cards, unrelated media.
-            These are moved to ``images/<account>/_skipped/`` so the account
-            folder itself is exactly "photos where she is in it".
+Detection is a cascade: faces first (OpenCV YuNet), then a person detector
+(YOLOv8n) for shots where the face is out of frame, turned away or cropped,
+so body-only photos are not thrown out with the scenery. The verdict per file
+is cached in ``metadata/curation/<account>.json`` so later runs only look at
+new downloads.
 
-Identity is learned from the archive itself: the largest face cluster across
-her media is taken to be her, and its centroid is cached in
-``metadata/curation/<account>.json`` together with a per-file verdict so
-later runs only classify what is new.
-
-Face detection/recognition uses OpenCV's YuNet + SFace ONNX models, fetched
-from the opencv_zoo repository on first use (they are not committed).
+Both ONNX models are fetched on first use; they are not committed.
 """
 
 from __future__ import annotations
 
 import json
-import math
 import os
 import shutil
 import subprocess
@@ -41,28 +36,25 @@ SKIP_DIRNAME = "_skipped"
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png"}
 
-MODELS = {
-    "yunet": (
-        "face_detection_yunet_2023mar.onnx",
-        "https://github.com/opencv/opencv_zoo/raw/main/models/"
-        "face_detection_yunet/face_detection_yunet_2023mar.onnx",
-    ),
-    "sface": (
-        "face_recognition_sface_2021dec.onnx",
-        "https://github.com/opencv/opencv_zoo/raw/main/models/"
-        "face_recognition_sface/face_recognition_sface_2021dec.onnx",
-    ),
-}
+STATE_VERSION = 3
 
-# YuNet confidence for a usable face box.
-DETECT_SCORE = 0.6
-# Cosine similarity at or above this counts as the same person (SFace's
-# published verification threshold is 0.363; keep a margin for recompression).
-IDENTITY_SIM = 0.40
-# Greedy clustering threshold when learning her identity from scratch.
-CLUSTER_SIM = 0.45
-# Refuse to learn an identity from a handful of faces.
-MIN_IDENTITY_FACES = 10
+FACE_MODEL = (
+    "face_detection_yunet_2023mar.onnx",
+    "https://github.com/opencv/opencv_zoo/raw/main/models/"
+    "face_detection_yunet/face_detection_yunet_2023mar.onnx",
+)
+PERSON_MODEL = (
+    "yolov8n.onnx",
+    "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n.onnx",
+)
+
+# Face confidence. Deliberately low: a face anywhere in the frame (including a
+# small one in a collage) is enough to keep the image.
+FACE_SCORE = 0.5
+# Person confidence for the body fallback.
+PERSON_SCORE = 0.35
+PERSON_NMS = 0.45
+PERSON_INPUT = 640
 
 
 def log(msg: str) -> None:
@@ -74,40 +66,39 @@ def load_accounts() -> list[dict[str, Any]]:
     return [a for a in entries if a.get("curate_photos")]
 
 
-def model_paths(models_dir: Path) -> tuple[Path, Path]:
+def fetch_model(models_dir: Path, name: str, url: str) -> Path:
     models_dir.mkdir(parents=True, exist_ok=True)
-    paths = []
-    for key, (filename, url) in MODELS.items():
-        path = models_dir / filename
-        if not path.is_file() or path.stat().st_size == 0:
-            log(f"downloading {filename}")
-            try:
-                req = urllib.request.Request(
-                    url, headers={"User-Agent": "Mozilla/5.0 (archive curator)"}
-                )
-                with urllib.request.urlopen(req, timeout=120) as resp:
-                    path.write_bytes(resp.read())
-            except Exception as exc:  # noqa: BLE001 - e.g. TLS interception
-                # Fall back to curl, which uses the OS trust store and works
-                # on both the runners and TLS-inspected developer machines.
-                log(f"urllib failed ({exc}); retrying with curl")
-                subprocess.run(
-                    ["curl", "-fsSL", "--retry", "3", "-o", str(path), url],
-                    check=True,
-                )
-        paths.append(path)
-    return paths[0], paths[1]
+    path = models_dir / name
+    if path.is_file() and path.stat().st_size:
+        return path
+    log(f"downloading {name}")
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "Mozilla/5.0 (archive curator)"}
+        )
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            path.write_bytes(resp.read())
+    except Exception as exc:  # noqa: BLE001 - e.g. TLS interception
+        # Fall back to curl, which uses the OS trust store and works on both
+        # the runners and TLS-inspected developer machines.
+        log(f"urllib failed ({exc}); retrying with curl")
+        subprocess.run(
+            ["curl", "-fsSL", "--retry", "3", "-o", str(path), url], check=True
+        )
+    return path
 
 
 def load_state(path: Path) -> dict[str, Any]:
+    blank = {"version": STATE_VERSION, "files": {}}
     if not path.is_file():
-        return {"version": 1, "centroid": None, "files": {}}
+        return blank
     try:
         state = json.loads(path.read_text(encoding="utf-8"))
     except ValueError:
-        return {"version": 1, "centroid": None, "files": {}}
-    state.setdefault("version", 1)
-    state.setdefault("centroid", None)
+        return blank
+    if state.get("version") != STATE_VERSION:
+        # Rules changed: every verdict has to be recomputed.
+        return blank
     state.setdefault("files", {})
     return state
 
@@ -117,65 +108,63 @@ def save_state(path: Path, state: dict[str, Any]) -> None:
     path.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
 
 
-def cosine(a: list[float], b: list[float]) -> float:
-    dot = sum(x * y for x, y in zip(a, b))
-    na = math.sqrt(sum(x * x for x in a))
-    nb = math.sqrt(sum(y * y for y in b))
-    if not na or not nb:
-        return 0.0
-    return dot / (na * nb)
+def count_persons(img: Any, net: Any, cv2: Any, np: Any) -> int:
+    """Detect people with YOLOv8n (letterboxed 640 input, class 0 = person)."""
+    height, width = img.shape[:2]
+    gain = min(PERSON_INPUT / width, PERSON_INPUT / height)
+    new_w, new_h = int(round(width * gain)), int(round(height * gain))
+    resized = cv2.resize(img, (new_w, new_h))
+    canvas = np.full((PERSON_INPUT, PERSON_INPUT, 3), 114, np.uint8)
+    pad_x = (PERSON_INPUT - new_w) // 2
+    pad_y = (PERSON_INPUT - new_h) // 2
+    canvas[pad_y:pad_y + new_h, pad_x:pad_x + new_w] = resized
+
+    blob = cv2.dnn.blobFromImage(
+        canvas, 1 / 255.0, (PERSON_INPUT, PERSON_INPUT),
+        swapRB=True, crop=False,
+    )
+    net.setInput(blob)
+    out = net.forward()
+    preds = out[0].T
+    scores = preds[:, 4]  # class 0 = person
+    mask = scores > PERSON_SCORE
+    if not mask.any():
+        return 0
+    boxes = []
+    for row in preds[mask]:
+        cx, cy, bw, bh = row[:4]
+        boxes.append([
+            int((cx - bw / 2 - pad_x) / gain),
+            int((cy - bh / 2 - pad_y) / gain),
+            int(bw / gain),
+            int(bh / gain),
+        ])
+    kept = cv2.dnn.NMSBoxes(boxes, scores[mask].tolist(), PERSON_SCORE, PERSON_NMS)
+    return len(kept)
 
 
-def mean_vector(vectors: list[list[float]]) -> list[float]:
-    if not vectors:
-        return []
-    dim = len(vectors[0])
-    total = [0.0] * dim
-    for vec in vectors:
-        for i, value in enumerate(vec):
-            total[i] += value
-    n = float(len(vectors))
-    return [value / n for value in total]
-
-
-def learn_identity(
-    embeddings: list[tuple[str, int, list[float]]]
-) -> list[float] | None:
-    """Return the centroid of the identity that appears in most images."""
-    if len(embeddings) < MIN_IDENTITY_FACES:
-        return None
-    clusters: list[dict[str, Any]] = []
-    for name, _index, vec in embeddings:
-        best = None
-        best_sim = 0.0
-        for cluster in clusters:
-            sim = cosine(vec, cluster["centroid"])
-            if sim >= CLUSTER_SIM and sim > best_sim:
-                best, best_sim = cluster, sim
-        if best is None:
-            clusters.append({"vectors": [vec], "centroid": vec, "images": {name}})
-        else:
-            best["vectors"].append(vec)
-            best["centroid"] = mean_vector(best["vectors"])
-            best["images"].add(name)
-    # Weight by distinct images, not raw face count: a single group photo
-    # must not outvote the owner who appears in hundreds of solo shots.
-    dominant = max(clusters, key=lambda c: len(c["images"]))
-    log(f"learned identity from {len(dominant['images'])} images "
-        f"({len(dominant['vectors'])} faces, {len(clusters)} clusters)")
-    return dominant["centroid"]
+def count_people(img: Any, detector: Any, person_net: Any, cv2: Any,
+                 np: Any) -> tuple[int, int]:
+    """Return (faces, persons) found in an image."""
+    height, width = img.shape[:2]
+    detector.setInputSize((width, height))
+    _retval, faces = detector.detect(img)
+    faces = 0 if faces is None else len(faces)
+    if faces:
+        return faces, 0
+    return 0, count_persons(img, person_net, cv2, np)
 
 
 def classify_folder(
     account: str, models: tuple[Path, Path], state: dict[str, Any]
 ) -> dict[str, Any]:
-    import cv2  # imported here so --help style runs stay cheap
+    import cv2  # imported here so a config-only run stays cheap
     import numpy as np
 
-    yunet_path, sface_path = models
-    detector = cv2.FaceDetectorYN.create(str(yunet_path), "", (320, 320),
-                                         DETECT_SCORE, 0.3, 5000)
-    recognizer = cv2.FaceRecognizerSF.create(str(sface_path), "")
+    face_model, person_model = models
+    detector = cv2.FaceDetectorYN.create(str(face_model), "", (320, 320),
+                                         FACE_SCORE, 0.3, 5000)
+    person_net = cv2.dnn.readNetFromONNX(str(person_model))
 
     folder = IMAGES / account
     if not folder.is_dir():
@@ -186,7 +175,6 @@ def classify_folder(
         p for p in folder.iterdir() if p.is_file() and p.suffix.lower() in IMAGE_EXTS
     )
     known: dict[str, Any] = state["files"]
-    # Forget files that are no longer in the account folder.
     present = {p.name for p in candidates}
     for name in list(known):
         if name not in present:
@@ -195,73 +183,40 @@ def classify_folder(
     fresh = [p for p in candidates if p.name not in known]
     log(f"{account}: {len(candidates)} images, {len(fresh)} needing a look")
 
-    embeddings: list[tuple[str, int, list[float]]] = []
-    face_counts: dict[str, int] = {}
-    failures: list[str] = []
+    skipped_dir = folder / SKIP_DIRNAME
+    kept = moved = unreadable = 0
     for path in fresh:
         data = np.fromfile(str(path), dtype=np.uint8)  # unicode-safe read
         img = cv2.imdecode(data, cv2.IMREAD_COLOR) if data.size else None
         if img is None:
-            failures.append(path.name)
+            unreadable += 1
             continue
-        height, width = img.shape[:2]
-        detector.setInputSize((width, height))
-        _retval, faces = detector.detect(img)
-        count = 0 if faces is None else len(faces)
-        face_counts[path.name] = count
-        if not count:
-            continue
-        for index, face in enumerate(faces):
-            try:
-                aligned = recognizer.alignCrop(img, face)
-                feature = recognizer.feature(aligned).flatten().tolist()
-            except Exception:  # noqa: BLE001 - a bad crop is just skipped
-                continue
-            embeddings.append((path.name, index, feature))
-
-    centroid = state.get("centroid")
-    if centroid is None and embeddings:
-        centroid = learn_identity(embeddings)
-        state["centroid"] = centroid
-    if centroid is None:
-        log(f"{account}: not enough faces yet to learn her identity; "
-            f"leaving this run's images in place")
-        for name, count in face_counts.items():
-            if count >= 2:
-                known[name] = {"keep": True, "faces": count, "reason": "group"}
-        return state
-
-    sims: dict[str, float] = {}
-    for name, _index, vec in embeddings:
-        sim = cosine(vec, centroid)
-        if sim > sims.get(name, -1.0):
-            sims[name] = sim
-
-    skipped_dir = folder / SKIP_DIRNAME
-    kept = moved = 0
-    for path in fresh:
-        if path.name in failures:
-            continue
-        count = face_counts.get(path.name, 0)
-        sim = sims.get(path.name, 0.0)
-        if count >= 2:
-            verdict, reason = True, "group"
-        elif sim >= IDENTITY_SIM:
-            verdict, reason = True, f"her (sim={sim:.2f})"
+        faces, persons = count_people(img, detector, person_net, cv2, np)
+        keep = faces > 0 or persons > 0
+        if faces:
+            reason = f"faces={faces}"
+        elif persons:
+            reason = f"persons={persons}"
         else:
-            verdict, reason = False, f"no match (faces={count}, sim={sim:.2f})"
-        known[path.name] = {"keep": verdict, "faces": count, "reason": reason}
-        if verdict:
+            reason = "no people"
+        known[path.name] = {
+            "keep": keep,
+            "faces": faces,
+            "persons": persons,
+            "reason": reason,
+        }
+        if keep:
             kept += 1
-        else:
-            skipped_dir.mkdir(exist_ok=True)
-            dest = skipped_dir / path.name
-            if dest.exists():
-                dest.unlink()
-            shutil.move(str(path), str(dest))
-            moved += 1
+            continue
+        skipped_dir.mkdir(exist_ok=True)
+        dest = skipped_dir / path.name
+        if dest.exists():
+            dest.unlink()
+        shutil.move(str(path), str(dest))
+        moved += 1
 
-    log(f"{account}: kept {kept}, moved {moved} to {SKIP_DIRNAME}/")
+    log(f"{account}: kept {kept} with people, moved {moved} to {SKIP_DIRNAME}/"
+        + (f", {unreadable} unreadable" if unreadable else ""))
     return state
 
 
@@ -271,16 +226,19 @@ def main() -> int:
         log("No account opted into curate_photos; nothing to do.")
         return 0
 
-    extra = ""
-    if os.environ.get("CURATE_ACCOUNT"):
-        extra = os.environ["CURATE_ACCOUNT"].strip().lower()
-        accounts = [a for a in accounts if a["username"].lower() == extra]
+    wanted = os.environ.get("CURATE_ACCOUNT", "").strip().lower()
+    if wanted:
+        accounts = [a for a in accounts if a["username"].lower() == wanted]
         if not accounts:
-            log(f"CURATE_ACCOUNT {extra!r} is not a curated account; nothing to do.")
+            log(f"CURATE_ACCOUNT {wanted!r} is not a curated account; nothing to do.")
             return 0
 
     with tempfile.TemporaryDirectory(prefix="curate-models-") as tmp:
-        models = model_paths(Path(tmp))
+        models_dir = Path(tmp)
+        models = (
+            fetch_model(models_dir, *FACE_MODEL),
+            fetch_model(models_dir, *PERSON_MODEL),
+        )
         for entry in accounts:
             account = entry["username"]
             state_path = STATE_DIR / f"{account}.json"
