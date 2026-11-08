@@ -1,0 +1,1010 @@
+{
+  "version": 1,
+  "centroid": [
+    -0.6221299667787903,
+    0.36883826548343196,
+    0.7060471770956236,
+    0.3363524571828106,
+    0.9999267645180225,
+    0.40114982995916815,
+    0.9228801143300884,
+    -0.11591676885590833,
+    -0.7937252887469881,
+    -0.043175183127031606,
+    0.4389910826130825,
+    0.835857492268962,
+    0.43231418435735736,
+    -0.848854224471485,
+    -0.5985321202041471,
+    -0.8904736005865476,
+    -0.29736023352426644,
+    -0.03369946268332355,
+    -0.6274167875594953,
+    -0.17656028298113277,
+    -0.09279668892678969,
+    0.08769232094945277,
+    0.22352578414275365,
+    -0.39640855975449085,
+    -0.8794445748824407,
+    -0.3154264650143245,
+    -0.2221245611743892,
+    1.1220430124770193,
+    -0.4487673118162681,
+    0.199755117735442,
+    -0.7498278528561487,
+    0.6995713581495425,
+    0.6197652536280015,
+    -0.26653987481532726,
+    -0.04452873339109561,
+    0.5406721564119353,
+    -0.3429687148069634,
+    -0.5667881753076526,
+    -0.1131594770533197,
+    -0.11967669964274939,
+    -0.24290583501843846,
+    0.1323633991072283,
+    -0.006904499057461233,
+    1.6419823172995274,
+    0.7441388955887627,
+    0.4329695475890356,
+    -0.5035701492143905,
+    -0.043263893245774156,
+    -0.5175161646158599,
+    -0.1165003244052915,
+    0.2926648236153757,
+    0.11516681861351519,
+    0.12701681332991405,
+    -0.5469583507271155,
+    0.1537040237008649,
+    0.014304792508482933,
+    -0.5602679768138948,
+    -1.091193052173099,
+    -0.903858490726527,
+    0.27318741841351285,
+    0.2429279612158151,
+    -0.3115309067070484,
+    -0.38133865266161804,
+    -0.24180828955243616,
+    -0.08601672739228781,
+    -0.02573801390826702,
+    1.0493065433248001,
+    0.26279332286075635,
+    1.6245696517255377,
+    1.04047311491826,
+    0.07674641523729353,
+    0.998454319751438,
+    -0.6299702828366529,
+    -1.7076836316024555,
+    0.8608813199269421,
+    -1.009848811718471,
+    0.24870948712615407,
+    0.2015497205669389,
+    -0.9786935490282143,
+    0.1738101445028887,
+    -1.3403880191857325,
+    1.0953789001659435,
+    -0.3979241838130881,
+    -0.4345437889535199,
+    0.1952285951222567,
+    0.5310728566529339,
+    -0.44667424984714565,
+    0.5366586227079525,
+    -0.33955703883924904,
+    -0.5546167618321145,
+    -0.2789283986477291,
+    0.22560845337369861,
+    0.8830155366483856,
+    1.0685655099942404,
+    1.210213541162803,
+    -0.10355454953113462,
+    -0.3096813554053797,
+    -0.24546685272499041,
+    -1.1306396922206177,
+    0.13874367147903233,
+    -0.954699944704771,
+    0.6332105404752142,
+    -0.2795673497021198,
+    0.017471331664744544,
+    -0.009030908921404797,
+    -0.43990888221956354,
+    -0.39414947745664153,
+    -0.09703741814283763,
+    0.6392527632415295,
+    -0.25914528133238063,
+    0.04645220891517751,
+    -1.3838090792517452,
+    -0.7032224421992022,
+    0.3412050222977996,
+    0.03739818864885498,
+    0.13687409285236807,
+    -0.12470273870755644,
+    1.0895449310020708,
+    1.2668597254463856,
+    -0.09810300062492709,
+    0.07052553039701547,
+    1.5741055132273365,
+    0.48603717774591026,
+    -0.08645335847840589,
+    0.5492035230512128,
+    -0.001138982198694173,
+    0.6096276257406262,
+    0.5832442326799911
+  ],
+  "files": {
+    "2024-06-18_blexicanasfff_1803125640071127281_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-06-18_blexicanasfff_1803125640071127281_2.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2024-06-24_blexicanasfff_1805164272814633177_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.55)"
+    },
+    "2024-06-24_blexicanasfff_1805164272814633177_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.52)"
+    },
+    "2024-06-28_blexicanasfff_1806529970115666379_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.80)"
+    },
+    "2024-06-28_blexicanasfff_1806529970115666379_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.77)"
+    },
+    "2024-06-28_blexicanasfff_1806531368152637812_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.73)"
+    },
+    "2024-06-28_blexicanasfff_1806531368152637812_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.68)"
+    },
+    "2024-07-18_blexicanasfff_1814024264460251592_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-07-18_blexicanasfff_1814024264460251592_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.83)"
+    },
+    "2024-07-18_blexicanasfff_1814027179665019301_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.05)"
+    },
+    "2024-07-18_blexicanasfff_1814027179665019301_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-08-09_blexicanasfff_1821843599216030094_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.70)"
+    },
+    "2024-08-19_blexicanasfff_1825372783351681350_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.74)"
+    },
+    "2024-08-24_blexicanasfff_1827392328723788021_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.55)"
+    },
+    "2024-08-26_blexicanasfff_1827945194492133872_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-09-01_blexicanasfff_1830149430751760610_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2024-09-02_blexicanasfff_1830715998607155286_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2024-09-04_blexicanasfff_1831345995881283780_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-09-15_blexicanasfff_1835202904103236034_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2024-09-16_blexicanasfff_1835804161419411800_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.73)"
+    },
+    "2024-12-12_blexicanasfff_1867039432198545723_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2024-12-13_blexicanasfff_1867693056415412489_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2024-12-14_blexicanasfff_1867972223686131966_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.78)"
+    },
+    "2024-12-17_blexicanasfff_1869107043380138250_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2024-12-17_blexicanasfff_1869107043380138250_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2024-12-18_blexicanasfff_1869510086818955536_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2024-12-21_blexicanasfff_1870593964535075058_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.72)"
+    },
+    "2024-12-29_blexicanasfff_1873505450945388674_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.74)"
+    },
+    "2024-12-30_blexicanasfff_1873854571707289700_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-01-01_blexicanasfff_1874503048162345375_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-01-01_blexicanasfff_1874562416333504871_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=-0.04)"
+    },
+    "2025-01-01_blexicanasfff_1874562416333504871_2.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-01-02_blexicanasfff_1874868728816660839_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.11)"
+    },
+    "2025-01-03_blexicanasfff_1875259494189691209_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.70)"
+    },
+    "2025-01-03_blexicanasfff_1875259494189691209_2.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2025-01-06_blexicanasfff_1876353848559784099_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-01-12_blexicanasfff_1878237520867012756_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-01-25_blexicanasfff_1883059080530665494_1.jpg": {
+      "keep": true,
+      "faces": 47,
+      "reason": "group"
+    },
+    "2025-01-25_blexicanasfff_1883059080530665494_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-02-01_blexicanasfff_1885730294726066331_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.75)"
+    },
+    "2025-02-16_blexicanasfff_1891130067800948784_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.20)"
+    },
+    "2025-03-05_blexicanasfff_1897352910343954584_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.66)"
+    },
+    "2025-03-08_blexicanasfff_1898215198168645803_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.69)"
+    },
+    "2025-03-14_blexicanasfff_1900408183165735217_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=-0.00)"
+    },
+    "2025-04-21_blexicanasfff_1914208859972915316_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-04-23_blexicanasfff_1914909778343813447_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-04-23_blexicanasfff_1914909778343813447_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-05-12_blexicanasfff_1921792030457348469_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.69)"
+    },
+    "2025-05-17_blexicanasfff_1923558379500310815_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-05-18_blexicanasfff_1923906702862139758_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.75)"
+    },
+    "2025-05-20_blexicanasfff_1924976278785941923_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.82)"
+    },
+    "2025-05-20_blexicanasfff_1924976278785941923_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.75)"
+    },
+    "2025-05-22_blexicanasfff_1925360175260549155_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.14)"
+    },
+    "2025-05-24_blexicanasfff_1926105124516041144_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-06-03_blexicanasfff_1929966111077851365_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-06-08_blexicanasfff_1931779646238187640_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.14)"
+    },
+    "2025-06-12_blexicanasfff_1933228256498516073_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.36)"
+    },
+    "2025-06-12_blexicanasfff_1933228256498516073_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-06-19_blexicanasfff_1935799345171120602_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-06-30_blexicanasfff_1939551976372732169_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-07-08_blexicanasfff_1942426861121761290_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-07-08_blexicanasfff_1942426861121761290_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-07-08_blexicanasfff_1942426861121761290_3.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.27)"
+    },
+    "2025-07-08_blexicanasfff_1942426861121761290_4.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-07-08_blexicanasfff_1942647696453501005_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-07-08_blexicanasfff_1942688087584243714_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-07-15_blexicanasfff_1944982952191955167_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-07-15_blexicanasfff_1944987224031756607_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.28)"
+    },
+    "2025-07-30_blexicanasfff_1950360832061092213_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-07-30_blexicanasfff_1950677017592013005_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-08-05_blexicanasfff_1952562415540859199_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.16)"
+    },
+    "2025-08-05_blexicanasfff_1952824943424750007_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2025-08-12_blexicanasfff_1955117610376352223_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-08-21_blexicanasfff_1958657483897020745_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.21)"
+    },
+    "2025-08-31_blexicanasfff_1962049067875271096_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-02_blexicanasfff_1962921470658507246_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.23)"
+    },
+    "2025-09-14_blexicanasfff_1967271669443211675_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2025-09-14_blexicanasfff_1967272667951865950_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2025-09-15_blexicanasfff_1967385595250090445_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-15_blexicanasfff_1967385595250090445_2.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-09-17_blexicanasfff_1968381614289035418_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.79)"
+    },
+    "2025-09-18_blexicanasfff_1968516109771911315_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2025-09-19_blexicanasfff_1969134387821232425_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.01)"
+    },
+    "2025-09-21_blexicanasfff_1969638926366150759_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-21_blexicanasfff_1969844082282524833_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.56)"
+    },
+    "2025-09-23_blexicanasfff_1970582219556094234_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-23_blexicanasfff_1970582367816303090_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.74)"
+    },
+    "2025-09-25_blexicanasfff_1971276866544861581_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-27_blexicanasfff_1971856030645797031_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-28_blexicanasfff_1972263759520604319_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-09-29_blexicanasfff_1972698729913159937_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.25)"
+    },
+    "2025-10-05_blexicanasfff_1974675795047223706_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-10-10_blexicanasfff_1976469662360797387_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2025-10-10_blexicanasfff_1976469662360797387_2.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2025-10-15_blexicanasfff_1978262251485245882_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.73)"
+    },
+    "2025-10-17_blexicanasfff_1979303469275320531_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.32)"
+    },
+    "2025-10-18_blexicanasfff_1979684933246623861_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-10-27_blexicanasfff_1982859094810914831_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=-0.01)"
+    },
+    "2025-10-30_blexicanasfff_1984030584012992746_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-11-10_blexicanasfff_1987916885715722458_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.69)"
+    },
+    "2025-11-24_blexicanasfff_1993064638016307586_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2025-11-30_blexicanasfff_1995280093866823748_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.76)"
+    },
+    "2025-11-30_blexicanasfff_1995280093866823748_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.75)"
+    },
+    "2025-11-30_blexicanasfff_1995280093866823748_3.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2025-11-30_blexicanasfff_1995280093866823748_4.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.70)"
+    },
+    "2026-01-15_blexicanasfff_2011627414867399080_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.81)"
+    },
+    "2026-01-25_blexicanasfff_2015229671588168032_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-01-29_blexicanasfff_2016690526179733586_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.60)"
+    },
+    "2026-01-29_blexicanasfff_2016690526179733586_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.69)"
+    },
+    "2026-01-29_blexicanasfff_2016690526179733586_3.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.59)"
+    },
+    "2026-01-29_blexicanasfff_2016690526179733586_4.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-02-03_blexicanasfff_2018571916693664209_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-02-07_blexicanasfff_2020012122802123162_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.56)"
+    },
+    "2026-02-22_blexicanasfff_2025374627266986456_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.38)"
+    },
+    "2026-02-22_blexicanasfff_2025586949902278860_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.06)"
+    },
+    "2026-02-22_blexicanasfff_2025586949902278860_2.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-03-06_blexicanasfff_2029798204422689192_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-03-13_blexicanasfff_2032253609581130043_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.77)"
+    },
+    "2026-03-16_blexicanasfff_2033389467361305014_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-03-17_blexicanasfff_2034056508074238015_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.58)"
+    },
+    "2026-03-25_blexicanasfff_2036645700193190393_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.82)"
+    },
+    "2026-04-14_blexicanasfff_2044089421012578440_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.65)"
+    },
+    "2026-04-15_blexicanasfff_2044503882710098113_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.07)"
+    },
+    "2026-04-29_blexicanasfff_2049381635775148355_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.29)"
+    },
+    "2026-04-30_blexicanasfff_2049643300827582883_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-05-06_blexicanasfff_2051867435343528025_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.31)"
+    },
+    "2026-05-06_blexicanasfff_2051867435343528025_2.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.19)"
+    },
+    "2026-05-06_blexicanasfff_2051867435343528025_3.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-05-08_blexicanasfff_2052626418773656038_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.40)"
+    },
+    "2026-05-15_blexicanasfff_2055268575766630733_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-05-22_blexicanasfff_2057974106281132485_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-08_blexicanasfff_2063866737657815077_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.02)"
+    },
+    "2026-06-13_blexicanasfff_2065907678585524343_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.30)"
+    },
+    "2026-06-17_blexicanasfff_2067118428381388996_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-17_blexicanasfff_2067118428381388996_2.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.49)"
+    },
+    "2026-06-17_blexicanasfff_2067118428381388996_3.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-17_blexicanasfff_2067118428381388996_4.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-17_blexicanasfff_2067204222752264394_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-21_blexicanasfff_2068697441310752837_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2026-06-23_blexicanasfff_2069318918443860195_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-06-23_blexicanasfff_2069512929553076695_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-07-03_blexicanasfff_2073081109974270079_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.31)"
+    },
+    "2026-07-03_blexicanasfff_2073170744930893952_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-07-06_blexicanasfff_2074193170821267488_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-07-14_blexicanasfff_2077180212236746994_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.34)"
+    },
+    "2026-07-14_blexicanasfff_2077180212236746994_2.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-08-14_blexicanasfff_2088317904483668267_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.35)"
+    },
+    "2026-08-26_blexicanasfff_2092432580058509471_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2026-09-10_blexicanasfff_2098180813900648790_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2026-09-13_blexicanasfff_2099237422148050968_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.52)"
+    },
+    "2026-09-16_blexicanasfff_2100016455504781708_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.04)"
+    },
+    "2026-09-19_blexicanasfff_2101177607190388752_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.74)"
+    },
+    "2026-09-20_blexicanasfff_2101561309087080759_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.04)"
+    },
+    "2026-09-20_blexicanasfff_2101562375451058352_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=-0.02)"
+    },
+    "2026-09-23_blexicanasfff_2102870543384908211_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2026-09-23_blexicanasfff_2102878165878149483_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.71)"
+    },
+    "2026-09-28_blexicanasfff_2104403947108843549_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-09-28_blexicanasfff_2104638162756870168_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.65)"
+    },
+    "2026-09-28_blexicanasfff_2104638394500280683_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-09-30_blexicanasfff_2105088151752671256_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.76)"
+    },
+    "2026-09-30_blexicanasfff_2105405898692886768_1.jpg": {
+      "keep": true,
+      "faces": 1,
+      "reason": "her (sim=0.55)"
+    },
+    "2026-10-06_blexicanasfff_2107349493595213864_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-10-11_blexicanasfff_2109133441891471425_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-10-11_blexicanasfff_2109410661214073316_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-10-16_blexicanasfff_2111201073268502543_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-10-16_blexicanasfff_2111202547193233771_1.jpg": {
+      "keep": true,
+      "faces": 3,
+      "reason": "group"
+    },
+    "2026-10-18_blexicanasfff_2111948124205752358_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    },
+    "2026-10-25_blexicanasfff_2114462902006813000_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=-0.06)"
+    },
+    "2026-10-25_blexicanasfff_2114463699771515362_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.13)"
+    },
+    "2026-11-01_blexicanasfff_2116989986692100349_1.jpg": {
+      "keep": true,
+      "faces": 4,
+      "reason": "group"
+    },
+    "2026-11-02_blexicanasfff_2117073206758744155_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "reason": "group"
+    },
+    "2026-11-02_blexicanasfff_2117202703499907272_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.22)"
+    },
+    "2026-11-03_blexicanasfff_2117720828250837143_1.jpg": {
+      "keep": false,
+      "faces": 1,
+      "reason": "no match (faces=1, sim=0.16)"
+    },
+    "2026-11-05_blexicanasfff_2118251545582096502_1.jpg": {
+      "keep": false,
+      "faces": 0,
+      "reason": "no match (faces=0, sim=0.00)"
+    }
+  }
+}
