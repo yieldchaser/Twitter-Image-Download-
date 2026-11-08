@@ -15,6 +15,7 @@ on:
           - MarhelmData
           - ole_sanne
           - ed_fin
+          - blexicanasfff
       deep_backfill:
         description: "Also page the search index for full history"
         required: false
@@ -48,7 +49,7 @@ jobs:
       matrix:
         # Regular daily runs crawl every account inside one job; deep runs
         # get one job per account (independent timeouts, no cross-blocking).
-        account: ${{ github.event_name == 'workflow_dispatch' && inputs.account != 'all' && fromJSON(format('["{0}"]', inputs.account)) || fromJSON('["HBGrimes", "cashsarmax", "MarhelmData", "ole_sanne", "ed_fin"]') }}
+        account: ${{ github.event_name == 'workflow_dispatch' && inputs.account != 'all' && fromJSON(format('["{0}"]', inputs.account)) || fromJSON('["HBGrimes", "cashsarmax", "MarhelmData", "ole_sanne", "ed_fin", "blexicanasfff"]') }}
     name: ${{ matrix.account }}
     steps:
       - name: Checkout

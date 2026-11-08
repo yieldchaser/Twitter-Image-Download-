@@ -9,6 +9,7 @@ Automated archive of image media posted by selected public X accounts.
 - `@MarhelmData`
 - `@ole_sanne`
 - `@ed_fin`
+- `@blexicanasfff`
 
 ## How it works
 
