@@ -1020,6 +1020,12 @@
       "faces": 0,
       "persons": 1,
       "reason": "persons=1"
+    },
+    "2026-11-14_blexicanasfff_2121559069206978758_1.jpg": {
+      "keep": true,
+      "faces": 2,
+      "persons": 0,
+      "reason": "faces=2"
     }
   }
 }
