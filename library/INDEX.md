@@ -1,8 +1,8 @@
 # Library index
 
-Generated: 2026-11-14
+Generated: 2026-11-16
 
-Total images: 6832 in 672 series across 8 type folders.
+Total images: 6834 in 672 series across 8 type folders.
 
 Per-type totals:
 
@@ -13,8 +13,8 @@ Per-type totals:
 - news: 453 files in 49 series
 - other: 519 files in 32 series
 - photos: 561 files in 23 series
-- tables: 1303 files in 133 series
-- _inbox: 322 files in 6 series
+- tables: 1304 files in 133 series
+- _inbox: 323 files in 6 series
 
 ## charts (1792 files, 274 series)
 
@@ -584,14 +584,14 @@ Per-type totals:
 | shipyard-brochure-photo | 1 | 2024-12-12..2024-12-12 | cashsarmax | China Merchants Industry brochures |
 | weather-damage-photos | 1 | 2025-02-14..2025-02-14 | ed_fin | Cyclone damage at Port Hedland |
 
-## tables (1303 files, 133 series)
+## tables (1304 files, 133 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | infinity-rate-stipulations | 330 | 2023-01-16..2026-10-05 | ed_fin | Infinity shipbrokers clean tanker rate stipulations |
 | freight-futures-quotes | 178 | 2021-09-06..2026-09-24 | HBGrimes,cashsarmax,ed_fin,ole_sanne | Cape FFA curve screen |
 | stock-quotes-screens | 148 | 2021-05-13..2026-10-05 | MarhelmData,cashsarmax,ed_fin,ole_sanne | Shipping stocks watchlist quotes |
-| secondhand-prices | 131 | 2021-10-10..2026-08-23 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Tanker secondhand prices |
+| secondhand-prices | 132 | 2021-10-10..2026-11-15 | HBGrimes,MarhelmData,cashsarmax,ed_fin | Tanker secondhand prices |
 | tce-rates-tables | 100 | 2021-09-16..2026-09-11 | MarhelmData,cashsarmax,ed_fin | Tanker TCE rates by route |
 | fixture-lists | 63 | 2022-05-13..2026-08-28 | MarhelmData,cashsarmax,ed_fin | VLCC MEG activity panel |
 | newbuild-prices | 28 | 2021-10-16..2026-04-22 | MarhelmData,cashsarmax,ed_fin | Dry bulk and tanker newbuilding prices |
@@ -722,12 +722,12 @@ Per-type totals:
 | xclusiv-newbuilding-demolition-prices | 1 | 2022-05-31..2022-05-31 | ed_fin | Wet newbuilding and demolition price table |
 | zvezda-shipbuilding-orderbook | 1 | 2024-02-23..2024-02-23 | ed_fin | Zvezda Shipbuilding orderbook list |
 
-## _inbox arrivals (322 files, 6 series)
+## _inbox arrivals (323 files, 6 series)
 
 | series | files | date range | accounts | example |
 | --- | --- | --- | --- | --- |
 | blexicanasfff | 174 | 2024-06-18..2026-11-05 | blexicanasfff | unclassified blexicanasfff 2025-07-08 |
-| ed_fin | 62 | 2026-09-14..2026-11-13 | ed_fin | unclassified ed_fin 2026-10-23 |
+| ed_fin | 63 | 2026-09-14..2026-11-15 | ed_fin | unclassified ed_fin 2026-10-23 |
 | MarhelmData | 61 | 2026-09-15..2026-11-14 | MarhelmData | unclassified MarhelmData 2026-10-18 |
 | cashsarmax | 21 | 2026-09-21..2026-11-14 | cashsarmax | unclassified cashsarmax 2026-10-18 |
 | ole_sanne | 3 | 2026-09-16..2026-10-20 | ole_sanne | unclassified ole_sanne 2026-09-16 |
