@@ -1,11 +1,11 @@
 {
   "username": "blexicanasfff",
-  "generated_at": "2026-11-23T00:53:47.828402+00:00",
+  "generated_at": "2026-11-24T04:51:10.273249+00:00",
   "mode": "regular",
   "status": "ok",
   "reason": "media extraction completed",
-  "downloaded": 1,
-  "committed_files": 49,
+  "downloaded": 0,
+  "committed_files": 0,
   "returncode": 0,
   "detail": {
     "username": "blexicanasfff",
@@ -13,6 +13,6 @@
     "returncode": 0,
     "status": "ok",
     "reason": "media extraction completed",
-    "downloaded": 1
+    "downloaded": 0
   }
 }
